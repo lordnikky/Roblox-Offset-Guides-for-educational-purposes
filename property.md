@@ -48,21 +48,38 @@ so the offset is 0x1CE4BE0
 
 # GetPropertyData
 
-string "ButtonRight", second xref and decompile
+string "Unable to cast %s to %s", third xref and decompile
 
 ```c
-  sub_1CE7A60(a1: v148, a2: (unsigned int)"ButtonRight", a3: (unsigned int)&v151, a4: 1056, a5: (__int64)&qword_88907C0); // <-- you're here
-  xmmword_8890800 = *(_OWORD *)sub_7BCD30(a1: v178, a2: &qword_8941FC8, a3: 283);
-  sub_1CB8390(a1: &v175, a2: &unk_6DD98B0);
-  xmmword_8890810 = v175;
-  sub_1CB83B0(a1: &v176, a2: &unk_6DDA1A0);
-  xmmword_8890820 = v176;
-  sub_E6D4F0(a1: &v177, a2: &off_6DDAD78);
-  xmmword_8890830 = v177;
-  sub_2B0FAF0(a1: (__int64)&qword_6D04820); // <-- GetPropertyData
-  sub_2B0FAF0(a1: (__int64)"Touch"); // <-- GetPropertyData
-  return &qword_88907C0;
-}
+    if ( v9[3] >= 0x10u )
+      v9 = (_QWORD *)*v9;
+    v11 = (_QWORD *)sub_2B0FB20(a1: v9); // <-- getpropertydata
+    v12 = v11[2];
+    if ( v11[3] >= 0x10u )
+      v11 = (_QWORD *)*v11;
+    v18[1] = v12;
+    v18[0] = v11;
+    v13 = sub_1CE80B0(a1: v10, a2: v18);
+    if ( v13 != 0 )
+    {
+      v19 = *(_DWORD *)(v13 + 48);
+      sub_8607F0(a1: a1 + 1, a2: &v19);
+      v14 = sub_85F410();
+      *a1 = v14;
+      if ( v14 == sub_85F410() )
+      {
+        if ( a1[1] == 0 )
+          return nullptr;
+        return v8;
+      }
+LABEL_19:
+      sub_4924110(a1: "Variant cast failed");
+    }
+  }
+  v15 = sub_85F280();
+  sub_7D6BB0(a1: *(_QWORD *)(v15 + 8));
+  v16 = (const char *)sub_7D6BB0(a1: *(_QWORD *)(*a1 + 8));
+  sub_4924110(a1: "Unable to cast %s to %s", v16, v17); //<-- you are here
 ```
 
-so the offset is 0x2B0FAF0
+so the offset is 0x2B0FB20
