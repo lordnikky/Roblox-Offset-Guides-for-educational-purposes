@@ -1,0 +1,53 @@
+# luaF_FreeProto
+
+search string "LuauBufferCage", first xref:
+
+```asm
+.rdata:0000000006E26460 aLuaubuffercage db 'LuauBufferCage',0   ; DATA XREF: .data:0000000007C50CF0↓o
+.rdata:0000000006E2646F                 align 10h
+```
+
+double click .data, you'll be put here:
+
+```asm
+.data:0000000007C50CE8 byte_7C50CE8    db 0                    ; DATA XREF: sub_5FC180+E↑o
+.data:0000000007C50CE8                                         ; sub_2717A40:loc_2717D4C↑r ...
+.data:0000000007C50CE9                 align 10h
+.data:0000000007C50CF0                 dq offset aLuaubuffercage ; "LuauBufferCage"
+```
+
+second xref (sub_2717A40), decompile, scroll to the very bottom:
+
+```c
+    case 0xD:
+      sub_2728710(a1, a2: *(_QWORD *)(a2 + 32), a3: 16LL * *(unsigned int *)(a2 + 24), a4: *(_BYTE *)(a2 + 1));
+      goto LABEL_55;
+    case 0xF:
+      return sub_27241E0(a1, a2, a3); // <-- luaF_FreeProto
+    case 0x10:
+LABEL_55:
+      v8 = 40;
+      return sub_27287C0(a1, a2, a3: v8, a4: *(_BYTE *)(a2 + 1), a5: a3);
+    default:
+      return (unsigned int)*(unsigned __int8 *)(a2 + 2) - 5;
+  }
+  while ( v13 != a2 )
+  {
+    v12 = (__int64 *)(v13 + 8);
+    v13 = *(_QWORD *)(v13 + 8);
+    if ( v13 == 0 )
+      goto LABEL_19;
+  }
+  *v12 = *(_QWORD *)(v13 + 8);
+  --*(_DWORD *)(*(_QWORD *)(a1 + 24) + 12LL);
+LABEL_19:
+  v14 = *(_WORD *)(a2 + 4) - ((*(_WORD *)(a2 + 4) >> 1) & 0x5555);
+  v15 = (unsigned __int16)((v14 & 0x3333) + ((v14 >> 2) & 0x3333));
+  if ( (unsigned __int16)((257 * (((unsigned __int16)v15 + (unsigned __int16)(v15 >> 4)) & 0xF0F)) >> 8) < 8u )
+    *(_DWORD *)(*(_QWORD *)(a1 + 24) + 1584LL) &= ~0x20000000u;
+  v8 = *(unsigned int *)(a2 + 20) + 25LL;
+  return sub_27287C0(a1, a2, a3: v8, a4: *(_BYTE *)(a2 + 1), a5: a3);
+}
+```
+
+so the offset is 0x27241E0
