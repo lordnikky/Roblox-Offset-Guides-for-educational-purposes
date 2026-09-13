@@ -51,3 +51,5 @@ LABEL_19:
 ```
 
 so the offset is 0x27241E0
+
+(it also contains luaM_freearray which is sub_2728710 in my case)
