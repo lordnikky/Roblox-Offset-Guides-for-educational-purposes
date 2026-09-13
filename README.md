@@ -3,4 +3,6 @@ Roblox Offset Guides, STRICTLY for educational purposes, author does not support
 
 For any issues contact "lordnikky" on discord or by my email: nikky@nikky.me
 
+If anyone knows how to make comments different color, please contact me with the infomation above.
+
 **Please drop a star 😉**
