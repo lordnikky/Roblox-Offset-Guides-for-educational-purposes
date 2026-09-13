@@ -8,7 +8,7 @@
 
 these can be found via string "Attempt to migrate WeakObjectRef across VM boundary", first xref, decompile:
 
-```c
+```diff
 __int64 __fastcall sub_41812B0(__int64 a1, __int64 a2)
 {
   __int64 result; // rax
@@ -45,7 +45,7 @@ LABEL_22:
     *(_QWORD *)(v6 + 48) = a2;
   }
   if ( (unsigned __int64)(*(_QWORD *)(a2 + 40) + 16LL) > *(_QWORD *)(*(_QWORD *)(a2 + 16) + 16LL)
-    && (unsigned int)sub_26F7B00(a1: a2, a2: 1) == 0 ) // <-- lua_checkstack
+    && (unsigned int)sub_26F7B00(a1: a2, a2: 1) == 0 ) - // <-- lua_checkstack
   {
     goto LABEL_22;
   }
