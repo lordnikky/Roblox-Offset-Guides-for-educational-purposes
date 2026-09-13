@@ -55,3 +55,39 @@ string "task.wait is not available for AuroraScripts" first xref, done
 ``` 
 
 also "task.wait(t)"
+
+
+# TaskDesynchronize (TaskDesync(
+
+seach string "task.desynchronize() may only be called from a script that is a d", first xref will be it
+
+```asm
+.rdata:0000000006F7DBA0 aTaskDesynchron db 'task.desynchronize() may only be called from a script that is a d'
+.rdata:0000000006F7DBA0                                         ; DATA XREF: sub_4318F70:loc_431905C↑o
+```
+
+so the offset is 0x4318F70
+
+
+# TaskCancel
+
+string "Cannot call task.%s on a thread that is already '%s' in the task library", first xref is da offset
+
+```asm
+.rdata:0000000006F7DB00 aCannotCallTask db 'Cannot call task.%s on a thread that is already ',27h,'%s',27h,' '
+.rdata:0000000006F7DB00                                         ; DATA XREF: sub_4318580+7A↑o
+.rdata:0000000006F7DB00                                         ; sub_431A6B0+235↑o
+```
+
+so the offset is 0x4318580
+
+# TaskSynchronize (TaskSync)
+
+string "task.synchronize() may only be called from a script that is a descendant of an Actor", first xref
+
+```asm
+.rdata:0000000006F7DC20 aTaskSynchroniz db 'task.synchronize() may only be called from a script that is a des'
+.rdata:0000000006F7DC20                                         ; DATA XREF: sub_4318B60:loc_4318C49↑o
+```
+
+so the offset is 0x4318B60
