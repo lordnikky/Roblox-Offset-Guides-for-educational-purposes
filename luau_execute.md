@@ -3,33 +3,28 @@
 search for string "iterate over"
 
 ```asm
-.rdata:0000000006E275A8 aIterateOver    db 'iterate over',0     ; DATA XREF: .text:000000000273662D↑o
-.rdata:0000000006E275A8                                         ; .text:00000000027368FA↑o ...
+.rdata:0000000006E96DD8 aIterateOver    db 'iterate over',0     ; DATA XREF: sub_2788580+CA38↑o
+.rdata:0000000006E96DD8                                         ; sub_2788580+CD7F↑o ...
 ```
 
 press shift x on the xref:
 
 ```asm
 Direction	Type	Address	Text
-Up	o	.text:000000000273662D	lea     rax, aIterateOver; "iterate over"
-Up	o	.text:00000000027368FA	lea     rax, aIterateOver; "iterate over"
-Up	o	.text:00000000027369A4	lea     rax, aIterateOver; "iterate over"
-Up	o	.text:00000000027369D0	lea     rax, aIterateOver; "iterate over"
-Up	o	.text:00000000027369FC	lea     rax, aIterateOver; "iterate over"
-Up	o	sub_2736E10+B9E3	lea     rax, aIterateOver; "iterate over"
-Up	o	sub_2736E10+BCFA	lea     rax, aIterateOver; "iterate over"
-Up	o	sub_2736E10+BDA4	lea     rax, aIterateOver; "iterate over"
-Up	o	sub_2736E10+BDD0	lea     rax, aIterateOver; "iterate over"
-Up	o	sub_2736E10+BDFC	lea     rax, aIterateOver; "iterate over"
+Up	o	sub_2788580+CA38	lea     rax, aIterateOver; "iterate over"
+Up	o	sub_2788580+CD7F	lea     rax, aIterateOver; "iterate over"
+Up	o	sub_2788580+CE2A	lea     rax, aIterateOver; "iterate over"
+Up	o	sub_2788580+CE56	lea     rax, aIterateOver; "iterate over"
+Up	o	sub_2788580+CE82	lea     rax, aIterateOver; "iterate over"
 ```
 
-so, the sub_2736E10 technically is the luau_execute, thats what luau_execute calls to well execute stuff, but you dont wanna that, you want this
+so, the sub_2788580 technically is the luau_execute, thats what luau_execute calls to well execute stuff, but you dont wanna that, you want this
 
 well okay, after half an hour of trying to find best approach i failed, here's mid:
 
 luau_execute_body, thing that luau execute calls as can be seen here:
 
-do as said earlier (iterate over) and sub_2736E10 is the luau_execute_body, to find the luau_execute you gotta decompile the luau_execute_body which is ~10k lines so, thats why i tried to find better way. so, best way i found is dumb as shit but it seems to work, lol
+do as said earlier (iterate over) and sub_2788580 is the luau_execute_body, to find the luau_execute you gotta decompile the luau_execute_body which is ~10k lines so, thats why i tried to find better way. so, best way i found is dumb as shit but it seems to work, lol
 
 search for string "attempt to %s a %s value"
 
