@@ -44,7 +44,7 @@ first xref, decompile it
 void __fastcall __noreturn sub_2722A00(__int64 a1, __int64 a2, const char *a3)
 ```
 
-click sub_2722A00 and press x, 16th xref:
+click xrefs until you land on "call" (sorry dont got better way yet)
 
 ```asm
 Down	p	sub_2736E10+BCE7	call    sub_2722A00
@@ -65,33 +65,40 @@ look up like 26 lines:
 THATS the fucking luau_execute, whole code batch:
 
 ```c
-                            sub_272A260(a1: v5); // <-- your  tagret!!!!!
-                            if ( byte_7C51308 != 0 )
-                              sub_270BE30(a1: v5, a2: v905);
-                            if ( v904 == 0 )
-                              *(_BYTE *)(v5 + 5) = 0;
-                          }
-                          v913 = *(_BYTE *)(v5 + 3);
-                          v914 = v913 == 1 || v913 == 6 || v913 == 127;
-                          if ( v1356 != 0 )
-                          {
-                            --*(_WORD *)(v5 + 90);
-                            if ( v914 )
-                            {
-                              *(_QWORD *)(*(_QWORD *)(v5 + 72) + v1310 + 16) = (char *)v1309 + *(_QWORD *)(v5 + 48) + 48;
-LABEL_1949:
-                              --*(_WORD *)(v5 + 88);
-                              if ( *(_QWORD *)(*(_QWORD *)(v5 + 24) + 88LL) >= *(_QWORD *)(*(_QWORD *)(v5 + 24) + 80LL) )
-                                sub_2719020(a1: v5, a2: 1);
-                              v9 = *(_QWORD *)(v5 + 32);
-                              nn = *ii;
-                              a2 = v845 + v9;
-                              v1198 = v9;
-                              *(_QWORD *)(v5 + 40) = *(_QWORD *)(*ii + 16);
-                              if ( *(_DWORD *)(v845 + v9 + 12) == 0 )
-                              {
-                                *(_QWORD *)(nn + 32) = v1224;
-                                sub_2722A00(a1: v5, a2, a3: "call"); // <-- land here
+                ((void (__fastcall *)(__int64))sub_277A970)(a1: v5); // <-- luau execute
+                if ( byte_7CCA548 != 0 )
+                  ((void (__fastcall *)(__int64, __int64))sub_2752A30)(a1: v5, a2: v1081);
+                if ( v1080 == 0 )
+                  *(_BYTE *)(v5 + 5) = 0;
+              }
+              v1089 = *(_BYTE *)(v5 + 3);
+              v1090 = v1089 == 1 || v1089 == 6 || v1089 == 127;
+              if ( v1467 != 0 )
+              {
+                --*(_WORD *)(v5 + 50);
+                if ( v1090 )
+                {
+                  v1082 = v1409;
+                  *(_QWORD *)(v1409 + *(_QWORD *)(v5 + 120)) = *(_QWORD *)(v5 + 80) + v1403 + 48;
+LABEL_2291:
+                  --*(_WORD *)(v5 + 48);
+                  if ( *(_QWORD *)(*(_QWORD *)(v5 + 72) + 64LL) >= *(_QWORD *)(*(_QWORD *)(v5 + 72) + 56LL) )
+                  {
+                    LOBYTE(v1082) = 1;
+                    ((void (__fastcall *)(__int64, unsigned __int64))sub_2764400)(a1: v5, a2: v1082);
+                  }
+                  v9 = *(_QWORD *)(v5 + 96);
+                  v1091 = (_QWORD *)*ii;
+                  a2 = v949 + v9;
+                  v1327 = v9;
+                  *(_QWORD *)(v5 + 88) = *(_QWORD *)*ii;
+                  if ( *(_DWORD *)(v949 + v9 + 12) == 0 )
+                  {
+                    v1091[4] = v1348;
+                    ((void (__fastcall __noreturn *)(__int64, __int64, const char *))sub_27730C0)(
+                      a1: v5,
+                      a2,
+                      a3: "call"); // <-- you're here 
 ```
 
 fuck this shit
