@@ -14,7 +14,7 @@ search string "script start", first xref, decompile it:
     v220 = "Invalid Facet Access";
     sub_4921FD0(a1: 0, a2: "Invalid Facet Access");
   }
-  v23 = (_DWORD *)(sub_4248600(a1: v22 + 520, a2: &v225, a3: &v252) + 568); <<-- the GetLuaStateForInstance
+  v23 = (_DWORD *)(sub_4248600(a1: v22 + 520, a2: &v225, a3: &v252) + 568); // <<-- the GetLuaStateForInstance
   LODWORD(v272) = (_DWORD)v23 - *v23;
   HIDWORD(v272) = (_DWORD)v23 - v23[1];
   v24 = v272;
