@@ -1,55 +1,45 @@
 # luaF_FreeProto
 
-search string "LuauBufferCage", first xref:
+search string "LuauSplitTableLookups":
 
 ```asm
-.rdata:0000000006E26460 aLuaubuffercage db 'LuauBufferCage',0   ; DATA XREF: .data:0000000007C50CF0↓o
-.rdata:0000000006E2646F                 align 10h
+.data:0000000007CC9F68                 dq offset aLuausplittable ; "LuauSplitTableLookups"
+.data:0000000007CC9F70 qword_7CC9F70   dq 0                    ; DATA XREF: sub_600140+7↑w
+.data:0000000007CC9F78                 align 20h
+.data:0000000007CC9F80 dword_7CC9F80   dd 20h                  ; DATA XREF: sub_6001A0+E↑o
+.data:0000000007CC9F80                                         ; sub_2774B10+53↑r
 ```
+well, 3rd xref, the sub_2774B10, do NOT decompile it, from where you are scroll up until you see second SUBROUTINE section:
 
-double click .data, you'll be put here:
+this will be the first (function that u got sent to)
 
 ```asm
-.data:0000000007C50CE8 byte_7C50CE8    db 0                    ; DATA XREF: sub_5FC180+E↑o
-.data:0000000007C50CE8                                         ; sub_2717A40:loc_2717D4C↑r ...
-.data:0000000007C50CE9                 align 10h
-.data:0000000007C50CF0                 dq offset aLuaubuffercage ; "LuauBufferCage"
+text:0000000002774B10 ; =============== S U B R O U T I N E =======================================
+.text:0000000002774B10
+.text:0000000002774B10
+.text:0000000002774B10 ; char __fastcall sub_2774B10(__int64, __int64, __int64, unsigned int)
+.text:0000000002774B10 sub_2774B10     proc near               ; CODE XREF: sub_2788580+32EB↓p
+.text:0000000002774B10                 sub     rsp, 38h
+.text:0000000002774B14                 mov     rax, [rcx+48h]
+.text:0000000002774B18                 cmp     qword ptr [rax+710h], 0
 ```
 
-second xref (sub_2717A40), decompile, scroll to the very bottom:
+and you scroll up until you see next one
 
-```c
-    case 0xD:
-      sub_2728710(a1, a2: *(_QWORD *)(a2 + 32), a3: 16LL * *(unsigned int *)(a2 + 24), a4: *(_BYTE *)(a2 + 1));
-      goto LABEL_55;
-    case 0xF:
-      return sub_27241E0(a1, a2, a3); // <-- luaF_FreeProto
-    case 0x10:
-LABEL_55:
-      v8 = 40;
-      return sub_27287C0(a1, a2, a3: v8, a4: *(_BYTE *)(a2 + 1), a5: a3);
-    default:
-      return (unsigned int)*(unsigned __int8 *)(a2 + 2) - 5;
-  }
-  while ( v13 != a2 )
-  {
-    v12 = (__int64 *)(v13 + 8);
-    v13 = *(_QWORD *)(v13 + 8);
-    if ( v13 == 0 )
-      goto LABEL_19;
-  }
-  *v12 = *(_QWORD *)(v13 + 8);
-  --*(_DWORD *)(*(_QWORD *)(a1 + 24) + 12LL);
-LABEL_19:
-  v14 = *(_WORD *)(a2 + 4) - ((*(_WORD *)(a2 + 4) >> 1) & 0x5555);
-  v15 = (unsigned __int16)((v14 & 0x3333) + ((v14 >> 2) & 0x3333));
-  if ( (unsigned __int16)((257 * (((unsigned __int16)v15 + (unsigned __int16)(v15 >> 4)) & 0xF0F)) >> 8) < 8u )
-    *(_DWORD *)(*(_QWORD *)(a1 + 24) + 1584LL) &= ~0x20000000u;
-  v8 = *(unsigned int *)(a2 + 20) + 25LL;
-  return sub_27287C0(a1, a2, a3: v8, a4: *(_BYTE *)(a2 + 1), a5: a3);
-}
+```asm
+.text:00000000027748F0
+.text:00000000027748F0 ; =============== S U B R O U T I N E =======================================
+.text:00000000027748F0
+.text:00000000027748F0
+.text:00000000027748F0 ; __int64 __fastcall sub_27748F0(__int64, __int64, __int64)
+.text:00000000027748F0 sub_27748F0     proc near               ; CODE XREF: sub_2762DA0+51↑j
+.text:00000000027748F0
+.text:00000000027748F0 var_18          = qword ptr -18h
+.text:00000000027748F0 arg_0           = qword ptr  8
+.text:00000000027748F0 arg_8           = qword ptr  10h
+.text:00000000027748F0
+.text:00000000027748F0                 mov     [rsp+arg_0], rbx
+
 ```
 
-so the offset is 0x27241E0
-
-(it also contains luaM_freearray which is sub_2728710 in my case)
+so that subroutine should be the luaF_FreeProto, and the offset is 0x27748F0, ik its ass i didnt find any good anchors 
