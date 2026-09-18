@@ -8,7 +8,7 @@ Search for string "task.defer is not available for AuroraScripts", first xref wi
 
 .rdata:0000000006F7DCA0 aTaskDeferIsNot db 'task.defer is not available for AuroraScripts',0
 
-.rdata:0000000006F7DCA0                                         ; DATA XREF: sub\_4319B60:loc\_4319FC2↑o
+.rdata:0000000006F7DCA0                                         ; DATA XREF: sub_4319B60:loc_4319FC2↑o
 
 ```
 
@@ -22,7 +22,7 @@ string "task.spawn is not available for AuroraScripts", first xref will be it
 
 .rdata:0000000006F7DD28 aTaskSpawnIsNot db 'task.spawn is not available for AuroraScripts',0
 
-.rdata:0000000006F7DD28                                         ; DATA XREF: sub\_431A020:loc\_431A1DE↑o
+.rdata:0000000006F7DD28                                         ; DATA XREF: sub_431A020:loc_431A1DE↑o
 
 ```
 
@@ -37,7 +37,7 @@ string "task.delay is not available for AuroraScripts" first xref bla bla, didn'
 
 .rdata:0000000006F7DFE8 aTaskDelayIsNot db 'task.delay is not available for AuroraScripts',0
 
-.rdata:0000000006F7DFE8                                         ; DATA XREF: sub\_431A3B0:loc\_431A66A↑o
+.rdata:0000000006F7DFE8                                         ; DATA XREF: sub_431A3B0:loc_431A66A↑o
 
 ```
 well also can be found via "task.delay(t, f)"
