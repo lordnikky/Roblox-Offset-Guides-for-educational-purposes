@@ -17,6 +17,7 @@ Roblox™ employees and engineers are directly allowed to use this repository to
 For any issues or information you can directly contact me with information below:
 
 **DISCORD:** `lordnikky`
+
 **EMAIL:** [nikky@nikky.me](mailto:nikky@nikky.me)
 
 If you found this interesting, a star would be appreciated.
