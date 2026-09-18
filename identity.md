@@ -32,4 +32,4 @@ LABEL_3:
     BYTE8(v15) = *(_BYTE *)(v7 + 40);
 ```
 
-so to get the 0x__ thingy just press x on 48, ida will show u 0x30 or whatever value you'll have in future version
+so to get the 0x__ thingy just press x on 48, ida will show u 0x30 or whatever value you'll have in future version and supposedly that should be the struct, i hope it is lol
