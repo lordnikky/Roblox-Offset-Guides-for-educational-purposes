@@ -32,7 +32,7 @@ also in same file
 ```
 
 just for funnies here's every single string you can get print with, formatted to look like its a staircase just for funnies:
-```
+
 %s
 %s %d
 %s: %s
@@ -392,7 +392,6 @@ rbxgameasset urls are currently not supported on %s.%s. Use the image asset's rb
 MarketplaceService:OpenShop: called from a local script, but not called on a local player. Local scripts can only open the shop for the local player.
 MarketplaceService:PromptNativePurchase called from a local script, but not called on a local player. Local scripts can only prompt the local player.
 MarketplaceService:PromptNativePurchaseWithPaymentSessionId called from a local script, but not called on a local player. Local scripts can only prompt the local player.
-```
 R15 Rig Validation: failed (tooMany=%s componentMismatch=%s transformsInconsistent=%s labels=%zu names=%zu parents=%zu pre=%zu post=%zu tpose=%zu maxFlag=%d Count-1=%zu)
 R15 Rig Validation: failed (tooMany=%s componentMismatch=%s transformsInconsistent=%s labels=%zu children=%zu names=%zu joints=%zu pre=%zu post=%zu xforms=%zu maxFlag=%d Count-1=%zu)
 LDLProgram Id: %d, Dim: %d, Ext Dim: %d, Ops: %.0f k, L Height Max / Ave: %d / %.0f, GigOps/s: %.2f / %.2f, Flops/Dim: %.0f, Initialization: %.2f / %.2f us, Elimination: %.2f / %.2f us, Total: %.2f / %.2f us

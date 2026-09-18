@@ -8,5 +8,3 @@ search for string "\"0\":{\"type\":\"userdata\",\"cat\":0,\"size\":0}\n"", first
 ```
 
 so the offset is sub_27261C0
-
-# CURRENTLY OUTDATED
