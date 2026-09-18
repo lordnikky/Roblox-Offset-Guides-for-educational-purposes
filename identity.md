@@ -12,7 +12,9 @@ search for string "Cannot require a non-RobloxScript module from a RobloxScript"
 
 so the offset is 0x1D14D50
 
-# Identity struct :freezing:, press x on that rva u found in previous guide and go to first xref and look here :shocked:
+# Identity struct :freezing:
+
+press x on that rva u found in previous guide and go to first xref and look here :shocked:
 
 ```c
   *(_QWORD *)a1 = a2;
