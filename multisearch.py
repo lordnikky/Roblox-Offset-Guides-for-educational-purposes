@@ -1,10 +1,11 @@
-# ida plugin to search multiple strings instead of one, uhh, thats all, assigned to q by default so if u wanna use it just remove q keybind in ida or just change keybind to whatever you want
+# ida plugin to search multiple strings instead of one, uhh, thats all, assigned to q by default so if you wanna use it just remove q keybind in ida or just change keybind to whatever you want
 
 import ida_idaapi
 import ida_strlist
 import idautils
 import idc
 import ida_kernwin
+import ida_bytes
 
 ACTION_NAME = "custom:multi_search"
 
@@ -15,29 +16,45 @@ def run_search():
         
         if ida_strlist.get_strlist_qty() == 0:
             ida_strlist.build_strlist()
-            
-        string_hit_sets = [set() for _ in targets]
+
+        required_counts = {}
+        for target in targets:
+            required_counts[target] = required_counts.get(target, 0) + 1
+
+        target_func_counts = {
+            target: {} for target in required_counts
+        }
 
         for i in range(ida_strlist.get_strlist_qty()):
             si = ida_strlist.string_info_t()
             if not ida_strlist.get_strlist_item(si, i):
                 continue
-                
-            raw_bytes = idc.get_strlit_contents(si.ea, si.length, si.type)
+            # pretty sure in some cases there could be decoding issues since i always assume that its utf 8, either way good luck if you do encounter the issue lmao
+            raw_bytes = ida_bytes.get_strlit_contents(si.ea, si.length, si.type)
             if not raw_bytes:
                 continue
-                
+            
             current_str = raw_bytes.decode('utf-8', errors='ignore')
             
-            for idx, target in enumerate(targets):
+            for target in required_counts:
                 if target in current_str:
                     for xref in idautils.XrefsTo(si.ea):
                         func_ea = idc.get_func_attr(xref.frm, idc.FUNCATTR_START)
                         if func_ea != idc.BADADDR:
-                            string_hit_sets[idx].add(func_ea)
+                            target_func_counts[target][func_ea] = (
+                                target_func_counts[target].get(func_ea, 0) + 1
+                            )
 
-        matches = set.intersection(*string_hit_sets) if string_hit_sets and all(string_hit_sets) else set()
-        
+        first_target = next(iter(required_counts))
+        matches = set(target_func_counts[first_target].keys())
+
+        for target, required_count in required_counts.items():
+            matches = {
+                func_ea
+                for func_ea in matches
+                if target_func_counts[target].get(func_ea, 0) >= required_count
+            }
+
         print(f"Results for: {', '.join(targets)}")
         if matches:
             word = "function" if len(matches) == 1 else "functions"
