@@ -1,4 +1,4 @@
-# loadmodule
+# EnableLoadModule
 
 search for string "EnableLoadModule", second xref:
 
