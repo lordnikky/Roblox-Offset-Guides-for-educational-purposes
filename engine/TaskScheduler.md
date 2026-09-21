@@ -11,7 +11,7 @@ that qword is taskschedulerptr
 
 # TaskSchedulerTargetFPS
 
-search for string "TS:Step", first xref decompile:
+search for string "TS::Step", first xref decompile:
 
 ```c
       qword_89DD820 = sub_2B801C0(
