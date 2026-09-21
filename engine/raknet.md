@@ -211,3 +211,16 @@ double click the &RakNet::RakPeer::`vftable and thats where the offset is:
 ```
 
 so the offset is 0x6BB1740
+
+
+# convertItemEnumToString
+
+search for string "Stream Prefetch Request Items" first xref will be da needed thing
+
+```asm
+.rdata:0000000007023E20 aStreamPrefetch_0 db 'Stream Prefetch Request Items',0
+.rdata:0000000007023E20                                         ; DATA XREF: sub_47C64C0:loc_47C65C7↑o
+.rdata:0000000007023E3E                 align 20h
+```
+
+so the offset is 0x47C64C0
