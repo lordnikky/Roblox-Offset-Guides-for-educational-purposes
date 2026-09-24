@@ -1,6 +1,6 @@
 # luaM_visitgco
 
-search for string "\"0\":{\"type\":\"userdata\",\"cat\":0,\"size\":0}\n", first xref and decompile:
+search for string `"\"0\":{\"type\":\"userdata\",\"cat\":0,\"size\":0}\n"`, first xref and decompile:
 
 ```c
   sub_2728B70(a1, a2, a3: sub_27261C0); <-- sub_2728B70 is the visitgco
