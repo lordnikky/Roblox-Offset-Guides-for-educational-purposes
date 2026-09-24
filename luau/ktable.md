@@ -1,6 +1,6 @@
 # KTable
 
-search for string `"Trying to call method on object of type: ``%s`` with incorrect arguments"`
+search for string ``"Trying to call method on object of type: `%s` with incorrect arguments"``
 
 ```asm
 .rdata:0000000006F70910 aTryingToCallMe db 'Trying to call method on object of type: `%s` with incorrect argu'
