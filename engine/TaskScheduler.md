@@ -34,7 +34,7 @@ search for string "TS::Step", first xref decompile:
   v149 = 0;
   v150 = 0;
   sub_2B057F0(a1: (unsigned int)v143, a2: qword_89DD820, a3: -1, a4: 0, a5: 0);
-  v5 = dword_8227738; <-- your desired offser
+  v5 = dword_8227738; // <-- your desired offset
   sub_5E30(a1: v152, a2: a1 + 144, a3: 0, a4: 0);
 ```
 
