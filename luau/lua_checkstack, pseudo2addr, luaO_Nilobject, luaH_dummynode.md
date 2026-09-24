@@ -54,7 +54,7 @@ LABEL_22:
   if ( (unsigned int)(v5 - 1) >= *(_DWORD *)(*(_QWORD *)v7 + 8LL) )
   {
     v10 = *(char **)(v8 + 40);
-    if ( v10 == (char *)&unk_63CAB08 ) <-- luaH_Dummynode
+    if ( v10 == (char *)&unk_63CAB08 ) // <-- luaH_Dummynode
     {
 LABEL_18:
       i = (double *)&unk_63CDF48; // <-- LuaO_nilobject
