@@ -3,27 +3,26 @@
 search string "Unable to query property {}. It is not scriptable" or "Could not find property descriptor", if first string go to first xref, decompile:
 
 ```c
-  __debugbreak();
-  __debugbreak();
-  __debugbreak();
-  sub_1CE4BE0(a1: v4 + 472, a2: (__int64)&v77, a3: v78.m128i_i64, a4: 0); <-- getproperty 
-  if ( BYTE4(v77) != 0 )
+  if ( *(_DWORD *)(v4 + 472) == 0 )
+    return 0;
+  sub_1D32FF0(a1: v4 + 472, a2: &v67, a3: &v68, a4: 0); // <-- GetProperty
+  if ( BYTE4(v67) != 0 )
     return 0;
   v7 = *(_QWORD *)(v4 + 488)
-     + 16LL * (unsigned int)(*(_DWORD *)(v4 + 496) & *(_DWORD *)(*(_QWORD *)(v4 + 480) + 4LL * (unsigned int)v77));
+     + 16LL * (unsigned int)(*(_DWORD *)(v4 + 496) & *(_DWORD *)(*(_QWORD *)(v4 + 480) + 4LL * (unsigned int)v67));
   if ( v7 == 0 || *(_DWORD *)(v7 + 8) != 0 )
     return 0;
   v8 = *(_QWORD *)v7;
   if ( (*(_DWORD *)(v8 + 140) & 0x10) == 0 )
   {
-    v78.m128i_i64[0] = sub_7D6BB0(a1: *(_QWORD *)(v8 + 8));
-    sub_16F8930(a1: "Unable to query property {}. It is not scriptable", a2: &v78); // <-- you're here 
+    v68.m128i_i64[0] = sub_7E39A0(a1: *(_QWORD *)(v8 + 8));
+    sub_1719AD0(a1: "Unable to query property {}. It is not scriptable", a2: &v68); // <-- you're here
   }
   if ( *(_QWORD *)(v8 + 56) != 0 )
   {
 ```
 
-so the offset is 0x1CE4BE0
+so the offset is 0x1D32FF0
 
 if seconds string, first xref decompile
 
