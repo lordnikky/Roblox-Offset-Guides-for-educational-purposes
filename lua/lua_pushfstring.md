@@ -1,16 +1,15 @@
 # lua_pushfstring
 
-search for string "%s%.*s" or "%s: bytecode version mismatch (expected [%d..%d], got %d)" or like any error, best one is "bytecode corrupted"
+search for string "AuroraStruct<%s>" or these: "cannot resume %s coroutine", "%s: 0x%016llx", "%s:%d:", "bytecode corrupted"
 
 ```asm
-.rdata:0000000006E27B58 aSBytecodeCorru db '%s: bytecode corrupted',0
-.rdata:0000000006E27B58                                         ; DATA XREF: sub_27582C0+232↑o
+.rdata:0000000007073B18 aAurorastructS  db 'AuroraStruct<%s>',0 ; DATA XREF: sub_419E1D0+52↑o
 ```
 
 go to it and decompile:
 
 ```c
-  result = sub_26F8DE0(a1: v3, a2: "%s: bytecode corrupted", v17);
+  sub_265D7D0(a1, a2: "AuroraStruct<%s>", v2);
 ```
 
-double click sub_26F8DE0 and thats ur lua_pushfstring
+so the offset is 0x265D7D0
