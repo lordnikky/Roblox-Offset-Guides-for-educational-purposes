@@ -1,6 +1,6 @@
 # dumpgco
 
-search for string "\"0\":{\"type\":\"userdata\",\"cat\":0,\"size\":0}\n"", first xref decompile:
+search for string `"\"0\":{\"type\":\"userdata\",\"cat\":0,\"size\":0}\n"`, first xref decompile:
 
 ```c
   sub_2728B70(a1, a2, a3: sub_27261C0); <-- double click the second rva, so in this case sub_27261C0
