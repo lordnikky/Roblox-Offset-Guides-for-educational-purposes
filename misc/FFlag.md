@@ -1,54 +1,47 @@
 # GetFFlag
 
-search for string "not declared!", second xref, decompile, and scroll up a bit:
+search for string "= Error-not-set", first xref, scroll up:
 
 ```c
-LABEL_136:
-        v87 = qword_887CA40;
-        v88 = qword_887CA40 + 64;
-        v135.m128_u64[0] = qword_887CA40 + 64;
-        v89 = sub_5A2B400(a1: qword_887CA40 + 64);
-        if ( v89 != 0 )
-          sub_5A2B9D0(a1: v89);
-        v90 = sub_493AF20(a1: v87, a2: v152, a3: (__int64)&v155, a4: 1); // <-- getfflag
-        sub_5A2B460(a1: v88);
-        if ( v90 != 0 )
-        {
-          if ( v51 < 4 )
-          {
-            v94 = false;
-          }
-          else
-          {
-            v91 = 0;
-            while ( 1 )
-            {
-              v92 = *(_BYTE *)(*(_QWORD *)v137 + v91++);
-              if ( v92 != aUser_0[v91 - 1] )
-                break;
-              if ( v91 == 4 )
-              {
-                v93 = 0;
-                goto LABEL_144;
-              }
-            }
-            v93 = v92 < (unsigned __int8)aUser_0[v91 - 1] ? -1 : 1;
-LABEL_144:
-            v94 = v93 == 0;
-          }
-          v82 = "not declared!";	// <-- you're here
-          if ( v94 )
-            v82 = "UserFlag";
-        }
-        else
+    v5 = qword_89ABE98;
+    v6 = qword_89ABE98 + 64;
+    v20 = qword_89ABE98 + 64;
+    v7 = sub_5B237B0(a1: qword_89ABE98 + 64);
+    __eh34_enter_wind_state(-1, 0);
+    if ( v7 != 0 )
+      sub_5B23D80(a1: v7);
+    __wind
+    {
+      sub_4977B90(a1: v5, a2: v3, a3: (__int64)v21, a4: 0); // <-- getfflag
+      sub_5B23810(a1: v6);
+      v8 = *((_QWORD *)v3 + 2);
+      if ( *((_QWORD *)v3 + 3) >= 0x10u )
+        v3 = *(char **)v3;
+    }
+    __unwind
+    {
+      sub_84BA80(a1: &v20);
+    }
+    v9 = sub_916F10(a1: a1 + 632, a2: v3, a3: v8);
+    v10 = sub_915520(a1: v9, a2: "=");                // <-- let this be your anchor 
+    v11 = v21;
+    if ( v23 >= 0x10 )
+      v11 = (_QWORD *)v21[0];
+    v12 = sub_916F10(a1: v10, a2: v11, a3: v22);
+    sub_915520(a1: v12, a2: &unk_6E45E9C);
+    if ( __eh34_unwind(0) )
+      goto unwind_state_0;
+    __eh34_exit_wind_state(0, -1);
+    result = v23;
+    if ( v23 >= 0x10 )
 ```
 
-so the offset is 0x493AF20
+so the offset is 0x4977B90
 
 
 # SetFFlag
 
-search for string "[FLog::FastLogValueChanged] Setting variable {}" or "[FLog::FastLogValueChanged] ...(previously unknown)...", first xref will be the setfflag
+search for string `"[FLog::FastLogValueChanged] Setting variable {}" or "[FLog::FastLogValueChanged] ...(previously unknown)..."`, first xref will be the setfflag
 
 ```asm
 .rdata:0000000006FD61A8 aFlogFastlogval db '[FLog::FastLogValueChanged] Setting variable {}',0
