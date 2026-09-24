@@ -10,7 +10,7 @@ LABEL_136:
         v89 = sub_5A2B400(a1: qword_887CA40 + 64);
         if ( v89 != 0 )
           sub_5A2B9D0(a1: v89);
-        v90 = sub_493AF20(a1: v87, a2: v152, a3: (__int64)&v155, a4: 1); <-- getfflag
+        v90 = sub_493AF20(a1: v87, a2: v152, a3: (__int64)&v155, a4: 1); // <-- getfflag
         sub_5A2B460(a1: v88);
         if ( v90 != 0 )
         {
@@ -36,7 +36,7 @@ LABEL_136:
 LABEL_144:
             v94 = v93 == 0;
           }
-          v82 = "not declared!";	<-- you're here
+          v82 = "not declared!";	// <-- you're here
           if ( v94 )
             v82 = "UserFlag";
         }
