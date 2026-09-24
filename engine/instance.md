@@ -2,7 +2,7 @@
 
 idk if this is any useful but its jsut what i found 
 
-search for string "Unable to create an Instance of type \"%s\""
+search for string `"Unable to create an Instance of type \"%s\""`
 
 ```asm
 .rdata:0000000006FEA618 aUnableToCreate_2 db 'Unable to create an Instance of type "%s"',0
