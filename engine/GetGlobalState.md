@@ -3,30 +3,31 @@
 search string "assignVal", 7th xref, decompile, scroll up until you see 2 strings "invalid facet access", and look under em:
 
 ```c
-    sub\_2750300(a1: v15, a2: 4, a3: v74);
-  }
-  v104 = a1 - 2632;
-  if ( v9 == 0 )
-    v104 = -504;
-  if ( \*(int \*)(v104 + 5400) >= 3 )
-  {
-    \*(\_QWORD \*)\&v215 = "Invalid Facet Access";
-    sub\_498BD80(a1: 0, a2: "Invalid Facet Access");
-  }
-  v15 = sub\_421A7A0(a1: v104); // <-- GetGlobalState
-  v238\[24] = 0;
-  v53 = a2;
-  sub\_42CD770(a1: v9, a2, a3: v15, a4: v7, a5: (\_\_int64)a6, a6: (\_\_int64)v238);
-LABEL\_74:
-  v54 = (\_\_int64 \*)sub\_E2AC20(a1: v53, a2: v240);
-  v217 = \*v54;
-  v55 = v217;
-  v218 = v54\[1];
-  \*v54 = 0;
-  v54\[1] = 0;
-  if ( v55 != 0 )
-    v56 = \*(\_QWORD \*)(v55 + 40);
+      if ( v9 == 0 )
+        v100 = -488;
+      if ( *(int *)(v100 + 5416) >= 3 )
+      {
+        __wind
+        {
+          v235 = "twareCodec::sendFrameInternal, pts: {}";
+          sub_495EC80(a1: 0, a2: "Invalid Facet Access"); // <-- look for this
+        }
+        __unwind
+        {
+          sub_495EBF0();
+        }
+      }
+      v15 = sub_41F2300(a1: v100, a2: a3, a3: a6); // <-- getglobalstate
+      v232[24] = 0;
+      v52 = v207;
+      sub_42A6D10(a1: v9, a2: (_DWORD)v207, a3: v15, a4: v7, a5: a6, a6: (__int64)v232);
+LABEL_74:
+      v53 = (__int64 *)sub_D30300(a1: v52, a2: v234);
+      v54 = *v53;
+      v212 = *v53;
+      v213 = v53[1];
+      *v53 = 0;
 ```
 
-so the offset is 0x421A7A0
+so the offset is 0x41F2300
 
