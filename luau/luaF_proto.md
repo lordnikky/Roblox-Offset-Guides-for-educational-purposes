@@ -1,45 +1,77 @@
+heyy i finally found good string anchor, even tho its a bit of a pain cuz decompiling 8k lines of code thats the best one i could find :/
+
 # luaF_FreeProto
 
-search string "LuauSplitTableLookups":
+search for string "Failed to create Lua state", first xref, decompile:
 
-```asm
-.data:0000000007CC9F68                 dq offset aLuausplittable ; "LuauSplitTableLookups"
-.data:0000000007CC9F70 qword_7CC9F70   dq 0                    ; DATA XREF: sub_600140+7↑w
-.data:0000000007CC9F78                 align 20h
-.data:0000000007CC9F80 dword_7CC9F80   dd 20h                  ; DATA XREF: sub_6001A0+E↑o
-.data:0000000007CC9F80                                         ; sub_2774B10+53↑r
-```
-well, 3rd xref, the sub_2774B10, do NOT decompile it, from where you are scroll up until you see second SUBROUTINE section:
-
-this will be the first (function that u got sent to)
-
-```asm
-text:0000000002774B10 ; =============== S U B R O U T I N E =======================================
-.text:0000000002774B10
-.text:0000000002774B10
-.text:0000000002774B10 ; char __fastcall sub_2774B10(__int64, __int64, __int64, unsigned int)
-.text:0000000002774B10 sub_2774B10     proc near               ; CODE XREF: sub_2788580+32EB↓p
-.text:0000000002774B10                 sub     rsp, 38h
-.text:0000000002774B14                 mov     rax, [rcx+48h]
-.text:0000000002774B18                 cmp     qword ptr [rax+710h], 0
+```c
+  if ( a4 == 0 )
+    v8 = dword_85C4D88;
+  *v7 = v8;
+  v9 = sub_2662670(a1: sub_427CD10);
+  v983 = v9;
+  if ( v9 == 0 )
+    sub_4960E00(a1: "Failed to create Lua state"); // <-- you're here
+  if ( byte_7D64880 == 0 ) // <-- double click this
+    goto LABEL_22;
+  v10 = (_QWORD *)sub_4943800(a1: 0x58u);
+  if ( v10 == nullptr )
+  {
+    sub_7BADF0(a1: v1093);
+    throw (std::bad_alloc *)v1093;
 ```
 
-and you scroll up until you see next one
+double click the thing under the string:
 
 ```asm
-.text:00000000027748F0
-.text:00000000027748F0 ; =============== S U B R O U T I N E =======================================
-.text:00000000027748F0
-.text:00000000027748F0
-.text:00000000027748F0 ; __int64 __fastcall sub_27748F0(__int64, __int64, __int64)
-.text:00000000027748F0 sub_27748F0     proc near               ; CODE XREF: sub_2762DA0+51↑j
-.text:00000000027748F0
-.text:00000000027748F0 var_18          = qword ptr -18h
-.text:00000000027748F0 arg_0           = qword ptr  8
-.text:00000000027748F0 arg_8           = qword ptr  10h
-.text:00000000027748F0
-.text:00000000027748F0                 mov     [rsp+arg_0], rbx
-
+.data:0000000007D64880 byte_7D64880    db 0                    ; DATA XREF: sub_604660+E↑o
+.data:0000000007D64880                                         ; sub_26822A0:loc_26825AA↑r ...
 ```
 
-so that subroutine should be the luaF_FreeProto, and the offset is 0x27748F0, ik its ass i didnt find any good anchors 
+second xref, decompile, scroll to the end:
+
+```c
+        v8 = v30 + 8;
+        return sub_269C8B0(a1, (_DWORD)a2, a3: v8, a4: a2[2], a5: a3);
+      }
+    case 0xCu:
+      v31 = *((_QWORD *)a2 + 4);
+      if ( v31 != 0 )
+        sub_269C800(a1, a2: v31, a3: 16LL * (unsigned int)(*((_DWORD *)a2 + 19) - *((_DWORD *)a2 + 18)), a4: a2[2]);
+      v32 = *((_QWORD *)a2 + 6);
+      if ( v32 != 0 )
+        sub_269C800(a1, a2: v32, a3: 8LL * *((unsigned int *)a2 + 19), a4: a2[2]);
+      v8 = 88;
+      return sub_269C8B0(a1, (_DWORD)a2, a3: v8, a4: a2[2], a5: a3);
+    case 0xDu:
+      sub_269C800(a1, a2: *((_QWORD *)a2 + 4), a3: 16LL * *((unsigned int *)a2 + 6), a4: a2[2]);
+      goto LABEL_60;
+    case 0xFu:
+      return sub_2698550(a1, (__int64)a2, a3); // <-- luaF_FreeProto
+    case 0x10u:
+LABEL_60:
+      v8 = 40;
+      return sub_269C8B0(a1, (_DWORD)a2, a3: v8, a4: a2[2], a5: a3);
+    default:
+      return (unsigned int)*a2 - 5;
+  }
+  while ( (unsigned __int8 *)v14 != a2 )
+  {
+    v13 = (__int64 *)(v14 + 8);
+    v14 = *(_QWORD *)(v14 + 8);
+    if ( v14 == 0 )
+      goto LABEL_24;
+  }
+  *v13 = *(_QWORD *)(v14 + 8);
+  --*(_DWORD *)(*(_QWORD *)(a1 + 24) + 28LL);
+LABEL_24:
+  v15 = *((_WORD *)a2 + 2) - ((*((_WORD *)a2 + 2) >> 1) & 0x5555);
+  v16 = (unsigned __int16)((v15 & 0x3333) + ((v15 >> 2) & 0x3333));
+  if ( (unsigned __int16)((257 * (((unsigned __int16)v16 + (unsigned __int16)(v16 >> 4)) & 0xF0F)) >> 8) < 8u )
+    *(_DWORD *)(*(_QWORD *)(a1 + 24) + 1584LL) &= ~0x20000000u;
+  v8 = *((_DWORD *)a2 + 5) + 25;
+  return sub_269C8B0(a1, (_DWORD)a2, a3: v8, a4: a2[2], a5: a3);
+}
+```
+
+you dont need to scroll, when u decompile the code that string will be the last string ull see on your monitor (unless you have like big ass monitor idfk)
