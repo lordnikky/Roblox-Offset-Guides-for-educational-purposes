@@ -71,15 +71,15 @@ so the offset is 0x4318F70
 
 # TaskCancel
 
-string "Cannot call task.%s on a thread that is already '%s' in the task library", first xref is da offset
+string "cannot cancel thread", first xref is da offset
 
 ```asm
-.rdata:0000000006F7DB00 aCannotCallTask db 'Cannot call task.%s on a thread that is already ',27h,'%s',27h,' '
-.rdata:0000000006F7DB00                                         ; DATA XREF: sub_4318580+7A↑o
-.rdata:0000000006F7DB00                                         ; sub_431A6B0+235↑o
+.rdata:0000000007081F58 aCannotCancelTh db 'cannot cancel thread',0
+.rdata:0000000007081F58                                         ; DATA XREF: sub_435AE30+B5↑o
+.rdata:0000000007081F6D                 align 10h
 ```
 
-so the offset is 0x4318580
+so the offset is 0x435AE30
 
 # TaskSynchronize (TaskSync)
 
