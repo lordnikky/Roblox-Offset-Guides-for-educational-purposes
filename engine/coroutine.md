@@ -1,39 +1,36 @@
-So basically this wont be specific cuz they're all found with one string, search for string "cannot close %s coroutine", first xref, decompile and scroll very up, press x on that rva
+So basically this wont be specific cuz they're all found with one string, search for string "isyieldable", rdata xref
 
-```c
-__int64 __fastcall sub_5694590(__int64 a1)
-```
-
-second xref
 ```asm
-Down	o	.rdata:000000000666E4D8	dq offset sub_5694590
+.rdata:0000000007178EBA                 align 20h
+.rdata:0000000007178EC0 aIsyieldable    db 'isyieldable',0      ; DATA XREF: .rdata:00000000066F3CC0↑o
+.rdata:0000000007178EC0                                         ; .rdata:00000000066F3D40↑o
 ```
 
 will put you here:
 
 ```asm
-.rdata:000000000666E470                                         ; "create"
-.rdata:000000000666E478                 dq offset sub_5693C10
-.rdata:000000000666E480                 dq offset aRunning_0    ; "running"
-.rdata:000000000666E488                 dq offset sub_56944A0
-.rdata:000000000666E490                 dq offset aStatus_0     ; "status"
-.rdata:000000000666E498                 dq offset sub_56921A0
-.rdata:000000000666E4A0                 dq offset aWrap_0       ; "wrap"
-.rdata:000000000666E4A8                 dq offset sub_56941D0
-.rdata:000000000666E4B0                 dq offset aYield        ; "yield"
-.rdata:000000000666E4B8                 dq offset sub_5694440
-.rdata:000000000666E4C0                 dq offset aIsyieldable  ; "isyieldable"
-.rdata:000000000666E4C8                 dq offset sub_5694510
-.rdata:000000000666E4D0                 dq offset aClose_0      ; "close"
-.rdata:000000000666E4D8                 dq offset sub_5694590
+.rdata:00000000066F3CF0                                         ; "create"
+.rdata:00000000066F3CF8                 dq offset sub_575BAD0
+.rdata:00000000066F3D00                 dq offset aRunning_1    ; "running"
+.rdata:00000000066F3D08                 dq offset sub_575C350
+.rdata:00000000066F3D10                 dq offset aStatus_0     ; "status"
+.rdata:00000000066F3D18                 dq offset sub_575A060
+.rdata:00000000066F3D20                 dq offset aWrap_0       ; "wrap"
+.rdata:00000000066F3D28                 dq offset sub_575C080
+.rdata:00000000066F3D30                 dq offset aYield        ; "yield"
+.rdata:00000000066F3D38                 dq offset sub_575C2F0
+.rdata:00000000066F3D40                 dq offset aIsyieldable  ; "isyieldable"
+.rdata:00000000066F3D48                 dq offset sub_575C3C0
+.rdata:00000000066F3D50                 dq offset aClose_0      ; "close"
+.rdata:00000000066F3D58                 dq offset sub_575C450
 ```
 
 and as you guessed thats coroutine!!!!
 
-CoroutineCreate: 0x5693C10
-CoroutineRunning: 0x56944A0
-CoroutineStatus: 0x56921A0
-CoroutineWrap: 0x56941D0
-CorotuineYield: 0x5694440
-CoroutineIsYieldable: 0x5694510
-CoroutineClose: 0x5694590
+CoroutineCreate: 0x575BAD0
+CoroutineRunning: 0x575C350
+CoroutineStatus: 0x575A060
+CoroutineWrap: 0x575C080
+CorotuineYield: 0x575C2F0
+CoroutineIsYieldable: 0x575C3C0
+CoroutineClose: 0x575C450
