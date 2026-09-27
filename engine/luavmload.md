@@ -1,7 +1,5 @@
 # LuaVMLoad
 
-loads the fucking bytecode its in the name
-
 search for string "bytecode corrupted", decompile it and go to the very top
 
 ```c
