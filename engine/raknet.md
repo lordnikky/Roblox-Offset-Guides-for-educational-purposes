@@ -37,10 +37,9 @@ search for string "updateServerConnectionState", first xref
 .rdata:0000000006FAE550                                         ; DATA XREF: sub_4719560+182↑o
 ```
 
-
 # RakNetReliabilityLayerSend
 
-search for string "[FLog::Network] out of memory in raknet at callsite %ld", second xref
+search for string `"[FLog::Network] out of memory in raknet at callsite %ld"`, second xref
 
 ```asm.rdata:0000000006E3E360 aFlogNetworkOut db '[FLog::Network] out of memory in raknet at callsite %ld',0
 .rdata:0000000006E3E360                                         ; DATA XREF: sub_28F5620+100↑o
@@ -78,7 +77,7 @@ so the offset is 0x291A640
 
 # RakNetSend
 
-search for string "[FLog::Network] out of memory in raknet at callsite %ld" and first xref will be it:
+search for string `"[FLog::Network] out of memory in raknet at callsite %ld"` and first xref will be it:
 
 ```asm
 .rdata:0000000006E3E360 aFlogNetworkOut db '[FLog::Network] out of memory in raknet at callsite %ld',0
@@ -104,7 +103,7 @@ so the offset is 0x2901BC0
 
 # UpdateNetworkLoop
 
-search for string "[FLog::Network] Timed-out: Failed to gracefully end update loop w" or "[DFLog::RakNetPktTrace] [%s][%s][ext=%s][%s][drop=%d][%#x][%s]", first xref will be it
+search for string `"[FLog::Network] Timed-out: Failed to gracefully end update loop w"` or `"[DFLog::RakNetPktTrace] [%s][%s][ext=%s][%s][drop=%d][%#x][%s]"`, first xref will be it
 
 ```asm
 .rdata:0000000006E3E950 aFlogNetworkTim_1 db '[FLog::Network] Timed-out: Failed to gracefully end update loop w' or "
@@ -117,7 +116,7 @@ so the offset is 0x28E7090
 
 # SendPacketsToSelf
 
-search for string "[FLog::Network] RakPeer::SendPacketsToSelfToUnblockSocketReceiveT" or just SendPacketsToSelfToUnblockSocketReceiveT in case that doesnt have an xref, first xref will be the offset
+search for string `"[FLog::Network] RakPeer::SendPacketsToSelfToUnblockSocketReceiveT"` or just SendPacketsToSelfToUnblockSocketReceiveT in case that doesnt have an xref, first xref will be the offset
 
 ```asm
 .rdata:0000000006E3E830 aFlogNetworkRak_1 db '[FLog::Network] RakPeer::SendPacketsToSelfToUnblockSocketReceiveT'
@@ -129,7 +128,7 @@ so the offset is 0x28EAF50
 
 # RakPeerReceive
 
-search for string "[DFLog::RaknetJoinOrDisconnectRequest] RakNet Receiving %s packet" first xref will be the rakpeerrecieve
+search for string `"[DFLog::RaknetJoinOrDisconnectRequest] RakNet Receiving %s packet"` first xref will be the rakpeerrecieve
 
 ```asm
 .rdata:0000000006E3ED90 aDflogRaknetjoi db '[DFLog::RaknetJoinOrDisconnectRequest] RakNet Receiving %s packet'
@@ -224,3 +223,32 @@ search for string "Stream Prefetch Request Items" first xref will be da needed t
 ```
 
 so the offset is 0x47C64C0
+
+# RakNetEncrypt
+
+search for string "encryptionResult", first xref do not decompile, scroll up a bit till you see ------:
+
+```asm
+.text:00000000028B1B26 ; ---------------------------------------------------------------------------
+.text:00000000028B1B26
+.text:00000000028B1B26 loc_28B1B26:                            ; CODE XREF: sub_28B17D0+32C↑j
+.text:00000000028B1B26                 mov     r15d, 5
+.text:00000000028B1B2C
+.text:00000000028B1B2C loc_28B1B2C:                            ; CODE XREF: sub_28B17D0+280↑j <-- that loc_ is the encrypt offset
+.text:00000000028B1B2C                                         ; sub_28B17D0+291↑j ...
+.text:00000000028B1B2C                 inc     qword ptr [rsi+110h]
+.text:00000000028B1B33                 inc     qword ptr [rsi+118h]
+.text:00000000028B1B3A                 lea     rdx, off_7D6B658 ; "RakNetEncryptionResultCounter"
+.text:00000000028B1B41                 lea     rcx, [rbp+3B0h+var_390]
+.text:00000000028B1B45                 call    sub_28B8DB0
+.text:00000000028B1B4A                 nop
+.text:00000000028B1B4B                 lea     rcx, [rbp+3B0h+var_C0]
+.text:00000000028B1B52                 call    sub_2ED80D0
+.text:00000000028B1B57                 lea     rcx, [rbp+3B0h+var_C0]
+.text:00000000028B1B5E                 call    sub_2ED8350
+.text:00000000028B1B63                 lea     rax, aEncryptionresu ; "encryptionResult" <-- you're here
+.text:00000000028B1B6A                 mov     qword ptr [rbp+3B0h+var_420], rax
+.text:00000000028B1B6E                 mov     qword ptr [rbp+3B0h+var_420+8], 10h
+```
+
+so the offset is 0x28B1B2C
