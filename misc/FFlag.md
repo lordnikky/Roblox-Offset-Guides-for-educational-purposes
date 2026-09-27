@@ -54,7 +54,7 @@ so the offset is 0x493A3A0
 
 
 # FFlagPointer
-
+searching for like any fflag name will also work, im just using this random one
 search for string "DebugWinDisableUpdates", second xref, decompile:
 
 ```c
