@@ -98,7 +98,7 @@ double click the first return sub_, scroll down until you see this:
       *(_DWORD *)(v21 + 176) = a4;
       *(_DWORD *)(v21 + 180) = 4;
       *(_BYTE *)(v21 + 184) = 0;
-      *(_QWORD *)v21 = &FLog::ValueGetSet<bool>::`vftable'; // double click this
+      *(_QWORD *)v21 = &FLog::ValueGetSet<bool>::`vftable'; // <-- double click this
       v23 = v47;
       *((_QWORD *)v22 + 24) = v47;
       v22[200] = *v23;
