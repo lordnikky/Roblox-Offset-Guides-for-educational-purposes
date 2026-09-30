@@ -1,6 +1,6 @@
 # lua_newstate
 
-search string "Failed to create Lua state", first xref, decompile:
+search string "Failed to create Lua state", second xref, decompile:
 
 ```c
 v11 = sub_26FDC10(a1: sub_4247E10); // <-- lua_newstate
