@@ -88,7 +88,7 @@ search for string `"[FLog::Network] out of memory in raknet at callsite %ld"` an
 0x28F5620 is the offset
 
 
-# RakNetProcessNetworkPacket
+# RakPeerProcessNetworkPacket
 
 search for string "RakPeer::ProcessNetworkPacket" first xref will be it
 
