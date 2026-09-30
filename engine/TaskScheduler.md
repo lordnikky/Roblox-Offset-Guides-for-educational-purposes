@@ -14,28 +14,30 @@ that qword is taskschedulerptr
 search for string "TS::Step", first xref decompile:
 
 ```c
-      qword_89DD820 = sub_2B801C0(
-                        a1: (unsigned int)&aOcnewmtfixstag[-754112],
-                        a2: (unsigned int)"TS::Step", // <-- you're here
-                        a3: -1,
-                        a4: v4,
-                        a5: 255);
-      sub_1330(a1: &dword_89DD818);
+        }
+      }
+      qword_8AFF1E0 = sub_2AA6830(a1: (unsigned int)"Jobs", a2: (unsigned int)"TS::Step", a3: -1, a4: v5, a5: 255); // <-- you're here
+      sub_1350(a1: &dword_8AFF1D8);
     }
   }
-  memset(v143, 0, 32);
-  *(__m128i *)&v143[4] = _mm_load_si128((const __m128i *)&xmmword_714D4A0);
-  *(_OWORD *)&v143[6] = 0;
-  v144 = 0;
-  v145 = 0;
-  v146 = 0;
-  v147 = 0;
-  v148 = 0;
+  memset(v148, 0, 32);
+  *(__m128i *)&v148[4] = _mm_load_si128((const __m128i *)&xmmword_722DA10);
+  *(_OWORD *)&v148[6] = 0;
   v149 = 0;
   v150 = 0;
-  sub_2B057F0(a1: (unsigned int)v143, a2: qword_89DD820, a3: -1, a4: 0, a5: 0);
-  v5 = dword_8227738; // <-- your desired offset
-  sub_5E30(a1: v152, a2: a1 + 144, a3: 0, a4: 0);
+  v151 = 0;
+  v152 = 0;
+  v153 = 0;
+  v154 = 0;
+  v155 = 0;
+  sub_2A2AC30(a1: (unsigned int)v148, a2: qword_8AFF1E0, a3: -1, a4: 0, a5: 0);
+  v6 = dword_8319D48;   // <-- the offset
+  sub_8E60(a1: v157, a2: a1 + 144, a3: 0, a4: 0);
+  v7 = *(_DWORD *)(a1 + 260);
+  v122 = v7;
+  v8 = sub_7690();
+  v9 = v8;
+  v10 = *(_QWORD *)(a1 + 168);
 ```
 
-so the offset is 0x8227738
+so the offset is 0x8319D48
