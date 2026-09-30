@@ -13,7 +13,7 @@ search for string "InvalidInstance", second xref:
 
 only second, the sub_873FB0, then in decompiled code scroll to the very botton, so, when you're at the very bottom, scroll up like 5 times, 5 singular scrolls, you should see like:
 
-```
+```c
   v8 = *(unsigned __int8 *)(a1 + 4);
   v9 = *(_QWORD *)(a1 + 24);
   if ( byte_7C50E50 < 0 )
