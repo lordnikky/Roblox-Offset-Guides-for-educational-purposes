@@ -4,7 +4,7 @@ this will cover quite some raknet offsets
 
 # raknetrecieve
 
-search for string "[DFLog::NetworkTrace] Incoming packet error: length <= 2 || buffe", or "[DFLog::NetworkTrace] Incoming packet error: internalPacket->orde", first xref will be it:
+search for string `"[DFLog::NetworkTrace] Incoming packet error: length <= 2 || buffe", or "[DFLog::NetworkTrace] Incoming packet error: internalPacket->orde"`, first xref will be it:
 
 ```asm
 .rdata:0000000006E41270 aDflogNetworktr_10 db '[DFLog::NetworkTrace] Incoming packet error: length <= 2 || buffe'
@@ -18,7 +18,7 @@ so the offset is 0x29179F0
 
 # RaknetReportNetworkError
 
-search for string "ConnectionFailure" or "[DFLog::NetworkTrace] reportPerServerMetric::: sc(%s:%d).state =", first xref
+search for string `"ConnectionFailure"` or `"[DFLog::NetworkTrace] reportPerServerMetric::: sc(%s:%d).state ="`, first xref
 
 ```asm
 .rdata:0000000006FAEFE8 aConnectionfail db 'ConnectionFailure',0
