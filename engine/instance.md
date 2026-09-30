@@ -82,7 +82,7 @@ so the offset is 0x5B05D0
 
 string "InstanceHandle is not enabled yet!" and guess what, its first xref
 
-```
+```asm
 asm.rdata:0000000006FDDCA0 aInstancehandle_1 db 'InstanceHandle is not enabled yet!',0
 .rdata:0000000006FDDCA0                                         ; DATA XREF: sub_41A26F0:loc_41A28ED↑o
 .rdata:0000000006FDDCA0                                         ; sub_41A2900:loc_41A2AD3↑o ...
