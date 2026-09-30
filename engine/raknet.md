@@ -4,7 +4,7 @@ this will cover quite some raknet offsets
 
 # raknetrecieve
 
-search for string `"[DFLog::NetworkTrace] Incoming packet error: length <= 2 || buffe", or "[DFLog::NetworkTrace] Incoming packet error: internalPacket->orde"`, first xref will be it:
+search for string `"[DFLog::NetworkTrace] Incoming packet error: length <= 2 || buffe"`, or `"[DFLog::NetworkTrace] Incoming packet error: internalPacket->orde"`, first xref will be it:
 
 ```asm
 .rdata:0000000006E41270 aDflogNetworktr_10 db '[DFLog::NetworkTrace] Incoming packet error: length <= 2 || buffe'
