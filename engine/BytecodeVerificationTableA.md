@@ -16,4 +16,4 @@ __int64 sub_5E1B80()
 }
 ```
 
-that unk is the bytecodeverificationtablea, so the offset is 0x844ED90
+that unk is the bytecodeverificationtablea (or qword), so the offset is 0x844ED90
