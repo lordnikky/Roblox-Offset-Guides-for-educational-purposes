@@ -50,35 +50,34 @@ so the offset is 0x1CE4BE0
 string "Unable to cast %s to %s", third xref and decompile
 
 ```c
-    if ( v9[3] >= 0x10u )
-      v9 = (_QWORD *)*v9;
-    v11 = (_QWORD *)sub_2B0FB20(a1: v9); // <-- getpropertydata
-    v12 = v11[2];
-    if ( v11[3] >= 0x10u )
-      v11 = (_QWORD *)*v11;
-    v18[1] = v12;
-    v18[0] = v11;
-    v13 = sub_1CE80B0(a1: v10, a2: v18);
-    if ( v13 != 0 )
+    }
+    v13 = v12[2];
+    if ( v12[3] >= 0x10u )
+      v12 = (_QWORD *)*v12;
+    v19[0] = v12;
+    v19[1] = v13;
+    v14 = sub_1D6C050(a1: v7, a2: v19); // <-- getpropertydata
+    if ( v14 != 0 )
     {
-      v19 = *(_DWORD *)(v13 + 48);
-      sub_8607F0(a1: a1 + 1, a2: &v19);
-      v14 = sub_85F410();
-      *a1 = v14;
-      if ( v14 == sub_85F410() )
+      LODWORD(v20) = *(_DWORD *)(v14 + 48);
+      sub_890110(a1: a1 + 1, a2: &v20);
+      v15 = sub_88ED30();
+      *a1 = v15;
+      if ( v15 == sub_88ED30() )
       {
         if ( a1[1] == 0 )
           return nullptr;
         return v8;
       }
-LABEL_19:
-      sub_4924110(a1: "Variant cast failed");
+LABEL_27:
+      sub_49A60B0(a1: "Variant cast failed");
     }
   }
-  v15 = sub_85F280();
-  sub_7D6BB0(a1: *(_QWORD *)(v15 + 8));
-  v16 = (const char *)sub_7D6BB0(a1: *(_QWORD *)(*a1 + 8));
-  sub_4924110(a1: "Unable to cast %s to %s", v16, v17); //<-- you are here
+  v16 = sub_88EBA0();
+  sub_8080D0(a1: *(_QWORD *)(v16 + 8));
+  v17 = (const char *)sub_8080D0(a1: *(_QWORD *)(*a1 + 8));
+  sub_49A60B0(a1: "Unable to cast %s to %s", v17, v18); // <-- you're here
+}
 ```
 
-so the offset is 0x2B0FB20
+so the offset is 0x1D6C050
