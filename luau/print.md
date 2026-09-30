@@ -31,13 +31,12 @@ also in same file
     sub_1CAB4B0(a1: 0, a2: "Current asset id is %lld", *((_QWORD *)&v10 + 1));
 ```
 
-just for funnies here's every single string you can get print with, formatted to look like its a staircase just for funnies:
+just for funnies here's every single string you can get print with, formatted to look like its a staircase just for funnies (you can use these in case if "current identity is" doesn't have any xrefs for some reason):
 
 ```
 %s
 %s %d
 %s: %s
-<no-string>
 TestService: %s
   Size/Dim: %.1f
 Failed to load %s
