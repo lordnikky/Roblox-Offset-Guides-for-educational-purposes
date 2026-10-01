@@ -8,4 +8,4 @@ search string "can't resume script in this context", first xref will be it
 .rdata:0000000006F7899C                 align 20h
 ```
 
-48 8D 05 ? ? ? ? 48 89 44 24 ? 48 C7 44 24 ? ? ? ? ? ? ? ? ? 48 85 C0 74 ? 48 8B 48
+sig: 48 8D 05 ? ? ? ? 48 89 44 24 ? 48 C7 44 24 ? ? ? ? ? ? ? ? ? 48 85 C0 74 ? 48 8B 48
