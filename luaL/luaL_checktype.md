@@ -30,3 +30,5 @@ Down	p	sub_26FF360+1B	call    sub_26FF270
 ```
 
 yaayyyayaya new easy guide for me
+
+48 83 EC 28 44 8B CA 4C 8B D1
