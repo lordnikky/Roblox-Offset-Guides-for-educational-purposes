@@ -76,6 +76,7 @@ so the offset is 0x291A640
 
 (you can also scroll up a bit when you press on the sub_290A2F0 and see this .text:000000000290A2F0 sub_290A2F0     proc near               ; CODE XREF: sub_291A640+CB↓p the xref will be RakNetReliabilityLayerSend)
 
+sig: 48 89 5C 24 ? 44 89 44 24 ? 48 89 54 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 83 EC 40 45 8B E1
 
 # RakNetSend
 
