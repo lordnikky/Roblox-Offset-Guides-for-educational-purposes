@@ -28,6 +28,7 @@ search for string `"ConnectionFailure"` or `"[DFLog::NetworkTrace] reportPerServ
 
 so the offset is 0x47076E0
 
+sig: 48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC C0 05 00 00 48 8B 05 ? ? ? ? 48 33 C4 48 89 85 ? ? ? ? 49 8B C1
 
 # RaknetHandleConnectionState
 
