@@ -13,3 +13,5 @@ go to it and decompile:
 ```
 
 so the offset is 0x265D7D0
+
+sig: 48 89 54 24 ? 4C 89 44 24 ? 4C 89 4C 24 ? 53 48 83 EC 20 48 8B 51
