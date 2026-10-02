@@ -93,3 +93,5 @@ asm.rdata:0000000006FDDCA0 aInstancehandle_1 db 'InstanceHandle is not enabled y
 ```
 
 so the offset is 0x41A26F0
+
+sig: 48 89 5C 24 ? 48 89 7C 24 ? 55 48 8B EC 48 81 EC 80 00 00 00 48 8B F9 80 3D
