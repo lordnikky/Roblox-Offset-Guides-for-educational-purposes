@@ -15,6 +15,7 @@ search for string `"[DFLog::NetworkTrace] Incoming packet error: length <= 2 || 
 
 so the offset is 0x29179F0
 
+sig: 48 8B C4 55 53 56 57 41 54 41 55 41 56 41 57 48 8D A8 ? ? ? ? 48 81 EC 18 0F 00 00
 
 # RaknetReportNetworkError
 
