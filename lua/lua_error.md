@@ -8,3 +8,5 @@ search for string "stack overflow", firxt xref and decompile:
 ```
 
 second rva is the lua_error, so the offset is 0x26FA450
+
+sig: 48 83 EC 28 BA 02 00 00 00 E8
