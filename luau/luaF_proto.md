@@ -2,7 +2,7 @@ heyy i finally found good string anchor, even tho its a bit of a pain cuz decomp
 
 # luaF_FreeProto
 
-search for string "Failed to create Lua state", first xref, decompile:
+search for string "Failed to create Lua state", second xref, decompile:
 
 ```c
   if ( a4 == 0 )
@@ -75,3 +75,5 @@ LABEL_24:
 ```
 
 you dont need to scroll, when u decompile the code that string will be the last string ull see on your monitor (unless you have like big ass monitor idfk)
+
+sig: 48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 30 ? ? ? ? 49 8B F0 4C 63 82
