@@ -8,3 +8,5 @@ search for string `"\"0\":{\"type\":\"userdata\",\"cat\":0,\"size\":0}\n"`, firs
 ```
 
 so the offset is sub_27261C0
+
+sig: 48 89 5C 24 ? 57 48 83 EC 20 48 8D 15
