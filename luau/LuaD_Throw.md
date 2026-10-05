@@ -17,3 +17,5 @@ search for string "resulting string too large", first xref decompile:
 ```
 
 so the offset is 0x266EA40
+
+sig: 48 83 EC 58 44 8B C2 48 8B D1
