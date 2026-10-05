@@ -99,6 +99,9 @@ LABEL_20:
 so the offsets are
 
 lua_checkstack 0x26F7B00 (48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 20 48 8B D9 BF 01 00 00 00 81 FA 40 1F 00 00)
+
 pseudo2addr 0x26f7960 (41 B9 EE D8 FF FF)
+
 LuaO_NilObject 0x63CDF48
+
 LuaH_DummyNode 0x63CAB08
