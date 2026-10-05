@@ -11,5 +11,4 @@ search string "Current identity is %d", first xref will be it:
 
 so the offset is 0x4267C80
 
-
-
+sig: 40 53 48 83 EC 40 48 8B D9 48 8B 0D ? ? ? ? E8 ? ? ? ? 48 8D 0D
