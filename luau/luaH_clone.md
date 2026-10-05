@@ -8,3 +8,5 @@ search for string "table has a protected metatable", second xref and decompile:
 ```
 
 so the offset is 0x27215A0
+
+sig: 48 89 5C 24 ? 48 89 6C 24 ? 56 57 41 55 41 56 41 57 48 83 EC 40 44 0F B6 79
