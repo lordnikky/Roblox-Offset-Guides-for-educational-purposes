@@ -38,6 +38,7 @@ search for string "= Error-not-set", first xref, scroll up:
 
 so the offset is 0x4977B90
 
+sig: 48 89 5C 24 ? 55 56 57 48 83 EC 50 48 8B 05 ? ? ? ? 48 33 C4 48 89 44 24 ? 41 0F B6 F1
 
 # SetFFlag
 
@@ -52,6 +53,7 @@ search for string `"[FLog::FastLogValueChanged] Setting variable {}" or "[FLog::
 
 so the offset is 0x493A3A0
 
+sig: 48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC D0 01 00 00 48 8B 05 ? ? ? ? 48 33 C4 48 89 85 ? ? ? ? 44 89 4C 24
 
 # FFlagPointer
 searching for like any fflag name will also work, im just using this random one
