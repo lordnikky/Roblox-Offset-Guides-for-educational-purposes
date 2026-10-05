@@ -34,3 +34,5 @@ __int64 __fastcall sub_5607560(_QWORD *a1)
 ```
 
 so the offset is 0x5607560
+
+sig: 40 53 48 83 EC 30 48 8B 41 ? 48 8B D9 48 3B 41
