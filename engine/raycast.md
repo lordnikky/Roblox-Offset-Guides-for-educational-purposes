@@ -3,7 +3,9 @@ some of raycast stuff :D
 # ShapeCast
 
 string "Attempt to shapecast with distance %f. The maximum distance is %f", first xref will be it
-(you can also use this signature 48 8B C4 55 53 56 57 41 54 41 55 41 56 41 57 48 81 EC 88 05 00 00)
+
+or use sig: 48 8B C4 55 53 56 57 41 54 41 55 41 56 41 57 48 81 EC 48 05 00 00
+
 ```asm
 .rdata:0000000006D32AA0 aAttemptToShape_0 db 'Attempt to shapecast with distance %f. The maximum distance is %f'
 .rdata:0000000006D32AA0                                         ; DATA XREF: sub_EC7720+E42↑o
