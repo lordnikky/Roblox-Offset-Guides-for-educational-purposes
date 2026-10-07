@@ -4,8 +4,6 @@ some of raycast stuff :D
 
 string "Attempt to shapecast with distance %f. The maximum distance is %f", first xref will be it
 
-or use sig: 48 8B C4 55 53 56 57 41 54 41 55 41 56 41 57 48 81 EC 48 05 00 00
-
 ```asm
 .rdata:0000000006D32AA0 aAttemptToShape_0 db 'Attempt to shapecast with distance %f. The maximum distance is %f'
 .rdata:0000000006D32AA0                                         ; DATA XREF: sub_EC7720+E42↑o
@@ -18,7 +16,6 @@ so the offset is 0xEC7720
 # SphereCast
 
 search for string "Attempt to shapecast with distance %f. The maximum distance is %d", second xref 
-(also can be found via this signature 48 8B C4 48 89 70 ? 57 48 81 EC 90 00 00 00 80 3D)
 ```asm
 .rdata:0000000006D327F0 aAttemptToSpher db 'Attempt to spherecast with radius %f. The maximum radius is %f.',0
 .rdata:0000000006D327F0                                         ; DATA XREF: sub_EC65E0+549↑o
@@ -30,7 +27,6 @@ so the offset is 0xEC70A0
 # BlockCast
 
 search for string "Attempt to blockcast with side length %f. The maximum side length is %f", second xref will be it
-48 8B C4 48 89 68 ? 48 89 70 ? 57 48 81 EC 80 00 00 00
 ```asm
 .rdata:0000000006D32AF0 aAttemptToBlock db 'Attempt to blockcast with side length %f. The maximum side length'
 .rdata:0000000006D32AF0                                         ; DATA XREF: sub_EC6B60+3A3↑o
@@ -69,7 +65,5 @@ first xref, go to it
   *(_QWORD *)&v29 = 0;
   v7 = (unsigned __int64)v30;
 ```
-
-OR you can use the signature because im nice and i dont want to waste your time 48 8B C4 48 89 58 ? 48 89 70 ? 55 57 41 54 41 56 41 57 48 8D A8 ? ? ? ? 48 81 EC 80 04 00 00
 
 so the offset is 0xEC5D60
