@@ -13,8 +13,6 @@ first xref is the offset
 
 so the offset is 0x43297B0
 
-sig: 48 8B C4 48 89 48 ? 55 53 56 57 41 54 41 55 41 56 41 57 48 8D A8 ? ? ? ? 48 81 EC A8 01 00 00
-
 # InstanceFindFirstAncestorImpl
 
 search for string "FindFirstAncestorWhichIsA", first xref will be it:
@@ -26,8 +24,6 @@ search for string "FindFirstAncestorWhichIsA", first xref will be it:
 ```
 
 so the offset is 0x5AF4E0
-
-sig is over 1000 bytes im not doing it here... 
 
 # InstanceGetAttribute
 
@@ -41,9 +37,6 @@ search for string `"[DFLog::HugeHugePersistentLog] Part {} is too large, treatin
 ```
 
 so the offset is 0x48001B0
-
-sig: 48 8B C4 48 89 58 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D A8 ? ? ? ? 48 81 EC B0 02 00 00 0F 29 70 ? 0F 29 78 ? 44 0F 29 40 ? 44 0F 29 48 ? 44 0F 29 90 ? ? ? ? 44 0F 29 98 ? ? ? ? 44 0F 29 A0 ? ? ? ? 44 0F 29 A8 ? ? ? ? 44 0F 29 B0 ? ? ? ? 48 8B 05 ? ? ? ? 48 33 C4 48 89 85 ? ? ? ? 4D 8B E0
-
 
 # InstanceFindFirstChild
 
@@ -93,5 +86,3 @@ asm.rdata:0000000006FDDCA0 aInstancehandle_1 db 'InstanceHandle is not enabled y
 ```
 
 so the offset is 0x41A26F0
-
-sig: 48 89 5C 24 ? 48 89 7C 24 ? 55 48 8B EC 48 81 EC 80 00 00 00 48 8B F9 80 3D
