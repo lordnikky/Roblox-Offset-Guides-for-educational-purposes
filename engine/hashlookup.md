@@ -26,5 +26,3 @@ search for string "data_model_service_init_part3_begin", first xref, decompile:
 ```
 
 so the offset is 0x2A6F370
-
-sig: 48 8D 0D ? ? ? ? E8 ? ? ? ? 90 41 0F B6 D6
