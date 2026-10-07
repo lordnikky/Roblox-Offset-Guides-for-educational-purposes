@@ -15,8 +15,6 @@ search for string `"[DFLog::NetworkTrace] Incoming packet error: length <= 2 || 
 
 so the offset is 0x29179F0
 
-sig: 48 8B C4 55 53 56 57 41 54 41 55 41 56 41 57 48 8D A8 ? ? ? ? 48 81 EC 18 0F 00 00
-
 # RaknetReportNetworkError
 
 search for string `"ConnectionFailure"` or `"[DFLog::NetworkTrace] reportPerServerMetric::: sc(%s:%d).state ="`, first xref
@@ -27,8 +25,6 @@ search for string `"ConnectionFailure"` or `"[DFLog::NetworkTrace] reportPerServ
 ```
 
 so the offset is 0x47076E0
-
-sig: 48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC C0 05 00 00 48 8B 05 ? ? ? ? 48 33 C4 48 89 85 ? ? ? ? 49 8B C1
 
 # RaknetHandleConnectionState
 
@@ -76,8 +72,6 @@ so the offset is 0x291A640
 
 (you can also scroll up a bit when you press on the sub_290A2F0 and see this .text:000000000290A2F0 sub_290A2F0     proc near               ; CODE XREF: sub_291A640+CB↓p the xref will be RakNetReliabilityLayerSend)
 
-sig: 48 89 5C 24 ? 44 89 44 24 ? 48 89 54 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 83 EC 40 45 8B E1
-
 # RakNetSend
 
 search for string `"[FLog::Network] out of memory in raknet at callsite %ld"` and first xref will be it:
@@ -89,8 +83,6 @@ search for string `"[FLog::Network] out of memory in raknet at callsite %ld"` an
 ```
 
 0x28F5620 is the offset
-
-sig: 40 55 53 56 57 41 54 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC C0 01 00 00 48 8B 05 ? ? ? ? 48 33 C4 48 89 85 ? ? ? ? 45 8B F9
 
 # RakPeerProcessNetworkPacket
 
@@ -104,8 +96,6 @@ search for string "RakPeer::ProcessNetworkPacket" first xref will be it
 
 so the offset is 0x2901BC0
 
-sig: 48 89 5C 24 ? 4C 89 44 24 ? 48 89 54 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D 6C 24 ? 48 81 EC 80 01 00 00 4D 8B E1
-
 # UpdateNetworkLoop
 
 search for string `"[FLog::Network] Timed-out: Failed to gracefully end update loop w"` or `"[DFLog::RakNetPktTrace] [%s][%s][ext=%s][%s][drop=%d][%#x][%s]"`, first xref will be it
@@ -118,8 +108,6 @@ search for string `"[FLog::Network] Timed-out: Failed to gracefully end update l
 
 so the offset is 0x28E7090
 
-sig: 48 8B C4 48 89 58 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D A8 ? ? ? ? 48 81 EC A0 01 00 00 0F 29 70 ? 0F 29 78 ? 44 0F 29 40 ? 44 0F 29 48 ? 44 0F 29 90 ? ? ? ? 44 0F 29 98 ? ? ? ? 44 0F 29 A0 ? ? ? ? 44 0F 29 A8 ? ? ? ? 44 0F 29 B0 ? ? ? ? 44 0F 29 B8 ? ? ? ? 49 8B D9
-
 # SendPacketsToSelf
 
 search for string `"[FLog::Network] RakPeer::SendPacketsToSelfToUnblockSocketReceiveT"` or just SendPacketsToSelfToUnblockSocketReceiveT in case that doesnt have an xref, first xref will be the offset
@@ -130,8 +118,6 @@ search for string `"[FLog::Network] RakPeer::SendPacketsToSelfToUnblockSocketRec
 ```
 
 so the offset is 0x28EAF50
-
-sig: 40 55 53 56 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC C0 01 00 00
 
 # RakPeerReceive
 
@@ -144,8 +130,6 @@ search for string `"[DFLog::RaknetJoinOrDisconnectRequest] RakNet Receiving %s p
 ```
 
 so the offset is 0x28ECA20
-
-sig: 48 89 5C 24 ? 55 57 41 56 48 83 EC 30 33 ED
 
 # RakPeerVirtualTable
 
@@ -232,8 +216,6 @@ search for string "Stream Prefetch Request Items" first xref will be da needed t
 
 so the offset is 0x47C64C0
 
-sig: 83 F9 2C 0F 87 ? ? ? ? 48 63 C1 48 8D 15 ? ? ? ? 8B 8C 82
-
 # RakNetEncrypt
 
 search for string "encryptionResult", first xref do not decompile, scroll up a bit till you see ------:
@@ -262,5 +244,3 @@ search for string "encryptionResult", first xref do not decompile, scroll up a b
 ```
 
 so the offset is 0x28B1B2C
-
-sig: 48 FF 86 ? ? ? ? 48 FF 86
