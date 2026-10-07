@@ -133,7 +133,7 @@ so the offset is 0x28ECA20
 
 # RakPeerVirtualTable
 
-search for string "Unable to find NetAssetManager but should be loaded", first xref, decompile, you will be put to the very end, scroll up until the string that you got put to hides behind the output window, after that scroll once again, you should see something like this:
+search for string "Unable to find NetAssetManager but should be loaded", first xref, decompile, you will be put to the very end, scroll up until you see RakNet:RakPeer>::`vfrable':
 
 ```c
       v71 = sub_49062B0(a1: 4200);
