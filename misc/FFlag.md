@@ -3,37 +3,43 @@
 search for string "= Error-not-set", first xref, scroll up:
 
 ```c
-    v5 = qword_89ABE98;
-    v6 = qword_89ABE98 + 64;
-    v20 = qword_89ABE98 + 64;
-    v7 = sub_5B237B0(a1: qword_89ABE98 + 64);
+  if ( (unsigned __int8)sub_498CD90(a1: qword_8A927F8, (_DWORD)a2, a3, a4: 127, a5: 0, a6: 0) != 0 )
+  {
     __eh34_enter_wind_state(-1, 0);
-    if ( v7 != 0 )
-      sub_5B23D80(a1: v7);
+    Src[0] = 0;
+    v20 = 0;
+    v21 = 15;
+    v5 = qword_8A927F8;
+    v6 = qword_8A927F8 + 64;
+    v17 = qword_8A927F8 + 64;
+    v18 = 1;
+    sub_89F0(a1: qword_8A927F8 + 64, a2: 0);
     __wind
     {
-      sub_4977B90(a1: v5, a2: v3, a3: (__int64)v21, a4: 0); // <-- getfflag
-      sub_5B23810(a1: v6);
-      v8 = *((_QWORD *)v3 + 2);
-      if ( *((_QWORD *)v3 + 3) >= 0x10u )
-        v3 = *(char **)v3;
+      sub_498D9B0(a1: v5, a2: v3, a3: Src, a4: 0); // <-- getfflag
     }
     __unwind
     {
-      sub_84BA80(a1: &v20);
+      sub_787CC0(a1: &v17);
     }
-    v9 = sub_916F10(a1: a1 + 632, a2: v3, a3: v8);
-    v10 = sub_915520(a1: v9, a2: "=");                // <-- let this be your anchor 
-    v11 = v21;
-    if ( v23 >= 0x10 )
-      v11 = (_QWORD *)v21[0];
-    v12 = sub_916F10(a1: v10, a2: v11, a3: v22);
-    sub_915520(a1: v12, a2: &unk_6E45E9C);
-    if ( __eh34_unwind(0) )
-      goto unwind_state_0;
-    __eh34_exit_wind_state(0, -1);
-    result = v23;
-    if ( v23 >= 0x10 )
+    __wind
+    {
+      sub_8B30(a1: v6);
+      v7 = v3[2];
+      if ( v3[3] >= 0x10u )
+        v3 = (_QWORD *)*v3;
+    }
+    __unwind
+    {
+      sub_4974AF0();
+    }
+    v8 = sub_8548F0(a1: a1 + 632, a2: v3, a3: v7);
+    v9 = sub_852F00(a1: v8, a2: "="); // <-- anchor
+    v10 = Src;
+    if ( v21 >= 0x10 )
+      v10 = (_QWORD *)Src[0];
+    v11 = sub_8548F0(a1: v9, a2: v10, a3: v20);
+    sub_852F00(a1: v11, a2: "\\n");
 ```
 
 so the offset is 0x4977B90
