@@ -1,7 +1,5 @@
 # luaM_newgco
 
-i must say that this will be quite bad, i will try to find better way to get it though
-
 search for string "InvalidInstance", second xref:
 
 ```asm
@@ -11,7 +9,7 @@ search for string "InvalidInstance", second xref:
 .rdata:0000000006F70ECA byte_6F70ECA    db 73h                  ; DATA XREF: sub_419A630+926↑r
 ```
 
-only second, the sub_873FB0, then in decompiled code scroll to the very botton, so, when you're at the very bottom, scroll up like 5 times, 5 singular scrolls, you should see like:
+only second, the sub_873FB0, then in decompiled code scroll to the very botton, so, when you're at the very bottom, scroll up until you see byte___ < 0, that will be your anchor:
 
 ```c
   v8 = *(unsigned __int8 *)(a1 + 4);
@@ -78,6 +76,6 @@ only second, the sub_873FB0, then in decompiled code scroll to the very botton, 
 }
 ```
 
-i know its ass im sorry lol, so the offset is 0x2728D90
+so the offset is 0x2728D90
 
 sig: 48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC 30 48 8B F1 49 63 E8 48 8B 49 ? 41 8B F9 48 8B DA 4C 8B CD
