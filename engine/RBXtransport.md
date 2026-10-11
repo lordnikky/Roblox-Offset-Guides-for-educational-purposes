@@ -266,3 +266,16 @@ __int64 sub_3A6BAA0()
 ```
 
 unk_ is the offset (0x8694E30) or qword whatever it'll be
+
+
+# FailureFallbackToRbxTransport
+
+string "failureFallbackToRbxTransport", first xref
+
+```c
+                            v128.m128i_i64[0] = (__int64)"failureFallbackToRbxTransport"; // <-- here
+                            v128.m128i_i64[1] = 29;
+                            v146 = v128;
+                            sub_2E01900(a1: v199, a2: &v146, a3: byte_86A3408[0], a4: 1); // failureFallbackToRbxTransport
+                            if ( byte_86A3408[0] != 0 ) <-- failureFallbackToRbxTransport
+```
