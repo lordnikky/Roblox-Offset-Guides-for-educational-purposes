@@ -133,76 +133,14 @@ so the offset is 0x28ECA20
 
 # RakPeerVirtualTable
 
-search for string "Unable to find NetAssetManager but should be loaded", first xref, decompile, you will be put to the very end, scroll up until you see RakNet:RakPeer>::`vfrable':
-
-```c
-      v71 = sub_49062B0(a1: 4200);
-      v72 = v71;
-      if ( v71 == 0 )
-      {
-        sub_7AE130(a1: v204);
-        CxxThrowException(pExceptionObject: v204, pThrowInfo: (_ThrowInfo *)&_TI2_AVbad_alloc_std__);
-      }
-      v168 = v71;
-      *(_DWORD *)(v71 + 8) = 1;
-      *(_DWORD *)(v71 + 12) = 1;
-      *(_QWORD *)v71 = &std::_Ref_count_obj2<RakNet::RakPeer>::`vftable';
-      sub_28E7670(a1: v71 + 16); // <-- double click the rva
-      v76 = v8 | 0x80;
-      *((_QWORD *)v70 + 3) = v72 + 16;
-      v77 = *((_QWORD *)v70 + 4);
-      *((_QWORD *)v70 + 4) = v72;
-      if ( v77 != 0 )
-        sub_7BC290(a1: v77, a2: v73, a3: v74, a4: v75);
-      LOBYTE(v73) = 1;
-      (*(void (__fastcall **)(_QWORD, __int64))(**((_QWORD **)v70 + 3) + 368LL))(a1: *((_QWORD *)v70 + 3), a2: v73);
-      (*(void (__fastcall **)(_QWORD, _QWORD))(**((_QWORD **)v70 + 3) + 528LL))(
-        a1: *((_QWORD *)v70 + 3),
-        a2: *((_QWORD *)v70 + 2));
-      v8 = v76 | 0x60;
-      v78 = (char **)(a1 + 344);
-      if ( (char *)(a1 + 344) == &v181 )
-      {
-        v80 = *(void (__fastcall ***)(char *, __int64))v70;
-```
-
-then you'll be put here
-
-```c
-_int64 __fastcall sub_28E7670(__int64 a1)
-{
-  __int64 v2; // rax
-  __int64 v3; // rax
-  __int64 v4; // rax
-  __int64 i; // rcx
-  __int64 *v6; // rax
-  __int64 v7; // rcx
-  unsigned int v8; // eax
-  unsigned int v9; // eax
-  _DWORD v11[2]; // [rsp+30h] [rbp-218h] BYREF
-  _QWORD v12[2]; // [rsp+38h] [rbp-210h] BYREF
-  _BYTE v13[8]; // [rsp+48h] [rbp-200h] BYREF
-  _DWORD pExceptionObject[3]; // [rsp+50h] [rbp-1F8h] BYREF
-  _BYTE v15[20]; // [rsp+5Ch] [rbp-1ECh] BYREF
-  _BYTE v16[416]; // [rsp+70h] [rbp-1D8h] BYREF
-
-  v12[1] = a1;
-  *(_QWORD *)a1 = &RakNet::RakPeer::`vftable';	
-  *(_QWORD *)(a1 + 8) = 0;
-  *(_QWORD *)(a1 + 16) = 0;
-```
-
-double click the &RakNet::RakPeer::`vftable and thats where the offset is:
-
+press shift f4 and ctrl f, search for ```RakNet::RakPeer::`vftable'```
 ```asm
-.rdata:0000000006BB1740 ; const RakNet::RakPeer::`vftable'
-.rdata:0000000006BB1740 ??_7RakPeer@RakNet@@6B@ dq offset sub_28E8350
-.rdata:0000000006BB1740                                         ; DATA XREF: sub_28E7670+33↑o
-.rdata:0000000006BB1740                                         ; sub_28E83F0+17↑o
+const RakNet::RakPeer::`vftable'	0000000006D03FC8
 ```
 
-so the offset is 0x6BB1740
+that 0000000006D03FC8 is the rva, 0x6D03FC8
 
+so the offset is 0x6D03FC8
 
 # convertItemEnumToString
 
