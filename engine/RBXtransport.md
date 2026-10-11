@@ -69,6 +69,13 @@ but
 .rdata:0000000006D717B8                                         ; sub_3A84A90+D↑o
 ```
 
+basically can be found with ??_7ConnectionInternal@NetworkBase@RBX@@6B@ - 0x38 which will result in .rdata:0000000006D71780                 dq offset sub_3A858A
+```asm
+.rdata:0000000006D71780                 dq offset sub_3A858A0
+```
+
+this will probably shift easily, ill have to find it every update but i'll do it
+
 the top one is the offset 0x3A858A0
 
 
