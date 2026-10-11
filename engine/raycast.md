@@ -67,3 +67,22 @@ first xref, go to it
 ```
 
 so the offset is 0xEC5D60
+
+# FastClusterEntity VTableRva
+
+press shift f4, ctrl f and search for ```RBX::Graphics::FastClusterEntity::`vftable'```, you'll see something like
+
+```asm
+const RBX::Graphics::FastClusterEntity::`vftable'	0000000006D70CE8
+```
+
+you can double click and just directly copy the rva:
+
+```asm
+.rdata:0000000006D70CE8 ; const RBX::Graphics::FastClusterEntity::`vftable'
+.rdata:0000000006D70CE8 ??_7FastClusterEntity@Graphics@RBX@@6B@ dq offset sub_39AB450
+.rdata:0000000006D70CE8                                         ; DATA XREF: sub_39AB180+E4↑o
+.rdata:0000000006D70CE8                                         ; sub_39AB480+D↑o
+```
+
+so the offset is 0x6D70CE8
