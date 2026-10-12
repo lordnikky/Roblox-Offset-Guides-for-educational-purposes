@@ -2,7 +2,7 @@ heyy i finally found good string anchor, even tho its a bit of a pain cuz decomp
 
 # luaF_FreeProto
 
-search for string "Failed to create Lua state", second xref, decompile:
+search for string "Failed to create Lua state", first xref, decompile:
 
 ```c
   if ( a4 == 0 )
@@ -77,3 +77,42 @@ LABEL_24:
 you dont need to scroll, when u decompile the code that string will be the last string ull see on your monitor (unless you have like big ass monitor idfk)
 
 sig: 48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC 30 ? ? ? ? 49 8B F0 4C 63 82
+
+<details>
+<summary><b>verify</b></summary>
+
+3 args, ypu
+
+```c
+__int64 __fastcall sub_25C5110(__int64 a1, __int64 a2, __int64 a3)
+{
+  __int64 v6; // rcx
+  __int64 v7; // rcx
+  __int64 v8; // rcx
+  __int64 v9; // rdx
+
+  sub_25C93C0(a1, a2: *(_QWORD *)(a2 + 40), a3: 4LL * *(int *)(a2 + 168), a4: *(unsigned __int8 *)(a2 + 2));
+  sub_25C93C0(a1, a2: *(_QWORD *)(a2 + 72), a3: 8LL * *(int *)(a2 + 160), a4: *(unsigned __int8 *)(a2 + 2));
+  sub_25C93C0(a1, a2: *(_QWORD *)(a2 + 32), a3: 16LL * *(int *)(a2 + 172), a4: *(unsigned __int8 *)(a2 + 2));
+  v6 = *(_QWORD *)(a2 + 16);
+  if ( a2 + 16 != v6 )
+    sub_25C93C0(a1, a2: a2 - v6 + 16, a3: *(int *)(a2 + 164), a4: *(unsigned __int8 *)(a2 + 2));
+  sub_25C93C0(a1, a2: a2 + *(_QWORD *)(a2 + 8) + 8LL, a3: 24LL * *(int *)(a2 + 152), a4: *(unsigned __int8 *)(a2 + 2));
+  sub_25C93C0(a1, a2: *(_QWORD *)(a2 + 88) ^ (a2 + 88), a3: 8LL * *(int *)(a2 + 144), a4: *(unsigned __int8 *)(a2 + 2));
+  v7 = *(_QWORD *)(a2 + 128);
+  if ( a2 + 128 != v7 )
+    sub_25C93C0(a1, a2: a2 - v7 + 128, a3: *(int *)(a2 + 168), a4: *(unsigned __int8 *)(a2 + 2));
+  if ( *(_QWORD *)(a2 + 104) != 0 )
+    (*(void (__fastcall **)(__int64, __int64))(*(_QWORD *)(a1 + 24) + 1768LL))(a1, a2);
+  v8 = *(_QWORD *)(a2 + 96);
+  if ( v8 + a2 + 96 != 0 )
+    sub_25C93C0(a1, a2: v8 + a2 + 96, a3: *(int *)(a2 + 140), a4: *(unsigned __int8 *)(a2 + 2));
+  v9 = *(_QWORD *)(a2 + 176);
+  if ( v9 != 0 )
+    sub_25C93C0(a1, a2: v9, a3: 16LL * *(unsigned int *)(a2 + 184), a4: *(unsigned __int8 *)(a2 + 2));
+  return sub_25C9470(a1, a2, a3: 216, a4: *(unsigned __int8 *)(a2 + 2), a5: a3);
+}
+```
+g
+  
+</details>
