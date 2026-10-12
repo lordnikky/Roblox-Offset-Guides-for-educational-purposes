@@ -78,6 +78,106 @@ this will probably shift easily, ill have to find it every update but i'll do it
 
 the top one is the offset 0x3A858A0
 
+ps:
+
+when decompiled it must look like this
+```c
+_QWORD *__fastcall sub_3A858A0(__int64 a1, _QWORD *a2)
+{
+  unsigned __int64 v4; // rsi
+  __int64 **v5; // rcx
+  __int64 *v6; // rbp
+  __int64 *i; // rbx
+  __int64 v8; // rcx
+  _QWORD *result; // rax
+  __int64 *v10; // [rsp+38h] [rbp-70h] BYREF
+  __int64 *v11; // [rsp+40h] [rbp-68h]
+  _BYTE v12[48]; // [rsp+60h] [rbp-48h] BYREF
+
+  v4 = 0;
+  *a2 = 0;
+  a2[1] = 0;
+  a2[2] = 0;
+  __wind
+  {
+    do
+    {
+      if ( *(_BYTE *)(a1 + 2184) != 0 )
+      {
+LABEL_6:
+        (*(void (__fastcall **)(_QWORD, __int64 **, _QWORD, __int64))(**(_QWORD **)(a1 + 2192) + 96LL))(
+          a1: *(_QWORD *)(a1 + 2192),
+          a2: &v10,
+          a3: (unsigned int)v4,
+          a4: 0x7FFFFFFF);
+        __wind
+        {
+          v6 = v11;
+          for ( i = v10; i != v6; i += 14 )
+          {
+            v8 = a2[1];
+            if ( v8 == a2[2] )
+            {
+              sub_2166450(a1: a2, a2: a2[1], a3: i);
+            }
+            else
+            {
+              sub_5238130(a1: v8, a2: i);
+              a2[1] += 88LL;
+            }
+          }
+        }
+        __unwind
+        {
+          sub_20AEFA0(a1: &v10);
+        }
+        v5 = &v10;
+      }
+      else
+      {
+        switch ( (int)v4 )
+        {
+          case 0:
+          case 3:
+          case 5:
+          case 6:
+          case 7:
+          case 11:
+            if ( (((_DWORD)v4 - 3) & 0xFFFFFFF7) != 0 )
+              goto LABEL_15;
+            (*(void (__fastcall **)(_QWORD, _BYTE *, _QWORD, __int64))(**(_QWORD **)(a1 + 2192) + 96LL))(
+              a1: *(_QWORD *)(a1 + 2192),
+              a2: v12,
+              a3: (unsigned int)v4,
+              a4: 0x7FFFFFFF);
+            v5 = (__int64 **)v12;
+            break;
+          case 1:
+          case 2:
+          case 4:
+          case 8:
+          case 9:
+          case 10:
+          case 12:
+          case 13:
+            goto LABEL_6;
+        }
+      }
+      sub_20B0EE0(a1: v5);
+LABEL_15:
+      ++v4;
+    }
+    while ( v4 < 0xE );
+    result = a2;
+  }
+  __unwind
+  {
+    sub_20AEF80(a1: a2);
+  }
+  return result;
+}
+```
+
 
 # ClientChannelConfig 
 
