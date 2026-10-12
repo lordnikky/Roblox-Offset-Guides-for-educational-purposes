@@ -39,8 +39,41 @@ sig: 48 83 EC 38 8B 81 ? ? ? ? 90
 
 
 <details>
-<summary><b> test </b></summary>
+<summary><b>click this if you're unsure that rva you got is correct </b></summary>
 
-test
+getglobalstate takes only 1 arg and returns global state:
+```c
+v15 = sub_41921C0(a1: v100);
+
+and
+
+__int64 __fastcall sub_41921C0(__int64 a1)
+```
+
+and to actually verify that function is correct decompile it and it should be like 21 lines with >=3 facet check:
+
+```c
+__int64 __fastcall sub_41921C0(__int64 a1)
+{
+  _DWORD *v1; // rax
+  __int64 v3; // [rsp+20h] [rbp-18h]
+
+  if ( *(int *)(a1 + 5080) >= 3 )
+  {
+    __wind
+    {
+      sub_4974B80(a1: 0, a2: "Invalid Facet Access");
+    }
+    __unwind
+    {
+      sub_4974AF0();
+    }
+  }
+  v1 = (_DWORD *)(sub_4210000(a1: a1 + 432) + 504);
+  LODWORD(v3) = *v1 - (_DWORD)v1;
+  HIDWORD(v3) = v1[1] - (_DWORD)v1;
+  return v3;
+}
+```
 
 </details>
