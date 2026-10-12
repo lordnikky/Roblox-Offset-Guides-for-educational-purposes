@@ -44,6 +44,72 @@ LABEL_229:
 
 so the offset is 0x1CE4BE0
 
+<details>
+
+<summary><b>verify:</b></summary>
+
+takes 4 args, should look like this
+
+```c
+__int64 __fastcall sub_1CA05A0(__int64 a1, __int64 a2, __int64 *a3, int a4)
+{
+  int v4; // r13d
+  __int64 v5; // rbp
+  unsigned __int64 v6; // rax
+  __int64 v8; // r14
+  unsigned int v10; // r15d
+  int v11; // esi
+  unsigned int v12; // ebx
+  int v13; // r8d
+  __int64 v14; // rax
+  unsigned int v15; // r9d
+
+  v4 = *(_DWORD *)(a1 + 28);
+  v5 = *a3;
+  v6 = (unsigned __int64)*a3 >> 3;
+  v8 = *(_QWORD *)(a1 + 8);
+  v10 = (unsigned int)(-1640531535 * v6) >> (32 - v4);
+  v11 = (-1640531535 * (_DWORD)v6) << v4;
+  v12 = v10 & 0xFFFFFFF0;
+LABEL_2:
+  v13 = 0;
+  while ( 1 )
+  {
+    v14 = v12 + (((_BYTE)v10 + (unsigned __int8)(0x4D72EB980136AF5CuLL >> (4 * (unsigned __int8)v13))) & 0xF);
+    v15 = *(_DWORD *)(v8 + 4 * v14);
+    if ( v15 == -1 )
+      break;
+    if ( ((v11 ^ v15) & ~*(_DWORD *)(a1 + 24)) == 0
+      && v5 == *(_QWORD *)(*(_QWORD *)(*(_QWORD *)(a1 + 16) + 16LL * (*(_DWORD *)(a1 + 24) & v15)) + 8LL) )
+    {
+      *(_BYTE *)(a2 + 4) = 0;
+      goto LABEL_18;
+    }
+    if ( (unsigned int)++v13 >= 0x10 )
+    {
+      v12 = (v12 + 16) & ((1 << v4) - 1);
+      goto LABEL_2;
+    }
+  }
+  if ( a4 != 0 )
+  {
+    if ( unk_829C78C != 0 && unk_86A7FB8 != 0 && a4 == 1 && *(_DWORD *)a1 == *(_DWORD *)(a1 + 4) )
+    {
+      sub_1CA08C0(a1, a2, a3);
+      return a2;
+    }
+    *(_DWORD *)(v8 + 4 * v14) = v11;
+    if ( a4 == 1 )
+      *(_DWORD *)(*(_QWORD *)(a1 + 8) + 4 * v14) |= (*(_DWORD *)a1)++;
+  }
+  *(_BYTE *)(a2 + 4) = 1;
+LABEL_18:
+  *(_DWORD *)a2 = v14;
+  return a2;
+}
+```
+  
+</details>
 
 # GetPropertyData
 
@@ -81,3 +147,71 @@ LABEL_27:
 ```
 
 so the offset is 0x1D6C050
+
+<details>
+
+<summary><b>verify:</b></summary>
+
+takes 2 args when called checks if pointer that it returned is correct, if not errors with varitant cast failed
+
+```c
+    v15 = sub_1CA3D10(a1: v8, a2: v20);
+    if ( v15 != 0 )
+    {
+      LODWORD(v21) = *(_DWORD *)(v15 + 48);
+      sub_7A8930(a1: a1 + 1, a2: &v21);
+      v16 = sub_7A7400();
+      *a1 = v16;
+      if ( v16 == sub_7A7400() )
+      {
+        if ( a1[1] == 0 )
+          return nullptr;
+        return v9;
+      }
+LABEL_27:
+      sub_4976D00(a1: "Variant cast failed");
+    }
+```
+
+function itself looks like this
+
+```c
+__int64 __fastcall sub_1CA3D10(_QWORD *a1, __m128i *a2)
+{
+  __m128i v2; // xmm1
+  unsigned __int8 *v3; // rdx
+  unsigned __int64 v4; // xmm0_8
+  unsigned int v5; // r8d
+  unsigned __int8 *i; // r9
+  int v7; // eax
+  __int64 v8; // r9
+  unsigned __int64 v9; // rax
+
+  v2 = *a2;
+  v3 = (unsigned __int8 *)a2->m128i_i64[0];
+  v4 = _mm_srli_si128(v2, 8).m128i_u64[0];
+  v5 = 0x811C9DC5;
+  for ( i = &v3[v4]; v3 != i; v5 = 16777619 * (v5 ^ v7) )
+    v7 = *v3++;
+  v8 = a1[10];
+  v9 = (8LL * a1[11]) >> 3;
+  while ( (__int64)v9 > 0 )
+  {
+    if ( *(_DWORD *)(v8 + 8 * (v9 >> 1)) >= v5 )
+    {
+      v9 >>= 1;
+    }
+    else
+    {
+      v8 += 8 * (v9 >> 1) + 8;
+      v9 += -1LL - (v9 >> 1);
+    }
+  }
+  if ( v8 == a1[10] + 8LL * a1[11] || *(_DWORD *)v8 != v5 )
+    return 0;
+  else
+    return a1[8] + 56LL * *(unsigned __int16 *)(v8 + 4);
+}
+```
+  
+</details>
