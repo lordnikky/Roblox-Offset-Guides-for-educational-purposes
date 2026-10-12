@@ -43,6 +43,6 @@ __int64 __fastcall sub_29B8010(__int64 a1)
 }
 ```
 
-that should be the whole function, takes 1 arg
+that should be the whole function, takes 1 arg (sub is different because diffrent version, guide stays the same :3)
   
 </details>
