@@ -32,3 +32,25 @@ Down	p	sub_26FF360+1B	call    sub_26FF270
 yaayyyayaya new easy guide for me
 
 sig: 48 83 EC 28 44 8B CA 4C 8B D1
+
+
+<details>
+
+<summary><b>verify</b></summary>
+
+takes 3 args calls GetTypeName 
+
+```c
+void __fastcall __noreturn sub_2590710(__int64 a1, unsigned int a2, __int64 a3)
+{
+  const char *v3; // rax
+  unsigned int v4; // r9d
+  __int64 v5; // r10
+
+  v3 = (const char *)sub_25884C0(a1, a2: (unsigned int)a3, a3, a4: a2);
+  sub_2590620(a1: v5, a2: v4, a3: v3);
+}
+```
+
+  
+</details>
