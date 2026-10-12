@@ -26,3 +26,23 @@ search for string "data_model_service_init_part3_begin", first xref, decompile:
 ```
 
 so the offset is 0x2A6F370
+
+<details>
+
+<summary><b>verify:</b></summary>
+
+```c
+__int64 __fastcall sub_29B8010(__int64 a1)
+{
+  __int64 v1; // rax
+
+  v1 = unk_8A49208;
+  if ( unk_8A49208 == 0 )
+    v1 = sub_29B7BF0(a1);
+  return sub_29B7CB0(a1: v1, a2: a1);
+}
+```
+
+that should be the whole function, takes 1 arg
+  
+</details>
