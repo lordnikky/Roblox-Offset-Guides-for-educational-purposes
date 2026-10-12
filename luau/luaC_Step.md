@@ -38,3 +38,35 @@ LABEL_134:
 so the offset is 0x26838F0
 
 sig: 48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 48 89 7C 24 ? 41 54 41 56 41 57 48 83 EC 30 48 8B 59 ? 0F B6 FA
+
+
+<details>
+
+<summary><b>verify</b></summary>
+
+soooo, takes 2 args, supposedly, inside of it scroll down and look for like
+
+```c
+        v24 = (double)v23;
+      v25 = *(_DWORD *)(v2 + 19128) & 0x1F;
+      v26 = *(double *)(v2 + 19168) - *(double *)(v2 + 19160);
+      v27 = (*(_QWORD *)(v2 + 19136) - *(_QWORD *)(v2 + 19152)) >> 10;
+      v28 = *(_DWORD *)(v2 + 4 * v25 + 19000);
+      *(_DWORD *)(v2 + 4 * v25 + 19000) = v27;
+      ++*(_DWORD *)(v2 + 19128);
+      *(_DWORD *)(v2 + 19132) += v27 - v28;
+      v29 = (__int64)(v24 / v19 * v26);
+      v30 = ((double)(int)v27 * 0.405 + (double)*(int *)(v2 + 19132) * 0.24300000000000002) * 1024.0;
+      v22 = *(_QWORD *)(v2 + 16);
+      v31 = v21 - (__int64)v30 - v29;
+      if ( v31 >= v22 )
+      {
+        v22 = v21 - (__int64)v30 - v29;
+        if ( v31 > v21 )
+          v22 = v21;
+      }
+```
+
+i think thats good
+  
+</details>
