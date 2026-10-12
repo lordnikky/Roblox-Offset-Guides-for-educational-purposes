@@ -72,6 +72,46 @@ so the offset is 0x291A640
 
 (you can also scroll up a bit when you press on the sub_290A2F0 and see this .text:000000000290A2F0 sub_290A2F0     proc near               ; CODE XREF: sub_291A640+CB↓p the xref will be RakNetReliabilityLayerSend)
 
+<details>
+
+<summary><b>verify:</b></summary>
+
+
+takes 13 args, at the very end you should see this
+
+```c
+      v36 = sub_27E5B40(a1, a2: *(unsigned int *)(v21 + 92));
+      v37 = *(_DWORD *)(a1 + 352);
+      v43[0] = v36;
+      v43[1] = v21;
+      sub_27E85A0(a1: a1 + 344, a2: v43);
+      if ( v37 != 0 )
+      {
+        do
+        {
+          v38 = (v37 - 1) >> 1;
+          a2 = 2LL * v38;
+          v39 = *(_QWORD *)(a1 + 344);
+          if ( *(_QWORD *)(v39 + 16LL * v38) <= v36 )
+            break;
+          v40 = *(_OWORD *)(v39 + 16LL * v37);
+          *(_OWORD *)(v39 + 16LL * v37) = *(_OWORD *)(v39 + 16LL * ((v37 - 1) >> 1));
+          *(_OWORD *)(*(_QWORD *)(a1 + 344) + 16LL * ((v37 - 1) >> 1)) = v40;
+          v37 = (v37 - 1) >> 1;
+        }
+        while ( v38 != 0 );
+      }
+      if ( unk_83CDCA8 != 0 )
+        *(_QWORD *)(a1 + 4056) += ((unsigned __int64)(unsigned int)(*(_DWORD *)(v21 + 24) + 7) >> 3) + 272;
+      ++*(_DWORD *)(a1 + 4LL * *(int *)(v21 + 92) + 816);
+      *(double *)(a1 + 8LL * *(int *)(v21 + 92) + 832) = (double)((unsigned int)(*(_DWORD *)(v21 + 24) + 7) >> 3)
+                                                       + *(double *)(a1 + 8LL * *(int *)(v21 + 92) + 832);
+      v22 = 1;
+```
+but uhh, 13 args check should be more than enough lol
+	
+</details>
+
 # RakNetSend
 
 search for string `"[FLog::Network] out of memory in raknet at callsite %ld"` and first xref will be it:
