@@ -80,7 +80,7 @@ the top one is the offset 0x3A858A0
 
 ps:
 
-when decompiled it must look like this
+when decompiled it must look like this and take 2 args
 ```c
 _QWORD *__fastcall sub_3A858A0(__int64 a1, _QWORD *a2)
 {
