@@ -8,3 +8,11 @@ search for string "cannot change a protected metatable", first xref decompile:
 ```
 
 so the offset is sub_2701A50
+
+<details>
+
+<summary><b>verify</b></summary>
+
+called with 3 args, if returned thing is incorrect errors with cannot change a protected metatable yeah uhh thats all 
+  
+</details>
