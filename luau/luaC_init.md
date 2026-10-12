@@ -63,3 +63,38 @@ go to the very bottom
 so the offset is 0x2728C80
 
 sig: 48 89 5C 24 ? 57 48 83 EC 30 48 8B FA 41 0F B6 D9 4D 8B D8
+
+
+<details>
+
+<summary><b>verify</b></summary>
+
+5 uhhh, how is it called again? args, right
+
+```c
+__int64 __fastcall sub_25C9C60(int a1, __int64 a2, int a3, unsigned __int8 a4, unsigned __int8 a5)
+{
+  __int64 v6; // rbx
+  __int64 v8; // r8
+  int v9; // r9d
+  __int64 result; // rax
+
+  v6 = a4;
+  v8 = 16360;
+  v9 = dword_7DEB860[a4];
+  if ( v9 > 512 )
+    v8 = 32744;
+  result = sub_25C9AF0(
+             a1,
+             a2: a3,
+             a3: v8,
+             a4: v9 + 8 * (unsigned int)a5,
+             a5: (v8 - 64) / (unsigned __int64)(v9 + 8 * a5));
+  *(_QWORD *)(a2 + 8 * v6) = result;
+  return result;
+}
+```
+since function is small just check if fuck it
+
+  
+</details>
