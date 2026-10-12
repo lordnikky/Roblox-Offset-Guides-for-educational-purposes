@@ -68,6 +68,64 @@ first xref, go to it
 
 so the offset is 0xEC5D60
 
+<details>
+  
+<summary><b>verify</b></summary>
+
+takes 5 args
+
+```c
+  _BYTE v57[8]; // [rsp+428h] [rbp+320h] BYREF
+  _BYTE v58[56]; // [rsp+430h] [rbp+328h] BYREF
+
+  v35 = (signed __int64)a2;
+  v29 = sub_4959690(a1: unk_867C100, (__int64)a2);
+  sub_DB62E0(a1: v53, a2: *(_QWORD *)(a1 + 1024), a3: a5);
+  sub_14CA2B0(a1: *(_QWORD *)(*(_QWORD *)(*(_QWORD *)(a1 + 1024) + 2240LL) + 2200LL));
+  v30 = 0;
+  v31 = 0;
+  v32.m128_u64[0] = 0;
+  v32.m128_i32[2] = 2139095040;
+  v32.m128_i8[12] = 0;
+  LODWORD(v33) = 1792;
+  v9 = *(_QWORD *)(*(_QWORD *)(a1 + 1024) + 2240LL);
+  v42 = *a3;
+  v43 = *((_DWORD *)a3 + 2);
+  v44 = *a4;
+  v45 = *((_DWORD *)a4 + 2);
+  v11 = sub_4959690(a1: unk_867C100, a2: v10);
+  v36 = v11;
+  v38 = v44;
+  v39 = v45;
+  v40 = v42;
+  v41 = v43;
+  LOBYTE(a1) = sub_1574C80(
+                 a1: v9,
+                 a2: (unsigned int)&v40,
+                 a3: (unsigned int)&v38,
+                 a4: (unsigned int)v53,
+                 a5: (__int64)&v30);
+  sub_4959690(a1: v11, a2: v12);
+  if ( (_BYTE)a1 != 0 )
+  {
+    v50 = 0;
+    v15 = v31;
+    v46 = v31;
+    v16 = v32;
+    v47 = v32;
+    v17 = _mm_shuffle_ps(v31, v31, 170).m128_f32[0];
+    v18 = _mm_shuffle_ps(v31, v31, 85).m128_f32[0];
+    v19 = v31.m128_f32[0];
+    v20 = (float)((float)((float)(*(float *)a3 - v31.m128_f32[0]) * (float)(*(float *)a3 - v31.m128_f32[0]))
+                + (float)((float)(*((float *)a3 + 1) - v18) * (float)(*((float *)a3 + 1) - v18)))
+        + (float)((float)(*((float *)a3 + 2) - v17) * (float)(*((float *)a3 + 2) - v17));
+    if ( v20 < 0.0 )
+      v21 = sqrtf(X: v20);
+    else
+```
+
+</details>
+
 # FastClusterEntity VTableRva
 
 press shift f4, ctrl f and search for ```RBX::Graphics::FastClusterEntity::`vftable'```, you'll see something like
