@@ -1,7 +1,3 @@
-**TODO**
-
-note to self: I didn't forget to make this
-
 # CubeTextures
 
 string "AnalyticsPoints" first xref
