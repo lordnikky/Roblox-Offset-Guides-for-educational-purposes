@@ -78,10 +78,9 @@ this will probably shift easily, ill have to find it every update but i'll do it
 
 the top one is the offset 0x3A858A0
 
-ps:
 
 <details>
-<summary>when decompiled it must look like this and take 2 args</b></summary>
+<summary><b></b>when decompiled it must look like this and take 2 args</b></summary>
 ```c
 _QWORD *__fastcall sub_3A858A0(__int64 a1, _QWORD *a2)
 {
