@@ -66,13 +66,26 @@ searching for like any fflag name will also work, im just using this random one
 search for string "DebugWinDisableUpdates", second xref, decompile:
 
 ```c
-__int64 sub_7CD3F0()
+__int64 sub_729960()
 {
-  return sub_49A9CA0(a1: qword_88FC7C8, a2: "DebugWinDisableUpdates", a3: &byte_815FBA8, a4: 1);
+  __int64 v0; // rbx
+  __int64 v1; // rdi
+  _QWORD v3[3]; // [rsp+30h] [rbp-28h] BYREF
+  char v4; // [rsp+48h] [rbp-10h]
+
+  v0 = qword_8C86398;
+  v1 = qword_8C86398 + 64;
+  v3[2] = qword_8C86398 + 64;
+  v4 = 1;
+  sub_89F0(a1: qword_8C86398 + 64, a2: 0);
+  v3[0] = "DebugWinDisableUpdates";
+  v3[1] = 22;
+  sub_49FE870(a1: v0, a2: v3, a3: &byte_848ECA0, a4: 1);
+  return sub_8B30(a1: v1);
 }
 ```
 
-that qword will be the FFlagPointer, so the offset is 0x88FC7C8
+byte (or qword or unk) that is after a3: will be the offset, 0x848ECA0
 
 
 # BooleanType
@@ -80,13 +93,26 @@ that qword will be the FFlagPointer, so the offset is 0x88FC7C8
 search for string "AnimGraphServerAuthorityNodeIndices", first xref, decompile:
 
 ```c
-__int64 sub_1A9F470()
+__int64 sub_1A71B10()
 {
-  return sub_497C690(a1: qword_89ABE98, a2: "AnimGraphServerAuthorityNodeIndices", a3: &byte_81B12A9, a4: 4);
+  __int64 v0; // rbx
+  __int64 v1; // rdi
+  _QWORD v3[3]; // [rsp+30h] [rbp-28h] BYREF
+  char v4; // [rsp+48h] [rbp-10h]
+
+  v0 = qword_8C86398;
+  v1 = qword_8C86398 + 64;
+  v3[2] = qword_8C86398 + 64;
+  v4 = 1;
+  sub_89F0(a1: qword_8C86398 + 64, a2: 0);
+  v3[0] = "AnimGraphServerAuthorityNodeIndices";
+  v3[1] = 35;
+  sub_49FE3E0(a1: v0, a2: v3, a3: &byte_8431A2D, a4: 4);
+  return sub_8B30(a1: v1);
 }
 ```
 
-double click the first return sub_, scroll down until you see this:
+double click the sub_ which contains offset of the fflag itself ( one with a3: byte unk or qword)
 
 ```c
       *(_QWORD *)(v21 + 48) = 0;
