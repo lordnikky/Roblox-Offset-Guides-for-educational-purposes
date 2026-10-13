@@ -445,7 +445,7 @@ see that big function with logs of arguments after label_ and before if v__ == 0
   return 0;
 ```
 
-see that 9 arg function and after if __ != 0? thats the RBXTransportDecrypt, when decompiled there should be string "tag" in it, thats quick verification
+see that 9 arg function and after if __ != 0? thats the RBXTransportDecrypt
 
 
 # RBXTransportEncrypt
