@@ -380,3 +380,125 @@ string "failureFallbackToRbxTransport", first xref
                             sub_2E01900(a1: v199, a2: &v146, a3: byte_86A3408[0], a4: 1); // <-- failureFallbackToRbxTransport
                             if ( byte_86A3408[0] != 0 ) // <-- failureFallbackToRbxTransport
 ```
+
+# RBXTransportDecrypt
+
+
+stringy ```"[DFLog::RbxTransportQuicServerSocket] QuicServerSocket invalid retry token from {}"``` first xref decompile
+
+```c
+LABEL_75:
+    v58 = sub_21994E0( // <-- DOUBLE CLICK THIIHIISHGA
+            a1: (_QWORD *)a4,
+            a2: v35,
+            a3: v13,
+            a4: a1 + 289,
+            a5: 32,
+            a6: *(_DWORD *)(a3 + 104),
+            a7: v56,
+            a8: v57,
+            a9: (size_t *)a3,
+            a10: v70,
+            a11: a6);
+    if ( v58 == 0 )
+    {
+      sub_71F5A0(a1: v85);
+      v86 = 0;
+      v34 = 1;
+      goto LABEL_124;
+    }
+    if ( (unsigned __int8)qword_7DE5FE8 >= 6u && BYTE1(qword_7DE5FE8) >= 6u )
+    {
+      *(_QWORD *)&v75 = &byte_7A01040;
+      v59 = (__int64 *)sub_2113D90(a1: a2, a2: v83);
+      __eh34_enter_wind_state(0, 1);
+      v71 = "[DFLog::RbxTransportQuicServerSocket] QuicServerSocket invalid retry token from {}";
+      v61 = -1;
+      do
+```
+
+see that big function with logs of arguments after label_ and before if v__ == 0, double click that, in that fuinction scroll to the very bottom
+
+```c
+  if ( (unsigned int)sub_219A050(a1: &v29, a2: v31, a3: v38, a4: v22) != 0 )
+    return 0xFFFFFFFFLL;
+  v25 = sub_219A780(
+          a1: (__int64)&v35,
+          a2: v31,
+          a3: &v29,
+          a4: v15,
+          a5: 0x2Du,
+          a6: v32,
+          a7: v28,
+          a8: (__int64)v33,
+          a9: v24 - v33);
+  if ( v29 != 0 )
+    sub_5BDD2A0();
+  if ( v25 != 0 )
+    return 0xFFFFFFFFLL;
+  v26 = v35;
+  if ( v35 > 0x14uLL || _byteswap_uint64(v37) + 10000000000LL <= a11 )
+    return 0xFFFFFFFFLL;
+  *a1 = v35;
+  if ( v26 != 0 )
+    memmove(a1: a1 + 1, Src: v36, Size: v26);
+  return 0;
+```
+
+see that 9 arg function and after if __ != 0? thats the RBXTransportDecrypt, when decompiled there should be string "tag" in it, thats quick verification
+
+
+# RBXTransportEncrypt
+
+string "ngtcp2_crypto_generate_retry_token failed: {}" first xref
+
+```c
+LABEL_20:
+  v22 = sub_21991D0(
+          a1: (unsigned int)v100,
+          a2: (int)a1 + 289,
+          a3: 32,
+          a4: *(_DWORD *)(a3 + 104),
+          a5: (__int64)v20,
+          a6: v21,
+          a7: (__int64)&v106,
+          a8: a3,
+          a9: a6);
+  Size[0] = v22;
+  if ( v22 < 0 )
+  {
+    v23 = sub_2197700(a1: (unsigned int)v22);
+    v74.m128i_i64[0] = (__int64)"ngtcp2_crypto_generate_retry_token failed: {}";
+    v74.m128i_i64[1] = 45;
+```
+
+thing after label 20 and before if __ < 0 
+
+double click
+
+scroll to the very bottom
+
+```c
+  v23 = &v22[*v21];
+  *a1 = -74;
+  if ( (unsigned int)sub_2199E80(a1: &v28, a2: &v29, a3: v42, a4: v20) != 0 )
+    return -1;
+  v24 = sub_219A5D0(
+          a1: (__int64)(a1 + 1),
+          a2: &v29,
+          a3: &v28,
+          a4: (int)&v34,
+          a5: 29,
+          a6: v39,
+          a7: v27,
+          a8: (__int64)v40,
+          a9: v23 - v40);
+  if ( v28 != 0 )
+    sub_5BDD2A0();
+  if ( v24 != 0 )
+    return -1;
+  v25 = &a1[v30 + 30];
+  *(_OWORD *)v25 = v38;
+  return v25 - a1 + 16;
+```
+after retun -1 thats the encrypt function, 9 args, wow
