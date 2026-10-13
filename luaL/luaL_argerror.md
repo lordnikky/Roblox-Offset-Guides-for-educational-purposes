@@ -1,4 +1,4 @@
-# luaL_getmetafield
+# luaL_argerror
 
 search for string "invalid argument #%d to '%s' (%s)" first xref is the luaL_getmetafield:
 
