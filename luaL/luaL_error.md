@@ -1,4 +1,4 @@
-# lual_argerror
+# lual_error
 
 string "cannot change a protected metatable", first xref, decompile:
 
