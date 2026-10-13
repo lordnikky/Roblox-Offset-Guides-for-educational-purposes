@@ -2,6 +2,8 @@ this will cover quite some raknet offsets
 
 **if you're searching for specific offset i recommend pressing ctrl + f and just search the name of it because this will have a lot of stuff**
 
+raknet has been disabled by roblox in favour of rbxtransport, but, raknet still can be used via FFlag that you can found in my guides about rbxtransport
+
 # raknetrecieve
 
 search for string `"[DFLog::NetworkTrace] Incoming packet error: length <= 2 || buffe"`, or `"[DFLog::NetworkTrace] Incoming packet error: internalPacket->orde"`, first xref will be it:
