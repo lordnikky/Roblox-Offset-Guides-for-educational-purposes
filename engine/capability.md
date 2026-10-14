@@ -84,3 +84,5 @@ LABEL_3:
 ```
 
 so to get the 0x__ thingy just press x on 48, ida will show u 0x30 or whatever value you'll have in future version
+
+0xFFFFFFFFFFFFFF00uLL is capability mask
