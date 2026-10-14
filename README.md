@@ -3,6 +3,7 @@
 
 Repository with various Roblox offset guides, explaining how to find them and what they're used for internally.
 
+**NOTE**: I use community driven offset names, so if something is named weirdly, or doesn't match the function it is NOT my fault, i simply make guides but I don't make up the names.
 
 # DISCLAIMER
 
