@@ -3,7 +3,7 @@
 
 Repository with various Roblox offset guides, explaining how to find them and what they're used for internally.
 
-**NOTE**: I use community driven offset names, so if something is named weirdly, or doesn't match the function it is NOT my fault, i simply make guides but I don't make up the names.
+**NOTE**: I use community driven offset names, so if something is named weirdly, or doesn't match the function it is NOT my fault, I simply make guides, but I don't make up the names.
 
 # DISCLAIMER
 
@@ -15,7 +15,7 @@ What is provided in this repository is purely for **educational purposes**, the 
 
 Roblox™ employees and engineers are directly allowed to use this repository to patch whatever they need. Furthermore, **if requested the repository will be taken down as soon as the author sees the notice. The author will fully cooperate under any circumstances.**
 
-For any issues or information you can directly contact me with information below:
+For any issues or information you can directly contact me using information below:
 
 **DISCORD:** `lordnikky`
 
