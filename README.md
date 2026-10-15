@@ -22,3 +22,5 @@ For any issues or information you can directly contact me using information belo
 **EMAIL:** [nikky@nikky.me](mailto:nikky@nikky.me)
 
 If you found this interesting, a star would be appreciated.
+
+_This repository is licensed under the terms of the **[Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org)**._
