@@ -10,7 +10,7 @@ Up    o    sub_2736E10+BDD0    lea     rax, aIterateOver; "iterate over"
 Up    o    sub_2736E10+BDFC    lea     rax, aIterateOver; "iterate over"
 ```
 
-decompile it, its 10 thousand lines so it will take a while, after its done, copy over the code to notepad and ctrl f search for  `"(unsigned __int8 *)sub"`
+decompile it, its 10 thousand lines so it will take a while, after its done, copy over the code to notepad and ctrl f search for  `"(a1: &unk_"`
 
 every possibility:
 
