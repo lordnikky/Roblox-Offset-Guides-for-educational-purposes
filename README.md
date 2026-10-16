@@ -24,3 +24,7 @@ For any issues or information you can directly contact me using information belo
 If you found this interesting, a star would be appreciated.
 
 _This repository is licensed under the terms of the **[Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org)**._
+
+This means that you are legally **not allowed** to sell, paywall or monetize content in this repository. The author reserves full right to issue legal take-down notices for any violations.
+
+Proper credit must be present to the author(s) of this repository if any original work is present.
