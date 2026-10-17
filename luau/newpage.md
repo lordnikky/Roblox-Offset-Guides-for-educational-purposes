@@ -1,4 +1,4 @@
-# luaM_newgco
+# newpage
 
 search for string "InvalidInstance", second xref:
 
@@ -16,7 +16,7 @@ only second, the sub_873FB0, then in decompiled code scroll to the very botton, 
   v9 = *(_QWORD *)(a1 + 24);
   if ( byte_7C50E50 < 0 )
   {
-    v15 = sub_2728D90(a1, a2: (_QWORD **)(v9 + 792), a3: 112, a4: 48, a5: 1); // <-- luaM_newgco (sub_2728D90)
+    v15 = sub_2728D90(a1, a2: (_QWORD **)(v9 + 792), a3: 112, a4: 48, a5: 1); // <-- newpage (sub_2728D90)
     v13 = v15 + 16;
     v15[12] -= v15[9];
     ++v15[13];
