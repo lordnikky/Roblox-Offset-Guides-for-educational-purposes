@@ -62,3 +62,10 @@ Section 7 - Other Terms and Conditions.
 
 a. The Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.
 b. Any arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.
+
+Section 8 - Environmental and Target Space Restrictions (Amendment).
+
+a. In accordance with the rights reserved by the Licensor under this Public License and under global copyright laws, an explicit environmental restriction is placed upon the distribution and deployment of the Licensed Material.
+b. The sharing, distribution, reproduction, hosting, mirroring, copy-pasting, execution, or public display of the Licensed Material (or any Adapted Material) within the Discord server known as "skidding hq" (including any successor, renamed, or recreated iterations of said server) by any user or entity is strictly prohibited.
+c. Any instance of the Licensed Material being made available within the "skidding hq" Discord server is explicitly defined as an unauthorized exploitation outside the scope of this license. 
+d. Any breach of this environmental restriction results in the immediate, automatic, and permanent termination of all Licensed Rights under Section 6(a) for the violating party, without the possibility of the 30-day reinstatement outlined in Section 6(b).
