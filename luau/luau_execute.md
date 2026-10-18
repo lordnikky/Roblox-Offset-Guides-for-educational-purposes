@@ -13,7 +13,7 @@ first xref decompile, it is a BIG function and will take a while if you're on ol
 __int64 __fastcall sub_265FAB0(__int64 a1, __int64 a2)
 ```
 
-<img width="836" height="631" alt="image" src="https://drive.google.com/file/d/1_emrx9j3Tk4XI5_5BzXUXJboKiocnXIG/view?usp=drive_link" />
+<img width="836" height="631" alt="image" src="https://docs.google.com/images/d/1nY6TxmYJPncLZCITLqjS_jwle0xHkBg6OU0FVw1NWPs/edit?usp=sharing" />
 
 You will see this, there's one that stands out, that is the luau_execute
 
