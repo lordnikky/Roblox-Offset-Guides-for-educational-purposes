@@ -28,3 +28,5 @@ _This repository is licensed under the terms of the **[Creative Commons Attribut
 This means that you are legally **not allowed** to sell, paywall or monetize content in this repository. The author reserves full right to issue legal take-down notices for any violations.
 
 Proper credit must be present to the author(s) of this repository if any original work is present.
+
+October 19 2026: Currently there is 1 active violation of license, it all has been documented. 
