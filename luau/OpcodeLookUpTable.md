@@ -1,26 +1,18 @@
 # OpcodeLookUpTable
 
-string "iterate over" (same as luau_execute), ignore .text segments and go to xref
+string "bytecode corrupted" first xref
 
-```asm
-Up    o    sub_2736E10+B9E3    lea     rax, aIterateOver; "iterate over"
-Up    o    sub_2736E10+BCFA    lea     rax, aIterateOver; "iterate over"
-Up    o    sub_2736E10+BDA4    lea     rax, aIterateOver; "iterate over"
-Up    o    sub_2736E10+BDD0    lea     rax, aIterateOver; "iterate over"
-Up    o    sub_2736E10+BDFC    lea     rax, aIterateOver; "iterate over"
-```
-
-decompile it, its 10 thousand lines so it will take a while, after its done, copy over the code to notepad and ctrl f search for  `"(a1: &unk_"` or "(a:1 byte_"
-
-every possibility:
+decompile it, copy over in notepad and ctrl f for "switch ( byte" or "switch ( qword" or "switch ( unk" wtv 
 
 ```c
-        v50 = (unsigned __int8 *)sub_2722610(a1: &unk_6E26C70, a2: 188);
-        v51 = (unsigned __int8 *)sub_2722610(a1: &unk_6E26C70, a2: v28);
-            nn = *(unsigned __int8 *)sub_2722610(a1: &unk_6E26C70, a2: 124);
-        v39 = (unsigned __int8 *)sub_2722610(a1: &unk_6E26C70, a2: 48);
-            if ( *(v1212 - 8) == *(unsigned __int8 *)sub_2722610(a1: &unk_6E26C70, a2: 153) )
-        v27 = (unsigned __int8 *)sub_2722610(a1: &unk_6E26C70, a2: 77);
+        {
+          v153 = *v152 & 0xFFFFFF00 | byte_71433E0[(unsigned __int8)*v152];
+          *v152 = v153;
+          switch ( byte_7144260[(unsigned __int8)v153] )
+          {
+            case 7:
+            case 8:
+
 ```
 
-That &unk_ is the OpcodeLookUpTable
+that byte is the opcodelookuptable 0x7144260
