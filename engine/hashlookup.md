@@ -3,26 +3,27 @@
 search for string "data_model_service_init_part3_begin", first xref, decompile:
 
 ```c
-                  v225 = a1;
-                  sub_36176D0(a1: v142 + 576, a2: &v200, a3: &v225);
-                  sub_7EE540(a1: &v200);
-                  v144 = sub_807030(a1: &v188);
-                  v321 = *(_OWORD *)sub_7EE300(a1: v343, a2: "data_model_service_init_part2_end", a3: v144);
-                  sub_50E8830(a1: v145, a2: &v321);
-                  v146 = sub_807030(a1: &v188);
-                  v322 = *(_OWORD *)sub_7EE300(a1: v342, a2: "data_model_service_init_part3_begin", a3: v146); // <-- you're here
-                  sub_50E8830(a1: v147, a2: &v322);
-                  sub_3617810(a1: v56);
-                  sub_3223A20(a1: v56);
-                  sub_3617820(a1: v56);
-                  sub_3617830(a1: v56);
-                  sub_3617840(a1: v56);
-                  sub_3617850(a1: v56);
-                  v148 = sub_2A6F370(a1: (__int64)&qword_6EC3AF8); // <-- hashlookup
-                  sub_28D0BA0(a1: v323, a2: v56, a3: v148);
-                  sub_7EEA40(a1: v323);
-                  sub_3617860(a1: v56);
-                  sub_3617870(a1: v56);
+                  if ( v181 != 0 )
+                    sub_35A2510(a1: v138);
+                  v221 = a1;
+                  sub_362C3D0(a1: v138 + 568, a2: v196, a3: &v221);
+                  sub_74DEB0(a1: v196);
+                  v140 = sub_7678F0(a1: &v184);
+                  v317 = *(_OWORD *)sub_74DCE0(a1: v339, a2: "data_model_service_init_part2_end", a3: v140);
+                  sub_522E260(a1: v141, a2: &v317);
+                  v142 = sub_7678F0(a1: &v184);
+                  v318 = *(_OWORD *)sub_74DCE0(a1: v338, a2: "data_model_service_init_part3_begin", a3: v142); // <-- you are here
+                  sub_522E260(a1: v143, a2: &v318);
+                  sub_362C4A0(a1: v56);
+                  sub_31D3DF0(a1: v56);
+                  sub_362C4B0(a1: v56);
+                  sub_362C4C0(a1: v56);
+                  sub_362C4D0(a1: v56);
+                  sub_362C4E0(a1: v56);
+                  v144 = sub_2AB0720(a1: "GamePassService"); // this is the hashlookup
+                  sub_290B3A0(a1: v319, a2: v56, a3: v144);
+                  sub_74E3F0(a1: v319);
+                  sub_362C4F0(a1: v56);
 ```
 
 so the offset is 0x2A6F370
@@ -32,17 +33,17 @@ so the offset is 0x2A6F370
 <summary><b>verify:</b></summary>
 
 ```c
-__int64 __fastcall sub_29B8010(__int64 a1)
+__int64 __fastcall sub_2AB0720(__int64 a1)
 {
   __int64 v1; // rax
 
-  v1 = unk_8A49208;
-  if ( unk_8A49208 == 0 )
-    v1 = sub_29B7BF0(a1);
-  return sub_29B7CB0(a1: v1, a2: a1);
+  v1 = qword_8DCFB98;
+  if ( qword_8DCFB98 == 0 )
+    v1 = sub_2AB0300(a1);
+  return sub_2AB03C0(a1: v1, a2: a1);
 }
 ```
 
-that should be the whole function, takes 1 arg (sub is different because diffrent version, guide stays the same :3)
+that should be the whole function, takes 1 arg
   
 </details>
