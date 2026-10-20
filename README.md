@@ -23,7 +23,7 @@ For any issues or information you can directly contact me using information belo
 
 If you found this interesting, a star would be appreciated.
 
-_This repository is licensed under the terms of the **LordNikky Public License (LNPL-NC-1.0)**. ._
+_This repository is licensed under the terms of the **LordNikky Public License (LNPL-NC-1.0)**._
 
 This means that you are legally **not allowed** to sell, paywall or monetize content in this repository. The author reserves full right to issue legal take-down notices for any violations.
 
