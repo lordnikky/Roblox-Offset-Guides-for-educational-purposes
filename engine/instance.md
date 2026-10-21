@@ -38,6 +38,17 @@ search for string `"[DFLog::HugeHugePersistentLog] Part {} is too large, treatin
 
 so the offset is 0x48001B0
 
+# InstanceSetAttribute
+
+string "Attempt to assign attribute %s. CoreScript permission required", first xref will be it 
+
+```asm
+.rdata:000000000723EE98 aAttemptToAssig db 'Attempt to assign attribute %s. CoreScript permission required',0
+.rdata:000000000723EE98                                         ; DATA XREF: sub_1D5AD20+442↑o
+```
+
+so the offset is 0x1D5AD20
+
 # InstanceFindFirstChild
 
 search for string "FindFirstChild", first xref will be it:
