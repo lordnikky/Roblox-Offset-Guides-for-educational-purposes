@@ -32,3 +32,4 @@ Proper credit must be present to the author(s) of this repository if any origina
 Discord server under the name of "Skidding HQ" is no longer legally allowed to distribute my work. That includes any links, files, snippets from my original work from this repository.
 
 October 19 2026: Currently there is 1 active violation of license, it all has been documented. 
+October 21 2026: DMCA request has been resolved, all instances of license being violated have been taken down.
