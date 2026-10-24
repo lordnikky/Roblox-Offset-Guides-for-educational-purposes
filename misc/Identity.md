@@ -1,6 +1,6 @@
 # IdentityPTR
 
-string "ParabolaAdornment may only be instantiated by CoreScripts at this time", first xref
+string `ParabolaAdornment may only be instantiated by CoreScripts at this time`, first xref
 
 ```c
     *(_QWORD *)a1 = &RBX::ParabolaAdornment::`vftable';
