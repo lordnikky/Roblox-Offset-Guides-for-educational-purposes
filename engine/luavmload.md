@@ -1,6 +1,6 @@
 # LuaVMLoad
 
-search for string "bytecode corrupted", decompile it and go to the very top
+search for string `bytecode corrupted`, decompile it and go to the very top
 
 ```c
 __int64 __fastcall sub_27AC890(__int64 a1, __int64 a2)
