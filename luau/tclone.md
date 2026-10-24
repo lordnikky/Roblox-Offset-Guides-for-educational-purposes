@@ -1,6 +1,6 @@
 # tclone
 
-search for string "table has a protected metatable" second xref
+search for string `table has a protected metatable` second xref
 
 ```asm
 .rdata:0000000007078A40 aTableHasAProte db 'table has a protected metatable',0
@@ -8,8 +8,17 @@ search for string "table has a protected metatable" second xref
 .rdata:0000000007078A40                                         ; sub_5607560:loc_560762A↑o
 ```
 
+so the offset is 0x5607560
+
+
+<details> 
+
+<summary><b>hi</b></summary>
+
+theres how decompiled function looks
+
 ```c
-__int64 __fastcall sub_5607560(_QWORD *a1)
+__int64__fastcall sub_5607560(_QWORD *a1)
 {
   unsigned __int64 v1; // rax
   __int64 v3; // r8
@@ -33,6 +42,6 @@ __int64 __fastcall sub_5607560(_QWORD *a1)
 }
 ```
 
-so the offset is 0x5607560
+</details>
 
 sig: 40 53 48 83 EC 30 48 8B 41 ? 48 8B D9 48 3B 41
