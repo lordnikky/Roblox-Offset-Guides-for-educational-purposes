@@ -1,6 +1,6 @@
 # lua_newstate
 
-search string "Failed to create Lua state", first xref, decompile:
+search string `Failed to create Lua state`, first xref, decompile:
 
 ```c
   v10 = sub_258EFB0(a1: (__int64 (__fastcall *)(__int64, _QWORD, _QWORD, __int64))sub_420F830, a2); // lua_newstate
