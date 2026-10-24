@@ -2,7 +2,7 @@ some of raycast stuff :D
 
 # ShapeCast
 
-string "Attempt to shapecast with distance %f. The maximum distance is %f", first xref will be it
+string Attempt to shapecast with distance %f. The maximum distance is %f`, first xref will be it
 
 ```asm
 .rdata:0000000006D32AA0 aAttemptToShape_0 db 'Attempt to shapecast with distance %f. The maximum distance is %f'
@@ -15,7 +15,7 @@ so the offset is 0xEC7720
 
 # SphereCast
 
-search for string "Attempt to shapecast with distance %f. The maximum distance is %d", second xref 
+search for string `Attempt to shapecast with distance %f. The maximum distance is %d`, second xref 
 ```asm
 .rdata:0000000006D327F0 aAttemptToSpher db 'Attempt to spherecast with radius %f. The maximum radius is %f.',0
 .rdata:0000000006D327F0                                         ; DATA XREF: sub_EC65E0+549↑o
@@ -26,7 +26,7 @@ so the offset is 0xEC70A0
 
 # BlockCast
 
-search for string "Attempt to blockcast with side length %f. The maximum side length is %f", second xref will be it
+search for string `Attempt to blockcast with side length %f. The maximum side length is %f`, second xref will be it
 ```asm
 .rdata:0000000006D32AF0 aAttemptToBlock db 'Attempt to blockcast with side length %f. The maximum side length'
 .rdata:0000000006D32AF0                                         ; DATA XREF: sub_EC6B60+3A3↑o
@@ -38,7 +38,7 @@ so the offset is 0xEC6F50
 
 # WorldRoot_Raycast (or just normal raycast)
 
-string "Raycast" exactly like that, same uppercasing nothing else, first xref
+string `Raycast` exactly like that, same uppercasing nothing else, first xref
 ```asm
 .rdata:0000000006D3BC40 aRaycast        db 'Raycast',0          ; DATA XREF: sub_FA55F0:loc_FA5649↑o
 .rdata:0000000006D3BC40                                         ; .rdata:0000000006A13AA8↑o
