@@ -6,7 +6,7 @@
 
 # lua_checkstack
 
-these can be found via string "Attempt to migrate WeakObjectRef across VM boundary", first xref, decompile:
+these can be found via string `Attempt to migrate WeakObjectRef across VM boundary`, first xref, decompile:
 
 ```c
 __int64 __fastcall sub_41812B0(__int64 a1, __int64 a2)
