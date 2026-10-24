@@ -1,6 +1,6 @@
 # luaC_init
 
-search for string "InvalidInstance", second xref and decompile:
+search for string `InvalidInstance`, second xref and decompile:
 
 go to the very bottom
 
