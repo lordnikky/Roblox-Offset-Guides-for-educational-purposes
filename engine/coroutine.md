@@ -1,4 +1,4 @@
-So basically this wont be specific cuz they're all found with one string, search for string "isyieldable", rdata xref
+So basically this wont be specific cuz they're all found with one string, search for string `isyieldable`, rdata xref
 
 ```asm
 .rdata:0000000007178EBA                 align 20h
