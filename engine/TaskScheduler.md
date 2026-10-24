@@ -16,7 +16,7 @@ search for string `TS::Step`, first xref decompile:
 ```c
         }
       }
-      qword_8AFF1E0 = sub_2AA6830(a1: (unsigned int)"Jobs", a2: (unsigned int)"TS::Step", a3: -1, a4: v5, a5: 255); // <-- you're here (why doesnt this become a comment??)
+      qword_8AFF1E0 = sub_2AA6830(a1: (unsigned int)"Jobs", a2: (unsigned int)"TS::Step", a3: -1, a4: v5, a5: 255);  // <-- you're here (why doesnt this become a comment??)
       sub_1350(a1: &dword_8AFF1D8);
     }
   }
