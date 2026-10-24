@@ -2,7 +2,7 @@ some of raycast stuff :D
 
 # ShapeCast
 
-string Attempt to shapecast with distance %f. The maximum distance is %f`, first xref will be it
+string `Attempt to shapecast with distance %f. The maximum distance is %f`, first xref will be it
 
 ```asm
 .rdata:0000000006D32AA0 aAttemptToShape_0 db 'Attempt to shapecast with distance %f. The maximum distance is %f'
