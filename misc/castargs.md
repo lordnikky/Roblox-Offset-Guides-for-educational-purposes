@@ -1,6 +1,6 @@
 # CastArgs
 
-string "Argument %d missing or nil", second xref, decompile and scroll to the very top
+string `Argument %d missing or nil`, second xref, decompile and scroll to the very top
 
 ```c
 __int64 __fastcall sub_7A7EC0(__int64 a1, int a2, __int64 a3, int a4, unsigned int *a5)
