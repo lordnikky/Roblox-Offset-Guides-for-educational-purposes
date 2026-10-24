@@ -1,4 +1,4 @@
-multiple offsets in 1 guide again, search for string "setmetatable", first rdata xref:
+multiple offsets in 1 guide again, search for string `setmetatable`, first rdata xref:
 
 ```asm
 rdata:00000000064542E0                                         ; "assert"
