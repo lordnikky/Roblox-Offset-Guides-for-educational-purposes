@@ -1,6 +1,6 @@
 # luaO_pushfstring
 
-search for string "stack overflow", first xref, decompile:
+search for string `stack overflow`, first xref, decompile:
 
 ```c
   sub_2722360(a1, a2: "stack overflow");
