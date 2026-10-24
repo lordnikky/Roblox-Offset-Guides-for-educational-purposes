@@ -1,6 +1,6 @@
 # luaL_argerror
 
-search for string "invalid argument #%d to '%s' (%s)" first xref is the luaL_argerror:
+search for string `invalid argument #%d to '%s' (%s)` first xref is the luaL_argerror:
 
 ```asm
 .rdata:0000000006F1B7D8                 db 'invalid argument #%d to ',27h,'%s',27h,' (%s)',0
