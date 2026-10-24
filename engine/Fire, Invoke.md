@@ -46,7 +46,7 @@ string `FireAllClients can only be called from the server` first xref
 
 # InvokeClient
 
-InvokeClient can only be called from the server
+`InvokeClient can only be called from the server`
 
 ```asm
 .rdata:000000000705D5B0 aInvokeclientCa db 'InvokeClient can only be called from the server',0
