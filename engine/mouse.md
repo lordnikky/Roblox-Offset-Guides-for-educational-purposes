@@ -1,6 +1,6 @@
 # FireMouseClick
 
-string "FLog::DragDetectorLog] DragDetector::updateMouseState LeftMouseUp", first xref and decompile, from here scroll up till line ~250
+string `FLog::DragDetectorLog] DragDetector::updateMouseState LeftMouseUp`, first xref and decompile, from here scroll up till line ~250
 
 ```c
           && (*(unsigned __int8 (__fastcall **)(__int64))(*(_QWORD *)a1 + 712LL))(a1) == 0 )
@@ -80,16 +80,80 @@ so the offset is 0x3BCFAE0
 
 # FireProximityPrompt
 
-"ProximityPrompt_Triggered", first xref will be it
+`proximityPromptOnHeartbeat`, first xref, scroll down till line like 450 idk
 
-```asm
-.rdata:00000000071E8C00 xmmword_71E8C00 xmmword 5F74706D6F72507974696D69786F7250h
-.rdata:00000000071E8C00                                         ; DATA XREF: sub_30CFF60+2B4↑r
-.rdata:00000000071E8C10 qword_71E8C10   dq 6572656767697254h    ; DATA XREF: sub_30CFF60+2BE↑r
-.rdata:00000000071E8C18 byte_71E8C18    db 64h                  ; DATA XREF: sub_30CFF60+2CB↑r
+```c
+                  sub_893A70(a1: &v82, a2: i, a3: v49);
+                  i = (__int64 **)v82.m128i_i64[1];
+                }
+                __unwind
+                {
+                  sub_74E3F0(a1: &v104);
+                }
+              }
+              else
+              {
+                *i = nullptr;
+                v57 = i + 1;
+                i[1] = nullptr;
+                v58 = v49[1];
+                if ( v58 != nullptr )
+                {
+                  _InterlockedIncrement((volatile signed __int32 *)v58 + 2);
+                  i = (__int64 **)v82.m128i_i64[1];
+                  v56 = v105;
+                }
+                *i = *v49;
+                v59 = v49[1];
+                *v57 = v59;
+                i += 2;
+                v82.m128i_i64[1] = (__int64)i;
+              }
+            }
+            if ( v55 != 0 )
+              sub_74CFF0(a1: v56);
+          }
+        }
+        v60 = v82.m128i_i64[0];
+        for ( j = v82.m128i_i64[0]; (__int64 **)j != i; j += 16 )
+        {
+          v62 = *(_QWORD ***)j;
+          *((_DWORD *)v62 + 4) = 0;
+          *(_DWORD *)(*(_QWORD *)j + 20LL) = 2;
+          sub_312C650(a1: (__int64)*v62);
+          sub_312C010(a1: *v62); // <-- FireProximityPrompt
+        }
+      }
+      __unwind
+      {
+        sub_76A810(a1: &v82);
+      }
+      if ( v60 != 0 )
+      {
+        if ( (__int64 **)v60 != i )
+        {
+          do
+          {
+            v63 = *(volatile signed __int32 **)(v60 + 8);
+            if ( v63 != nullptr )
+            {
+              if ( _InterlockedExchangeAdd(v63 + 2, 0xFFFFFFFF) == 1 )
+              {
+                (**(void (__fastcall ***)(volatile signed __int32 *))v63)(a1: v63);
+                if ( _InterlockedExchangeAdd(v63 + 3, 0xFFFFFFFF) == 1 )
+                  (*(void (__fastcall **)(volatile signed __int32 *))(*(_QWORD *)v63 + 8LL))(a1: v63);
+              }
+              i = (__int64 **)v82.m128i_i64[1];
+            }
+            v60 += 16LL;
+          }
+          while ( (__int64 **)v60 != i );
+          v60 = v82.m128i_i64[0];
 ```
 
-offset is 0x30CFF6
+Basically. look for something that has 1 arg after something + 4) = 0, that 4 will prob change, just saying, not proud of that guide but it'll do
+
+offset is 0x312C010
 
 
 rest (such as FireMouseHoverEnter, FireMouseHoverLeave) will be found later since I'm lazy shit
