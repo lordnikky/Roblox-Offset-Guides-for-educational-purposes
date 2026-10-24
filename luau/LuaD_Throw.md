@@ -1,6 +1,6 @@
 # LuaD_Throw
 
-search for string "resulting string too large", first xref decompile:
+search for string `resulting string too large`, first xref decompile:
 
 ```c
       }
