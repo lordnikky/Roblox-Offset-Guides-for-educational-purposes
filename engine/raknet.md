@@ -6,7 +6,7 @@ raknet has been disabled by roblox in favour of rbxtransport, but, raknet still 
 
 # raknetrecieve
 
-search for string `"[DFLog::NetworkTrace] Incoming packet error: length <= 2 || buffe"`, or `"[DFLog::NetworkTrace] Incoming packet error: internalPacket->orde"`, first xref will be it:
+search for string `[DFLog::NetworkTrace] Incoming packet error: length <= 2 || buffe`, or `[DFLog::NetworkTrace] Incoming packet error: internalPacket->orde`, first xref will be it:
 
 ```asm
 .rdata:0000000006E41270 aDflogNetworktr_10 db '[DFLog::NetworkTrace] Incoming packet error: length <= 2 || buffe'
@@ -19,7 +19,7 @@ so the offset is 0x29179F0
 
 # RaknetReportNetworkError
 
-search for string `"ConnectionFailure"` or `"[DFLog::NetworkTrace] reportPerServerMetric::: sc(%s:%d).state ="`, first xref
+search for string `ConnectionFailure` or `[DFLog::NetworkTrace] reportPerServerMetric::: sc(%s:%d).state =`, first xref
 
 ```asm
 .rdata:0000000006FAEFE8 aConnectionfail db 'ConnectionFailure',0
@@ -30,7 +30,7 @@ so the offset is 0x47076E0
 
 # RaknetHandleConnectionState
 
-search for string "updateServerConnectionState", first xref
+search for string `updateServerConnectionState`, first xref
 
 ```asm
 .rdata:0000000006FAE550 aDflogNetworktr_14 db '[DFLog::NetworkTrace] updateServerConnectionState::: sc(%s).old_s'
@@ -39,9 +39,10 @@ search for string "updateServerConnectionState", first xref
 
 # RakNetReliabilityLayerSend
 
-search for string `"[FLog::Network] out of memory in raknet at callsite %ld"`, second xref
+search for string `[FLog::Network] out of memory in raknet at callsite %ld`, second xref
 
-```asm.rdata:0000000006E3E360 aFlogNetworkOut db '[FLog::Network] out of memory in raknet at callsite %ld',0
+```asm
+.rdata:0000000006E3E360 aFlogNetworkOut db '[FLog::Network] out of memory in raknet at callsite %ld',0
 .rdata:0000000006E3E360                                         ; DATA XREF: sub_28F5620+100↑o
 .rdata:0000000006E3E360                                         ; sub_290A2F0+1F↑o
 ```
@@ -116,7 +117,7 @@ but uhh, 13 args check should be more than enough lol
 
 # RakNetSend
 
-search for string `"[FLog::Network] out of memory in raknet at callsite %ld"` and first xref will be it:
+search for string `[FLog::Network] out of memory in raknet at callsite %ld` and first xref will be it:
 
 ```asm
 .rdata:0000000006E3E360 aFlogNetworkOut db '[FLog::Network] out of memory in raknet at callsite %ld',0
@@ -128,7 +129,7 @@ search for string `"[FLog::Network] out of memory in raknet at callsite %ld"` an
 
 # RakPeerProcessNetworkPacket
 
-search for string "RakPeer::ProcessNetworkPacket" first xref will be it
+search for string `RakPeer::ProcessNetworkPacket` first xref will be it
 
 ```asm
 .rdata:0000000006E3D780 aRakpeerProcess db 'RakPeer::ProcessNetworkPacket',0
@@ -140,7 +141,7 @@ so the offset is 0x2901BC0
 
 # UpdateNetworkLoop
 
-search for string `"[FLog::Network] Timed-out: Failed to gracefully end update loop w"` or `"[DFLog::RakNetPktTrace] [%s][%s][ext=%s][%s][drop=%d][%#x][%s]"`, first xref will be it
+search for string `[FLog::Network] Timed-out: Failed to gracefully end update loop w` or `[DFLog::RakNetPktTrace] [%s][%s][ext=%s][%s][drop=%d][%#x][%s]`, first xref will be it
 
 ```asm
 .rdata:0000000006E3E950 aFlogNetworkTim_1 db '[FLog::Network] Timed-out: Failed to gracefully end update loop w' or "
@@ -152,7 +153,7 @@ so the offset is 0x28E7090
 
 # SendPacketsToSelf
 
-search for string `"[FLog::Network] RakPeer::SendPacketsToSelfToUnblockSocketReceiveT"` or just SendPacketsToSelfToUnblockSocketReceiveT in case that doesnt have an xref, first xref will be the offset
+search for string `[FLog::Network] RakPeer::SendPacketsToSelfToUnblockSocketReceiveT` or just `SendPacketsToSelfToUnblockSocketReceiveT` in case that doesnt have an xref, first xref will be the offset
 
 ```asm
 .rdata:0000000006E3E830 aFlogNetworkRak_1 db '[FLog::Network] RakPeer::SendPacketsToSelfToUnblockSocketReceiveT'
@@ -163,7 +164,7 @@ so the offset is 0x28EAF50
 
 # RakPeerReceive
 
-search for string `"[DFLog::RaknetJoinOrDisconnectRequest] RakNet Receiving %s packet"` first xref will be the rakpeerrecieve
+search for string `[DFLog::RaknetJoinOrDisconnectRequest] RakNet Receiving %s packet` first xref will be the rakpeerrecieve
 
 ```asm
 .rdata:0000000006E3ED90 aDflogRaknetjoi db '[DFLog::RaknetJoinOrDisconnectRequest] RakNet Receiving %s packet'
@@ -186,7 +187,7 @@ so the offset is 0x6D03FC8
 
 # convertItemEnumToString
 
-search for string "Stream Prefetch Request Items" first xref will be da needed thing
+search for string `Stream Prefetch Request Items` first xref will be da needed thing
 
 ```asm
 .rdata:0000000007023E20 aStreamPrefetch_0 db 'Stream Prefetch Request Items',0
@@ -198,7 +199,7 @@ so the offset is 0x47C64C0
 
 # RakNetEncrypt
 
-search for string "encryptionResult", first xref do not decompile, scroll up a bit till you see ------:
+search for string `encryptionResult`, first xref do not decompile, scroll up a bit till you see ------:
 
 ```asm
 .text:00000000028B1B26 ; ---------------------------------------------------------------------------
