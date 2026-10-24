@@ -1,6 +1,6 @@
 # Capability
 
-search for string "Cannot require a non-RobloxScript module from a RobloxScript", first xref, decompile:
+search for string `Cannot require a non-RobloxScript module from a RobloxScript`, first xref, decompile:
 
 ```c
     qmemcpy(v155, (const void *)(*(_QWORD *)(a1 + 40) + 48LL), sizeof(v155));
