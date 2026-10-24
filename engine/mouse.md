@@ -151,7 +151,7 @@ so the offset is 0x3BCFAE0
           v60 = v82.m128i_i64[0];
 ```
 
-Basically. look for something that has 1 arg after something + 4) = 0, that 4 will prob change, just saying, not proud of that guide but it'll do
+Basically. look for something that has 1 arg after something + 4) = 0, that 4 will prob change, or idk do your pattern scanning, you'll find it, i believe in you
 
 offset is 0x312C010
 
