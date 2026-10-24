@@ -1,6 +1,6 @@
 # PrintIdentity
 
-search string "Current identity is %d", first xref will be it:
+search string `Current identity is %d`, first xref will be it:
 
 ```asm
 
