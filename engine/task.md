@@ -2,7 +2,7 @@ wont only contain taskdefer but will have bit more stuff
 
 # TaskDefer
 
-Search for string "task.defer is not available for AuroraScripts", first xref will be it
+Search for string `task.defer is not available for AuroraScripts`, first xref will be it
 
 ```asm
 
@@ -16,7 +16,7 @@ so the offset is 0x4319B60
 
 # TaskSpawn
 
-string "task.spawn is not available for AuroraScripts", first xref will be it
+string `task.spawn is not available for AuroraScripts`, first xref will be it
 
 ```asm
 
@@ -30,7 +30,7 @@ so the offset is 0x431A020
 
 # TaskDelay
 
-string "task.delay is not available for AuroraScripts" first xref bla bla, didn't you notice the pattern already lol
+string `task.delay is not available for AuroraScripts` first xref bla bla, didn't you notice the pattern already lol
 
 ```asm
 
@@ -39,13 +39,13 @@ string "task.delay is not available for AuroraScripts" first xref bla bla, didn'
 .rdata:0000000006F7DFE8                                         ; DATA XREF: sub_431A3B0:loc_431A66A↑o
 
 ```
-well also can be found via "task.delay(t, f)"
+well also can be found via `task.delay(t, f)`
 
 so the offset is 0x431A3B0
 
 # TaskWait
 
-string "task.wait is not available for AuroraScripts" first xref, done
+string `task.wait is not available for AuroraScripts` first xref, done
 
 ```asm
 .rdata:0000000006F7DFA8 aTaskWaitIsNotA db 'task.wait is not available for AuroraScripts',0
@@ -58,7 +58,7 @@ sig: 40 53 56 57 48 83 EC 60 48 8B D9
 
 # TaskDesynchronize (TaskDesync)
 
-seach string "task.desynchronize() may only be called from a script that is a d", first xref will be it
+seach string `task.desynchronize() may only be called from a script that is a d`, first xref will be it
 
 ```asm
 .rdata:0000000006F7DBA0 aTaskDesynchron db 'task.desynchronize() may only be called from a script that is a d'
@@ -69,7 +69,7 @@ so the offset is 0x4318F70
 
 # TaskCancel
 
-string "cannot cancel thread", first xref is da offset
+string "`cannot cancel thread`, first xref is da offset
 
 ```asm
 .rdata:0000000007081F58 aCannotCancelTh db 'cannot cancel thread',0
@@ -81,7 +81,7 @@ so the offset is 0x435AE30
 
 # TaskSynchronize (TaskSync)
 
-string "task.synchronize() may only be called from a script that is a descendant of an Actor", first xref
+string `task.synchronize() may only be called from a script that is a descendant of an Actor`, first xref
 
 ```asm
 .rdata:0000000006F7DC20 aTaskSynchroniz db 'task.synchronize() may only be called from a script that is a des'
