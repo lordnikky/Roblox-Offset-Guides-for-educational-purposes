@@ -1,6 +1,6 @@
 # GetFFlag
 
-search for string "= Error-not-set", first xref, scroll up:
+search for string `= Error-not-set`, first xref, scroll up:
 
 ```c
   if ( (unsigned __int8)sub_498CD90(a1: qword_8A927F8, (_DWORD)a2, a3, a4: 127, a5: 0, a6: 0) != 0 )
@@ -48,7 +48,7 @@ sig: 48 89 5C 24 ? 55 56 57 48 83 EC 50 48 8B 05 ? ? ? ? 48 33 C4 48 89 44 24 ? 
 
 # SetFFlag
 
-search for string `"[FLog::FastLogValueChanged] Setting variable {}" or "[FLog::FastLogValueChanged] ...(previously unknown)..."`, first xref will be the setfflag
+search for string `[FLog::FastLogValueChanged] Setting variable {}" or "[FLog::FastLogValueChanged] ...(previously unknown)...`, first xref will be the setfflag
 
 ```asm
 .rdata:0000000006FD61A8 aFlogFastlogval db '[FLog::FastLogValueChanged] Setting variable {}',0
@@ -63,7 +63,7 @@ sig: 48 89 5C 24 ? 55 56 57 41 54 41 55 41 56 41 57 48 8D AC 24 ? ? ? ? 48 81 EC
 
 # FFlagPointer
 searching for like any fflag name will also work, im just using this random one
-search for string "DebugWinDisableUpdates", second xref, decompile:
+search for string `DebugWinDisableUpdates`, second xref, decompile:
 
 ```c
 __int64 sub_729960()
@@ -90,7 +90,7 @@ byte (or qword or unk) that is after a3: will be the offset, 0x848ECA0
 
 # BooleanType
 
-search for string "AnimGraphServerAuthorityNodeIndices", first xref, decompile:
+search for string `AnimGraphServerAuthorityNodeIndices`, first xref, decompile:
 
 ```c
 __int64 sub_1A71B10()
