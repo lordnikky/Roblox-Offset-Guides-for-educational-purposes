@@ -1,6 +1,6 @@
 # GetProperty
 
-search string "Unable to query property {}. It is not scriptable" or "Could not find property descriptor", if first string go to first xref, decompile:
+search string `Unable to query property {}. It is not scriptable` or `Could not find property descriptor`, if first string go to first xref, decompile:
 
 ```c
   if ( *(_DWORD *)(v4 + 472) == 0 )
@@ -113,7 +113,7 @@ LABEL_18:
 
 # GetPropertyData
 
-string "Unable to cast %s to %s", third xref and decompile
+string `Unable to cast %s to %s`, third xref and decompile
 
 ```c
     }
