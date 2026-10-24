@@ -1,6 +1,6 @@
 # lua_error
 
-search for string "stack overflow", firxt xref and decompile:
+search for string `stack overflow`, firxt xref and decompile:
 
 ```c
   sub_2722360(a1, a2: "stack overflow");
