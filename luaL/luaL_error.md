@@ -1,6 +1,6 @@
 # lual_error
 
-string "cannot change a protected metatable", first xref, decompile:
+string `cannot change a protected metatable`, first xref, decompile:
 
 ```c
     sub_2591240(a1, a2: "cannot change a protected metatable");
