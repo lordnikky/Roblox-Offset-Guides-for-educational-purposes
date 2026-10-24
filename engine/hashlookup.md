@@ -1,6 +1,6 @@
 # HashLookUp
 
-search for string "data_model_service_init_part3_begin", first xref, decompile:
+search for string `data_model_service_init_part3_begin`, first xref, decompile:
 
 ```c
                   if ( v181 != 0 )
