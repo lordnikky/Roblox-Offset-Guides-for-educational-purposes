@@ -1,6 +1,6 @@
 # dumpgco
 
-search for string `"{\"type\":\"string\",\"cat\":%d,\"size\":%d,\"data\":\"`, first xref is it 
+search for string `{\"type\":\"string\",\"cat\":%d,\"size\":%d,\"data\":\`, first xref is it 
 
 ```c
 .rdata:0000000007141A58 aTypeStringCatD db '{"type":"string","cat":%d,"size":%d,"data":"',0
