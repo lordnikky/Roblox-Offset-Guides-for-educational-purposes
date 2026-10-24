@@ -38,7 +38,7 @@ offset 0x3A851C0
 
 # ClientSend
 
-"Trying to send on a not ready channel!" 
+`Trying to send on a not ready channel!`
 
 first xref:
 
@@ -183,7 +183,7 @@ LABEL_15:
 # ClientChannelConfig 
 
 
-string "Failed to open send channel {}!", first xref 
+string `Failed to open send channel {}!`, first xref 
 
 ```c
     v3 = sub_3A84FC0(a1: (__int64)v10, a2: v1); // <-- ClientChannelConfig
@@ -223,7 +223,7 @@ string "Failed to open send channel {}!", first xref
 
 # AppSend
 
-string "overflow_size"
+string `overflow_size`
 
 first xref, go to very top, press x on the rva
 
@@ -240,7 +240,7 @@ thats the AppSend
 
 # AppReceive 
 
-string "[DFLog::RbxTransportRnaExpConnection] {}. receivePop. Channel {} not found" or "e object field '{}' is not exported, returning nil." (cuz debug strings can be unreliable), first xref on both
+string `[DFLog::RbxTransportRnaExpConnection] {}. receivePop. Channel {} not found" or "e object field '{}' is not exported, returning nil.` (cuz debug strings can be unreliable), first xref on both
 
 ```asm
 .rdata:0000000006F629F0 aDflogRbxtransp_84 db '[DFLog::RbxTransportRnaExpConnection] {}. receivePop. Channel {} '
@@ -258,7 +258,7 @@ string "[DFLog::RbxTransportRnaExpConnection] {}. receivePop. Channel {} not fou
 
 # AppReceiveMaxBytes 
 
-string "[DFLog::RbxTransportRnaExpConnection] {}. receivePopMaxBytes. channelId {}, maxBytes {}, bytesRead {}" or "[DFLog::RbxTransportRnaExpConnection] {}. receivePopMaxBytes. Channel {} not found" first xref on butt
+string `[DFLog::RbxTransportRnaExpConnection] {}. receivePopMaxBytes. channelId {}, maxBytes {}, bytesRead {}` or `[DFLog::RbxTransportRnaExpConnection] {}. receivePopMaxBytes. Channel {} not found` first xref on butt
 
 ```asm
 .rdata:0000000006F62E90 aDflogRbxtransp_88 db '[DFLog::RbxTransportRnaExpConnection] {}. receivePopMaxBytes. cha'
@@ -275,7 +275,7 @@ string "[DFLog::RbxTransportRnaExpConnection] {}. receivePopMaxBytes. channelId 
 
 # StreamCreate and StreamAppend and StreamDestroy
 
-string "RtcAppConnection::close", first xref
+string `RtcAppConnection::close`, first xref
 
 ```asm
 .rdata:0000000006F62940 aRtcappconnecti_2 db 'RtcAppConnection::close',0
@@ -357,7 +357,7 @@ offset is 0x74FA7C8
 
 # UseRbxTransportClient 
 
-string "UseRbxTransportClient" second xref
+string `UseRbxTransportClient` second xref
 
 ```c
 __int64 sub_3B03190()
@@ -384,7 +384,7 @@ __int64 sub_3B03190()
 
 # FailureFallbackToRbxTransport
 
-string "failureFallbackToRbxTransport", first xref
+string `failureFallbackToRbxTransport`, first xref
 
 ```c
                             v128.m128i_i64[0] = (__int64)"failureFallbackToRbxTransport"; // <-- here
@@ -463,7 +463,7 @@ see that 9 arg function and after if __ != 0? thats the RBXTransportDecrypt
 
 # RBXTransportEncrypt
 
-string "ngtcp2_crypto_generate_retry_token failed: {}" first xref
+string `ngtcp2_crypto_generate_retry_token failed: {}` first xref
 
 ```c
 LABEL_20:
