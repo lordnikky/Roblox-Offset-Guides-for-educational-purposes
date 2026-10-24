@@ -2,7 +2,7 @@
 
 uhhh... what explanation do you expect?
 
-search for string "current identity is"
+search for string `current identity is`
 ```asm
 .rdata:0000000006F78F38 aCurrentIdentit db 'Current identity is %d',0
 .rdata:0000000006F78F38                                         ; DATA XREF: sub_4267C80+B7↑o
