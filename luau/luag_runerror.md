@@ -1,6 +1,6 @@
 # luaG_runerror
 
-search for string "table overflow", any xref works, decompile first for example
+search for string `table overflow`, any xref works, decompile first for example
 
 ```c
         sub_2723350(a1, a2: (__int64)"table overflow", v22);
