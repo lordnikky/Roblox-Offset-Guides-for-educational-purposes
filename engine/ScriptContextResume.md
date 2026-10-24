@@ -1,6 +1,6 @@
 # ScriptContextResume
 
-search string "can't resume script in this context", first xref will be it
+search string `Can't resume script in this context`, first xref will be it
 
 ```asm
 .rdata:0000000006F78978 aCanTResumeScri db 'Can',27h,'t resume script in this context',0
