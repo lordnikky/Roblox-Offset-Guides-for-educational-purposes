@@ -2,7 +2,7 @@
 
 idk if this is any useful but its jsut what i found 
 
-search for string `"Unable to create an Instance of type \"%s\""`
+search for string `Unable to create an Instance of type \"%s\"`
 
 ```asm
 .rdata:0000000006FEA618 aUnableToCreate_2 db 'Unable to create an Instance of type "%s"',0
@@ -15,7 +15,7 @@ so the offset is 0x43297B0
 
 # InstanceFindFirstAncestorImpl
 
-search for string "FindFirstAncestorWhichIsA", first xref will be it:
+search for string `FindFirstAncestorWhichIsA`, first xref will be it:
 
 ```asm
 .rdata:0000000006E04D18 aFindfirstances_1 db 'FindFirstAncestorWhichIsA',0
@@ -27,7 +27,7 @@ so the offset is 0x5AF4E0
 
 # InstanceGetAttribute
 
-search for string `"[DFLog::HugeHugePersistentLog] Part {} is too large, treating as persistent"`, first xref will be it:
+search for string `[DFLog::HugeHugePersistentLog] Part {} is too large, treating as persistent`, first xref will be it:
 
 ```asm
 .rdata:00000000070271F0 aDflogHugehugep db '[DFLog::HugeHugePersistentLog] Part {} is too large, treating as '
@@ -40,7 +40,7 @@ so the offset is 0x48001B0
 
 # InstanceSetAttribute
 
-string "Attempt to assign attribute %s. CoreScript permission required", first xref will be it 
+string `Attempt to assign attribute %s. CoreScript permission required`, first xref will be it 
 
 ```asm
 .rdata:000000000723EE98 aAttemptToAssig db 'Attempt to assign attribute %s. CoreScript permission required',0
@@ -51,7 +51,7 @@ so the offset is 0x1D5AD20
 
 # InstanceFindFirstChild
 
-search for string "FindFirstChild", first xref will be it:
+search for string `FindFirstChild`, first xref will be it:
 
 ```asm
 .rdata:0000000006E04B88 aFindfirstchild_0 db 'FindFirstChild',0 ; DATA XREF: sub_5B2B20:loc_5B2BFF↑o
@@ -63,7 +63,7 @@ so the offset is 0x5B2B20
 
 # InstanceFindFirstChildOfClass
 
-search for string "FindFirstChildOfClass", yeah yeah it'll be first xref bruh:
+search for string `FindFirstChildOfClass`, yeah yeah it'll be first xref bruh:
 
 ```asm 
 .rdata:0000000006E04D38 aFindfirstchild db 'FindFirstChildOfClass',0
@@ -76,7 +76,7 @@ so the offset is 0x5AF750
 
 # InstanceGetChildren
 
-search for string "GetChildren", yup first xref strikes again:
+search for string `GetChildren`, yup first xref strikes again:
 
 ```asm
 .rdata:0000000006E04C80 aGetchildren    db 'GetChildren',0      ; DATA XREF: sub_5B05D0:loc_5B06AF↑o
@@ -88,7 +88,7 @@ so the offset is 0x5B05D0
 
 # InstanceIndex
 
-string "InstanceHandle is not enabled yet!" and guess what, its first xref
+string `InstanceHandle is not enabled yet!` and guess what, its first xref
 
 ```asm
 asm.rdata:0000000006FDDCA0 aInstancehandle_1 db 'InstanceHandle is not enabled yet!',0
