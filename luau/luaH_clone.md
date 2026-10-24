@@ -1,6 +1,6 @@
 # luaH_clone
 
-search for string "table has a protected metatable", second xref and decompile:
+search for string `table has a protected metatable`, second xref and decompile:
 
 ```c
   if ( (unsigned int)sub_2592E80(a1, a2: 1, a3: &qword_6F7DBC8) != 0 ) // <-- hallo zir, you ar here
