@@ -1,6 +1,6 @@
 # FireServer
 
-string "FireServer can only be called from the client", first xref
+string `FireServer can only be called from the client`, first xref
 
 ```asm
 .rdata:0000000007051850 aFireserverCanO db 'FireServer can only be called from the client',0
@@ -12,7 +12,7 @@ offset is 0x34496E0
 
 # FireClient
 
-string "FireClient can only be called from the server"
+string `FireClient can only be called from the server`
 
 ```asm
 .rdata:00000000070517E8 aFireclientCanO db 'FireClient can only be called from the server',0
@@ -24,7 +24,7 @@ string "FireClient can only be called from the server"
 
 # FireAllClients
 
-string "FireAllClients can only be called from the server" first xref
+string `FireAllClients can only be called from the server` first xref
 
 ```asm
 .rdata:0000000007051818 aFireallclients_0 db 'FireAllClients can only be called from the server',0
@@ -36,7 +36,7 @@ string "FireAllClients can only be called from the server" first xref
 
 # InvokeServer
 
-"InvokeServer can only be called from the client"
+`InvokeServer can only be called from the client`
 
 ```asm
 .rdata:000000000705D5F0 aInvokeserverCa db 'InvokeServer can only be called from the client',0
@@ -45,6 +45,8 @@ string "FireAllClients can only be called from the server" first xref
 0x351D380
 
 # InvokeClient
+
+InvokeClient can only be called from the server
 
 ```asm
 .rdata:000000000705D5B0 aInvokeclientCa db 'InvokeClient can only be called from the server',0
