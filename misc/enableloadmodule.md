@@ -1,6 +1,6 @@
 # EnableLoadModule
 
-search for string "EnableLoadModule", second xref:
+search for string `EnableLoadModule`, second xref:
 
 ```c
 __int64 sub_425C270()
