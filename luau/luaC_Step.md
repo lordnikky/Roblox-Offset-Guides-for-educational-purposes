@@ -1,6 +1,6 @@
 # LuaC_Step
 
-search for string "InvalidInstance", second xref, decompile and scroll up until you see that big wall of __int:
+search for string `InvalidInstance`, second xref, decompile and scroll up until you see that big wall of __int:
 
 ```c
   v4 = *(_QWORD *)(a1 + 24);
