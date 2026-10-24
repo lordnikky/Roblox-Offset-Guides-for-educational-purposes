@@ -15,7 +15,7 @@ so the offset is 0x5607560
 
 <summary><b>hi</b></summary>
 
-theres how decompiled function looks
+heres what the decompiled function looks like
 
 ```c
 __int64__fastcall sub_5607560(_QWORD *a1)
