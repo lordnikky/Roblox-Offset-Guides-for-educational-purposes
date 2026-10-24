@@ -1,6 +1,6 @@
 # OpcodeLookUpTable
 
-string "bytecode corrupted" first xref
+string `bytecode corrupted` first xref
 
 decompile it, copy over in notepad and ctrl f for "switch ( byte" or "switch ( qword" or "switch ( unk" wtv 
 
