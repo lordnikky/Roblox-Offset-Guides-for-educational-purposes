@@ -1,6 +1,6 @@
 # newpage
 
-search for string "InvalidInstance", second xref:
+search for string `InvalidInstance`, second xref:
 
 ```asm
 .rdata:0000000006F70EB8 aInvalidinstanc db 'InvalidInstance',0  ; DATA XREF: sub_85B460:loc_85B822↑o
@@ -77,5 +77,3 @@ only second, the sub_873FB0, then in decompiled code scroll to the very botton, 
 ```
 
 so the offset is 0x2728D90
-
-sig: 48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC 30 48 8B F1 49 63 E8 48 8B 49 ? 41 8B F9 48 8B DA 4C 8B CD
