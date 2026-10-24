@@ -1,6 +1,6 @@
 # GetGlobalState
 
-string "The schema may only be set once.", first xref, decompile and scroll up until you see string "Invalid Facet Access"
+string `The schema may only be set once.`, first xref, decompile and scroll up until you see string `Invalid Facet Access`
 ```c
   *(_DWORD *)(a1 + 160) = 1;
   v12 = *(_DWORD *)(a3 + 5448);
