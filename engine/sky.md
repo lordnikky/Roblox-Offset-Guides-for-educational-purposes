@@ -1,6 +1,6 @@
 # CubeTextures
 
-string "AnalyticsPoints" first xref
+string `AnalyticsPoints` first xref
 
 ```asm
 .rdata:000000000700CA58 aAnalyticspoint_1 db 'AnalyticsPoints',0
@@ -11,7 +11,7 @@ offset is 0x2DF6870
 
 # DrawSkyEnv
 
-string "AdvSkyRGBELinearEnvFS"
+string `AdvSkyRGBELinearEnvFS`
 
 ```asm
 .rdata:0000000007076808 aAdvskyrgbeline db 'AdvSkyRGBELinearEnvFS',0
@@ -22,7 +22,7 @@ this shit covers DrawCubeCall, DrawSkyPixel, DrawStars, DrawSun its all handled 
 
 # SkyGroup
 
-string "RenderAdvSkyGroup" first xref
+string `RenderAdvSkyGroup` first xref
 
 ```c
 __int64 sub_374AFC0()
@@ -50,7 +50,7 @@ qword (or byte or unk) after a3:
 
 # SkyThread
 
-"AdvSkyKickWake" first xref
+`AdvSkyKickWake` first xref
 
 ```asm
 .rdata:0000000007076590 aAdvskykickwake db 'AdvSkyKickWake',0   ; DATA XREF: sub_3744320+1F2↑o
