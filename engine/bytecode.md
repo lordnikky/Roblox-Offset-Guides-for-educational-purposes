@@ -2,7 +2,7 @@ stuff used in bytecode signing or something, dont really know lol
 
 # native::destroystring
 
-string "doNotFallbackToBaselineRepresentation" first xref decompile and scroll to the very end
+string `doNotFallbackToBaselineRepresentation` first xref decompile and scroll to the very end
 
 ```c
   LOBYTE(v86[0]) = 0;
@@ -31,7 +31,7 @@ yeah these 12 of same rva's are the native:destroystring
 
 # native::verify
 
-string `"%s: bytecode type version mismatch (expected [%d..%d], got %d)"` first xref
+string `%s: bytecode type version mismatch (expected [%d..%d], got %d)` first xref
 
 ```c
         ++v15;
