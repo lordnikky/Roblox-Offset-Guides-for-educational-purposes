@@ -1,4 +1,4 @@
-# LuaStatus
+# getLuauSecurityFlags
 
 apparently it's an offset and idk if its any useful but i'll add it because i can
 
@@ -23,7 +23,7 @@ LABEL_52:
         v49 = (_DWORD *)sub_31EFFF0(a1: v12);
         if ( v49 != nullptr )
         {
-          sub_425F880(a1: v49, a2: &v55); // <-- Lua Status
+          sub_425F880(a1: v49, a2: &v55); // <-- getLuauSecurityFlags
           *(_DWORD *)(a1 + 96) = v55;
         }
 LABEL_59:
