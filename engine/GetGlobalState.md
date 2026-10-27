@@ -1,6 +1,6 @@
 # GetGlobalState
 
-string `The schema may only be set once.`, first xref, decompile and scroll up until you see string `Invalid Facet Access`
+string `The schema may only be set once.`, first xref, decompile and scroll up until you see second string `Invalid Facet Access`
 ```c
   *(_DWORD *)(a1 + 160) = 1;
   v12 = *(_DWORD *)(a3 + 5448);
@@ -71,22 +71,21 @@ string `The schema may only be set once.`, first xref, decompile and scroll up u
 you saw the comments, double click that rva and in that function scroll down until you see invalid facet access, first one
 
 ```c
-          v99 = -408;
-        if ( *(int *)(v99 + 5448) >= 3 )
+        v90 = a1 - 2688;
+        if ( v10 == 0 )
+          v90 = -376;
+        if ( *(int *)(v90 + 5704) >= 3 )
+          sub_4A1E8B0(a1: 0, a2: "Invalid Facet Access"); // <-- search for this
+        v14 = sub_41D0080(a1: v90); // <-- getglobalstate
+        v229 = 0;
+        v91 = v217;
+        if ( *(_BYTE *)(v217 + 24) != 0 )
         {
-          __wind
-          {
-            sub_4AA5F60(a1: 0, a2: (__int64)"Invalid Facet Access"); // <-- search for this
-          }
-          __unwind
-          {
-            sub_4AA5ED0();
-          }
+          qmemcpy(v228, (const void *)v217, sizeof(v228));
+          *(_QWORD *)(v217 + 8) = 0;
+          *(_QWORD *)(v91 + 16) = 0;
+          v229 = 1;
         }
-        v15 = sub_425F7A0(a1: v99); // <-- getglobalstate
-        v228 = 0;
-        v100 = v212;
-        if ( *(_BYTE *)(v212 + 24) != 0 )
 ```
 
 
