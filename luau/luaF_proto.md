@@ -1,80 +1,170 @@
-heyy i finally found good string anchor, even tho its a bit of a pain cuz decompiling 8k lines of code thats the best one i could find :/
+sigh, they changed it again.
 
 # luaF_FreeProto
 
-search for string `Failed to create Lua state`, first xref, decompile:
+NO STRING, take luaC_step offset, without it you can't proceed (i have guide on it), decompile luaC_step
 
 ```c
-  if ( a4 == 0 )
-    v8 = dword_85C4D88;
-  *v7 = v8;
-  v9 = sub_2662670(a1: sub_427CD10);
-  v983 = v9;
-  if ( v9 == 0 )
-    sub_4960E00(a1: "Failed to create Lua state"); // <-- you're here
-  if ( byte_7D64880 == 0 ) // <-- double click this
-    goto LABEL_22;
-  v10 = (_QWORD *)sub_4943800(a1: 0x58u);
-  if ( v10 == nullptr )
+  int v30; // ecx
+  double v31; // xmm2_8
+  double v32; // xmm1_8
+  __int64 v33; // rcx
+  double v34; // xmm0_8
+  unsigned __int64 v35; // rax
+  void (__fastcall *v36)(__int64, _QWORD); // rax
+
+  v2 = *(_QWORD *)(a1 + 56);
+  v5 = *(_QWORD *)(v2 + 80) - *(_QWORD *)(v2 + 72);
+  v6 = *(void (__fastcall **)(__int64, _QWORD))(v2 + 1640);
+  v7 = *(_DWORD *)(v2 + 68) * *(_DWORD *)(v2 + 64) / 100;
+  if ( v6 != nullptr )
+    v6(a1, a2: 0);
+  if ( *(_BYTE *)(v2 + 57) == 0 )
   {
-    sub_7BADF0(a1: v1093);
-    throw (std::bad_alloc *)v1093;
+    v8 = sub_2646D70();
+    v9 = *(_BYTE *)(v2 + 57) == 0;
+    *(double *)(v2 + 21872) = v8;
+    if ( v9 )
+    {
+      v10 = sub_2646D70();
+      *(double *)(v2 + 22176) = v10;
+      *(double *)(v2 + 22168) = v10 - *(double *)(v2 + 21960);
+    }
+  }
+  v11 = sub_2646D70();
+  if ( a2 != 0 && v5 * *(int *)(v2 + 68) / 0x64 > v7 )
+    v7 = v5 * *(int *)(v2 + 68) / 0x64;
+  v12 = *(unsigned __int8 *)(v2 + 57);
+  v13 = sub_26158C0(a1, a2: v7); // <-- find this
+  v14 = sub_2646D70() - v11;
+  if ( v12 != 0 )
+  {
+    if ( v12 != 1 && v12 != 2 )
+    {
+      if ( v12 == 3 )
+      {
+        *(double *)(v2 + 22248) = v14 + *(double *)(v2 + 22248);
+      }
+      else if ( v12 == 4 )
+      {
+        *(_QWORD *)(v2 + 22328) += v13;
+        *(double *)(v2 + 22296) = v14 + *(double *)(v2 + 22296);
+        if ( a2 != 0 )
 ```
 
-double click the thing under the string:
-
-```asm
-.data:0000000007D64880 byte_7D64880    db 0                    ; DATA XREF: sub_604660+E↑o
-.data:0000000007D64880                                         ; sub_26822A0:loc_26825AA↑r ...
-```
-
-second xref, decompile, scroll to the end:
+basically, look for scond rva that is above != 0 and above if block, then, double click that, in that function scroll till the very end
 
 ```c
-        v8 = v30 + 8;
-        return sub_269C8B0(a1, (_DWORD)a2, a3: v8, a4: a2[2], a5: a3);
-      }
-    case 0xCu:
-      v31 = *((_QWORD *)a2 + 4);
-      if ( v31 != 0 )
-        sub_269C800(a1, a2: v31, a3: 16LL * (unsigned int)(*((_DWORD *)a2 + 19) - *((_DWORD *)a2 + 18)), a4: a2[2]);
-      v32 = *((_QWORD *)a2 + 6);
-      if ( v32 != 0 )
-        sub_269C800(a1, a2: v32, a3: 8LL * *((unsigned int *)a2 + 19), a4: a2[2]);
-      v8 = 88;
-      return sub_269C8B0(a1, (_DWORD)a2, a3: v8, a4: a2[2], a5: a3);
-    case 0xDu:
-      sub_269C800(a1, a2: *((_QWORD *)a2 + 4), a3: 16LL * *((unsigned int *)a2 + 6), a4: a2[2]);
-      goto LABEL_60;
-    case 0xFu:
-      return sub_2698550(a1, (__int64)a2, a3); // <-- luaF_FreeProto
-    case 0x10u:
-LABEL_60:
-      v8 = 40;
-      return sub_269C8B0(a1, (_DWORD)a2, a3: v8, a4: a2[2], a5: a3);
-    default:
-      return (unsigned int)*a2 - 5;
+            do
+            {
+              if ( v4 >= a2 )
+                break;
+              v15 = *(_QWORD *)(v2 + 104);
+              v16 = *(_QWORD *)(v15 + 8);
+              v4 += (int)(16 * sub_2616270(a1, a2: v15)); // <-- or this
+              *(_QWORD *)(v2 + 104) = v16;
+            }
+            while ( v16 != 0 );
+          }
+          for ( i = *(_QWORD *)(v2 + 1192); i != 0; *(_QWORD *)(v2 + 1192) = i )
+          {
+            if ( v4 >= a2 )
+              break;
+            v18 = *(_QWORD *)(v2 + 1192);
+            i = *(_QWORD *)(v18 + 8);
+            v4 += (int)(16 * sub_2616270(a1, a2: v18)); // <-- double click this
+          }
+          if ( *(_QWORD *)(v2 + 104) == 0 && i == 0 )
+          {
+LABEL_33:
+            **(_BYTE **)(v2 + 112) = **(_BYTE **)(v2 + 112) & 0xF8 | *(_BYTE *)(v2 + 56) & 3;
+            sub_2614940(a1);
+            *(_BYTE *)(v2 + 57) = 0;
+            if ( byte_8043170 != 0 )
+            {
+              v19 = *(void (__fastcall **)(_QWORD))(v2 + 1824);
+              if ( v19 != nullptr )
+                v19(a1: *(_QWORD *)(v2 + 112));
+            }
+          }
+        }
+        break;
+      default:
+        break;
+    }
   }
-  while ( (unsigned __int8 *)v14 != a2 )
+  else
+  {
+    sub_2615010(a1);
+  }
+  return v4;
+```
+
+function with 2 args above == 0 && i == 0 ) and under >= a2, double click, again, scroll till the end
+
+```c
+LABEL_10:
+    v10 += v5;
+    if ( v10 == v11 )
+    {
+      LODWORD(v9) = v16;
+      LODWORD(v3) = v5;
+      return (unsigned int)(((int)v11 - (int)v9) / (int)v3);
+    }
+  }
+  if ( ((*v10 ^ 3) & v14) != 0 )
+  {
+    *v10 = v13 | *v10 & 0xF8;
+    goto LABEL_10;
+  }
+  sub_26143E0(a1, a2: (__int64)v10, a3: a2);
+  if ( --v8 != 0 )
+    goto LABEL_10;
+  return (unsigned int)(((int)v10 - v16) / (int)v5 + 1);
+```
+
+the last rva, double click that (literally last rva sub_26143E0), in that function, scroll till the end, look for case 0xF above case 0x10
+
+```c
+      v8 = 112;
+      return sub_2645690(a1, a2, a3: v8, a4: *(unsigned __int8 *)(a2 + 2), a5: a3);
+    case 0xD:
+      v31 = *(_QWORD *)(a2 + 32);
+      if ( v31 != 0 )
+        sub_26455E0(a1, a2: v31, a3: 16LL * *(unsigned int *)(a2 + 24), a4: *(unsigned __int8 *)(a2 + 2));
+      goto LABEL_53;
+    case 0xE:
+      return result;
+    case 0xF:
+      return sub_261D6B0(a1, a2, a3); // <-- LUAF FREE PROTO
+    case 0x10:
+LABEL_53:
+      v8 = 40;
+      return sub_2645690(a1, a2, a3: v8, a4: *(unsigned __int8 *)(a2 + 2), a5: a3);
+    default:
+      return (unsigned int)*(unsigned __int8 *)(a2 + 1) - 5;
+  }
+  while ( v14 != a2 )
   {
     v13 = (__int64 *)(v14 + 8);
     v14 = *(_QWORD *)(v14 + 8);
     if ( v14 == 0 )
-      goto LABEL_24;
+      goto LABEL_23;
   }
   *v13 = *(_QWORD *)(v14 + 8);
-  --*(_DWORD *)(*(_QWORD *)(a1 + 24) + 28LL);
-LABEL_24:
-  v15 = *((_WORD *)a2 + 2) - ((*((_WORD *)a2 + 2) >> 1) & 0x5555);
+  --*(_DWORD *)(*(_QWORD *)(a1 + 56) + 8LL);
+LABEL_23:
+  v15 = *(_WORD *)(a2 + 4) - ((*(_WORD *)(a2 + 4) >> 1) & 0x5555);
   v16 = (unsigned __int16)((v15 & 0x3333) + ((v15 >> 2) & 0x3333));
   if ( (unsigned __int16)((257 * (((unsigned __int16)v16 + (unsigned __int16)(v16 >> 4)) & 0xF0F)) >> 8) < 8u )
-    *(_DWORD *)(*(_QWORD *)(a1 + 24) + 1584LL) &= ~0x20000000u;
-  v8 = *((_DWORD *)a2 + 5) + 25;
-  return sub_269C8B0(a1, (_DWORD)a2, a3: v8, a4: a2[2], a5: a3);
-}
+    *(_DWORD *)(*(_QWORD *)(a1 + 56) + 1576LL) &= ~0x20000000u;
+  v8 = *(_DWORD *)(a2 + 20) + 25;
+  return sub_2645690(a1, a2, a3: v8, a4: *(unsigned __int8 *)(a2 + 2), a5: a3);
 ```
 
-you dont need to scroll, when u decompile the code that string will be the last string ull see on your monitor (unless you have like big ass monitor idfk)
+so after all of this, you were able to find luaF_freeproto. Good job, and if you failed to, just dm me idfk
+
+so the offset is 0x261D6B0
 
 <details>
 <summary><b>verify</b></summary>
