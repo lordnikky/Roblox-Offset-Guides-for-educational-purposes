@@ -240,7 +240,7 @@ thats the AppSend
 
 # AppReceive 
 
-string `[DFLog::RbxTransportRnaExpConnection] {}. receivePop. Channel {} not found" or "e object field '{}' is not exported, returning nil.` (cuz debug strings can be unreliable), first xref on both
+string `[DFLog::RbxTransportRnaExpConnection] {}. receivePop. Channel {} not found` or `"e object field '{}' is not exported, returning nil.` (cuz debug strings can be unreliable), first xref on both
 
 ```asm
 .rdata:0000000006F629F0 aDflogRbxtransp_84 db '[DFLog::RbxTransportRnaExpConnection] {}. receivePop. Channel {} '
