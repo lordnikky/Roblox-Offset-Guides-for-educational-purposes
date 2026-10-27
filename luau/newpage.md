@@ -1,79 +1,47 @@
 # newpage
 
-search for string `InvalidInstance`, second xref:
-
-```asm
-.rdata:0000000006F70EB8 aInvalidinstanc db 'InvalidInstance',0  ; DATA XREF: sub_85B460:loc_85B822↑o
-.rdata:0000000006F70EB8                                         ; sub_873FB0:loc_874987↑o ...
-.rdata:0000000006F70EC8 word_6F70EC8    dw 766Bh                ; DATA XREF: sub_419A630+91B↑r
-.rdata:0000000006F70ECA byte_6F70ECA    db 73h                  ; DATA XREF: sub_419A630+926↑r
-```
-
-only second, the sub_873FB0, then in decompiled code scroll to the very botton, so, when you're at the very bottom, scroll up until you see byte___ < 0, that will be your anchor:
+search for string `ipairs`, first  xref:
 
 ```c
-  v8 = *(unsigned __int8 *)(a1 + 4);
-  v9 = *(_QWORD *)(a1 + 24);
-  if ( byte_7C50E50 < 0 )
+  sub_260D690(a1, a2: v70, a3: &v254, a4: v78);
+  *(_QWORD *)(a1 + 72) -= 16LL;
+  sub_26426C0(a1, a2: "ipairs", a3: sub_26413D0, a4: sub_2641170);
+  sub_26426C0(a1, a2: "pairs", a3: sub_2641010, a4: sub_2640A50);
+  if ( *(_QWORD *)(*(_QWORD *)(a1 + 56) + 80LL) >= *(_QWORD *)(*(_QWORD *)(a1 + 56) + 72LL) )
+    sub_2615BD0(a1, a2: 1);
+  if ( (*(_BYTE *)a1 & 4) != 0 )
   {
-    v15 = sub_2728D90(a1, a2: (_QWORD **)(v9 + 792), a3: 112, a4: 48, a5: 1); // <-- newpage (sub_2728D90)
-    v13 = v15 + 16;
-    v15[12] -= v15[9];
-    ++v15[13];
+    v79 = *(_QWORD *)(a1 + 56);
+    *(_BYTE *)a1 &= ~4u;
+    *(_QWORD *)(a1 + 40) = *(_QWORD *)(v79 + 32);
+    *(_QWORD *)(v79 + 32) = a1;
+  }
+  if ( (unsigned __int64)(*(_QWORD *)(a1 + 72) + 16LL) > *(_QWORD *)(*(_QWORD *)(a1 + 48) + 24LL)
+    && (unsigned int)sub_25F0900((_QWORD *)a1, a2: 1) == 0 )
+  {
+    goto LABEL_380;
+  }
+  v80 = *(_QWORD *)(a1 + 48);
+  if ( v80 == *(_QWORD *)(a1 + 24) )
+    v81 = *(_QWORD *)(a1 + 128);
+  else
+    v81 = *(_QWORD *)(**(_QWORD **)(v80 + 8) + 16LL);
+  v103 = *(unsigned __int8 *)(a1 + 4);
+  v104 = *(_QWORD *)(a1 + 56);
+  if ( byte_8043340 < 0 )
+  {
+    v110 = sub_2645BD0(a1, a2: (_QWORD **)(v104 + 88), a3: 112, a4: 48, a5: 1); // <-- newpage
+    v108 = v110 + 16;
+    v110[12] -= v110[9];
+    ++v110[13];
   }
   else
   {
-    v10 = (__int64 *)(v9 + 464 + 8LL * byte_7C50E50);
-    v11 = *v10;
-    if ( *v10 == 0 )
-      v11 = sub_2728C80(a1, a2: v9 + 464, a3: v9 + 792);
-    v12 = *(int *)(v11 + 48);
-    if ( (int)v12 < 0 )
-    {
-      v13 = *(_DWORD **)(v11 + 40);
-      *(_QWORD *)(v11 + 40) = *((_QWORD *)v13 + 1);
-    }
-    else
-    {
-      v13 = (_DWORD *)(v12 + v11 + 64);
-      LODWORD(v12) = v12 - *(_DWORD *)(v11 + 36);
-      *(_DWORD *)(v11 + 48) = v12;
-    }
-    ++*(_DWORD *)(v11 + 52);
-    if ( *(_QWORD *)(v11 + 40) == 0 && (int)v12 < 0 )
-    {
-      *v10 = *(_QWORD *)(v11 + 24);
-      v14 = *(_QWORD *)(v11 + 24);
-      if ( v14 != 0 )
-        *(_QWORD *)(v14 + 16) = 0;
-      *(_QWORD *)(v11 + 24) = 0;
-    }
-  }
-  if ( v13 == nullptr )
-    goto LABEL_133;
-  *(_QWORD *)(v9 + 88) += 48LL;
-  *(_QWORD *)(v9 + 8 * v8 + 11696) += 48LL;
-  v16 = *(void (__fastcall **)(__int64, _DWORD *, _QWORD, __int64, int, int, _DWORD))(v9 + 1672);
-  if ( v16 != nullptr )
-  {
-    LOBYTE(v75) = v8;
-    v16(a1, a2: v13, a3: 0, a4: 48, a5: v75, a6: 7, a7: 0);
-  }
-  *(_BYTE *)v13 = *(_BYTE *)(*(_QWORD *)(a1 + 24) + 72LL) & 3;
-  *((_BYTE *)v13 + 2) = 7;
-  *((_BYTE *)v13 + 1) = *(_BYTE *)(a1 + 4);
-  *((_QWORD *)v13 + 2) = 0;
-  *(_WORD *)((char *)v13 + 3) = 255;
-  *((_QWORD *)v13 + 3) = 0;
-  *((_QWORD *)v13 + 1) = 0;
-  *((_WORD *)v13 + 3) = 0;
-  *((_BYTE *)v13 + 5) = 0;
-  *((_QWORD *)v13 + 5) = &unk_63CAB08;
-  *(_QWORD *)v7 = v13;
-  *(_DWORD *)(v7 + 12) = 7;
-  *(_QWORD *)(a1 + 40) += 16LL;
-  return 1;
-}
+    v105 = *(_QWORD *)(v104 + 480 + 8LL * byte_8043340);
+    v106 = (_QWORD *)(v104 + 480 + 8LL * byte_8043340);
+    if ( v105 == 0 )
 ```
 
-so the offset is 0x2728D90
+so basically, at that string look down and look for byte_ < =, after it newpage will be called
+
+so the offset is 0x2645BD0
