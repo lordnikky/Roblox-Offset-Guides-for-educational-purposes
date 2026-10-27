@@ -2,17 +2,18 @@
 
 string `bytecode corrupted` first xref
 
-decompile it, copy over in notepad and ctrl f for "switch ( byte" or "switch ( qword" or "switch ( unk" wtv 
+decompile it, copy over in notepad and ctrl f for `& 0xFFFFFF00`
 
 ```c
-        {
-          v153 = *v152 & 0xFFFFFF00 | byte_71433E0[(unsigned __int8)*v152];
-          *v152 = v153;
-          switch ( byte_7144260[(unsigned __int8)v153] )
-          {
-            case 7:
-            case 8:
-
+              do
+              {
+                v149 = *v148 & 0xFFFFFF00 | byte_71CFBA0[(unsigned __int8)*v148]; // <-- here
+                *v148 = v149;
+                v148 += (int)sub_265AB70(a1: byte_71D0CF0[(unsigned __int8)v149]);
+              }
+              while ( (unsigned __int64)v148 < *(_QWORD *)(v126 + 136) + 4LL * *(int *)(v126 + 184) );
+              v148 = *(unsigned int **)(v126 + 136);
+            }
 ```
 
-that byte is the opcodelookuptable 0x7144260
+that byte (or wtv it is) is the opcodelookuptable 0x71CFBA0
