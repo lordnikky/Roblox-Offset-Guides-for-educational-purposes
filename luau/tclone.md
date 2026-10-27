@@ -43,5 +43,3 @@ __int64__fastcall sub_5607560(_QWORD *a1)
 ```
 
 </details>
-
-sig: 40 53 48 83 EC 30 48 8B 41 ? 48 8B D9 48 3B 41
