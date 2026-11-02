@@ -10,7 +10,7 @@ search for string `{\"type\":\"string\",\"cat\":%d,\"size\":%d,\"data\":\`, firs
 .rdata:0000000007141A88                                         ; sub_37B3610+440↑o ...
 ```
 
-so the offset is sub_27261C0
+so the offset is 0x2659700
 
 sig: 48 89 5C 24 ? 57 48 83 EC 20 48 8D 15
 
