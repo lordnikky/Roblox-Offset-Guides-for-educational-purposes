@@ -82,3 +82,5 @@ that number is not full realdatamodel, you have to take that number and add 8 to
 <img width="320" height="264" alt="image" src="https://github.com/user-attachments/assets/8d28c40c-4354-4ba0-8924-3e97a49d6e05" />
 
 :D
+
+**special thanks to amk_server (1542449003751411722) and proohio (994616269624062052) for teaching me this, people like them keep this repository great!!!!!!!!**
