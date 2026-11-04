@@ -87,21 +87,29 @@ right above that string there's if statement, at the end of it there's number, p
 same string, second xref 
 
 ```c
-__int64 __fastcall sub_188B1A0(__int64 a1)
+__int64 __fastcall sub_183DB10(__int64 a1)
 {
-  __int64 v1; // r8
-  __int64 v2; // rdx
-  __int64 v3; // rcx
+  __int64 result; // rax
+  __int64 v2; // r8
+  __int64 v3; // r8
+  __int64 v4; // rdx
+  __int64 v5; // rcx
 
-  v1 = *(_QWORD *)(*(_QWORD *)(a1 + 32) + 384LL);
-  v2 = *(_QWORD *)(*(_QWORD *)(a1 + 16) + 384LL);
-  if ( v2 == 0 || v1 == 0 || (v3 = *(_QWORD *)(v2 + 512)) != *(_QWORD *)(v1 + 512) )
-    sub_49DDC40(a1: "new overlap in different world", a2: &lParam);
-  return sub_15205C0(a1: v3, a2: v2, a3: v1, a4: 0, a5: 1);
+  if ( byte_8159CC8 == 0
+    || (result = *(_QWORD *)(a1 + 16), (v2 = *(_QWORD *)(*(_QWORD *)(result + 376) + 0x200LL)) != 0)
+    && (result = *(_QWORD *)(a1 + 32), v2 == *(_QWORD *)(*(_QWORD *)(result + 0x178) + 0x200LL)) )
+  {
+    v3 = *(_QWORD *)(*(_QWORD *)(a1 + 32) + 376LL);
+    v4 = *(_QWORD *)(*(_QWORD *)(a1 + 16) + 376LL);
+    if ( v4 == 0 || v3 == 0 || (v5 = *(_QWORD *)(v4 + 512)) != *(_QWORD *)(v3 + 512) )
+      sub_4AF8A80(a1: "new overlap in different world", a2: &lParam, a3: v3);
+    return sub_14B6AE0(a1: v5, a2: v4, a3: v3, a4: 0, a5: 1);
+  }
+  return result;
 }
 ```
 
-see that 2 first lines with numbers at the end? that's your Primitive, so its 0x180
+see that 2 first lines with numbers at the end? that's your Primitive, so its 0x178
 
 
 
