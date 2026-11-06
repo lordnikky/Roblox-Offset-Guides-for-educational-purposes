@@ -5,9 +5,7 @@ Repository with various Roblox offset guides, explaining how to find them and wh
 
 **NOTE**: I use community driven offset names, so if something is named weirdly, or doesn't match the function it is NOT my fault, I simply make guides, but I don't make up the names.
 
-**Working for version-5a21b87bbc2641cf** (latest)
-
-**Not updated to the future version. Only for the latest.**
+**Not updated to version-f0ea5da9412f4e35** (latest) **Issues may occure**
 
 # DISCLAIMER
 
