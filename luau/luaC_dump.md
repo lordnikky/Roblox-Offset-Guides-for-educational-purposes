@@ -1,4 +1,4 @@
-# luaC_dump.md
+# luaC_dump
 
 string `\"0\":{\"type\":\"userdata\",\"cat\":0,\"size\":0}\n`, first xref, well, thats all
 
