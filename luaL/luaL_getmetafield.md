@@ -1,4 +1,4 @@
-# luaL_argcheck
+# luaL_getmetafield
 
 search for string `cannot change a protected metatable`, first xref decompile:
 
