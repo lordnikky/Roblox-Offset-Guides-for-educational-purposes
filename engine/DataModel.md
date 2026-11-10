@@ -6,49 +6,51 @@
 string `"[FLog::BrowserServiceDiagnose] BrowserServiceDiagnose RbxEmbeddedWebViewIE::Invoke signalJavaScriptCallback %s"`, first xref
 
 ```c
-      v11 = *(_OWORD *)&qword_8165CE8;
-      sub_4AA6E30(
-        a1: &v11,
+      if ( v17 >= 0x10 )
+        v6 = (_QWORD *)v16[0];
+      v14 = *(_OWORD *)&qword_8250CB8;
+      sub_4B50A20(
+        a1: &v14,
         a2: "[FLog::BrowserServiceDiagnose] BrowserServiceDiagnose RbxEmbeddedWebViewIE::Invoke signalJavaScriptCallback %s",
         a3: v6);
     }
-    v7 = sub_4D543B0();
-    sub_7693C0(a1: v12, a2: v13);
+    v7 = sub_4E50F50();
+    v8 = sub_738FE0(a1: v15, a2: v16);
+    sub_4E52DD0(a1: v7, a2: v8);
 ```
 
 sub after the string, double click it
 
 ```c
-void *sub_4D543B0()
+void *sub_4E50F50()
 {
-  _DWORD *v0; // rdi
-
-  v0 = (_DWORD *)(*(_QWORD *)NtCurrentTeb()->ThreadLocalStoragePointer + 32LL);
-  if ( dword_8F59800 > *v0 )
+  if ( dword_8F8E958 > *(_DWORD *)(*(_QWORD *)NtCurrentTeb()->ThreadLocalStoragePointer + 40LL) )
   {
-    sub_1270(a1: &dword_8F59800);
-    if ( dword_8F59800 == -1 )
+    sub_12E0(a1: &dword_8F8E958);
+    if ( dword_8F8E958 == -1 )
     {
-      sub_4D53AF0(a1: &unk_8F59808); // <-- take this
-      atexit(a1: sub_641DBE0);
-      sub_1350(a1: &dword_8F59800);
+      sub_4E50630(a1: &unk_8F8E960); // <-- or this
+      sub_5FCBC50(a1: sub_6601650);
+      sub_14F0(a1: &dword_8F8E958);
     }
   }
-  if ( dword_8F59A28 <= *v0 )
-    return &unk_8F59808; // <-- or this
-  sub_1270(a1: &dword_8F59A28);
-  if ( dword_8F59A28 != -1 )
-    return &unk_8F59808; // <-- or even this
-  sub_4D53AF0(a1: &unk_8F59A30);
-  atexit(a1: sub_641DBD0);
-  sub_1350(a1: &dword_8F59A28);
-  return &unk_8F59808; // <-- or also this...
+  if ( dword_8F8EBE8 > *(_DWORD *)(*(_QWORD *)NtCurrentTeb()->ThreadLocalStoragePointer + 40LL) )
+  {
+    sub_12E0(a1: &dword_8F8EBE8);
+    if ( dword_8F8EBE8 == -1 )
+    {
+      sub_4E50630(a1: &unk_8F8EBF0);
+      sub_5FCBC50(a1: sub_6601640);
+      sub_14F0(a1: &dword_8F8EBE8);
+    }
+  }
+  return &unk_8F8E960; // <-- use this
 }
 ```
 
 easiest pattern is just to look for <= *v_
 
-so, take that rva, yes 0x8F59808 and just add 8 to it
+so, take that rva, yes 0x8F8E960 and just add 8 to it
 
 <img width="325" height="506" alt="image" src="https://github.com/user-attachments/assets/19cce983-3dea-4213-bb71-2d6bd2e03567" />
 
