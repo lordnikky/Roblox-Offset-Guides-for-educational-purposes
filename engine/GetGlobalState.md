@@ -2,90 +2,53 @@
 
 string `The schema may only be set once.`, first xref, decompile and scroll up until you see second string `Invalid Facet Access`
 ```c
-  *(_DWORD *)(a1 + 160) = 1;
-  v12 = *(_DWORD *)(a3 + 5448);
-  if ( v12 >= 3 )
-  {
-    __wind
-    {
-      sub_4AA5F60(a1: 0, a2: (__int64)"Invalid Facet Access"); // <-- scroll until this
-    }
-    __unwind
-    {
-      sub_4AA5ED0();
-    }
+    *(_QWORD *)&v78 = 21;
+    *((_QWORD *)&v78 + 1) = 31;
+    strcpy(v12, "ScriptContext is null");
+    *(_QWORD *)&v77 = v12;
+    *(_DWORD *)a2 = 1;
+    *(_OWORD *)(a2 + 8) = v77;
+    *(_OWORD *)(a2 + 24) = v78;
+    *(__m128i *)(a2 + 40) = v79;
+    return a2;
   }
-  __eh34_enter_wind_state(0, 6);
-  try
+  *(_DWORD *)(a1 + 160) = 1;
+  if ( *(int *)(a3 + 5712) >= 3 )
+    sub_4B4F960(a1: 0, a2: "Invalid Facet Access"); // <-- stop when u see this
+  v61 = 0;
+  v60 = &RBX::Lua::WeakThreadRef::`vftable';
+  v62 = 0;
+  v58 = (__m128i *)v74;
+  v64 = 0;
+  v74[24] = 0;
+  v13 = (_QWORD *)(*(__int64 (__fastcall **)(_QWORD, _QWORD *))(*(_QWORD *)*a5 + 176LL))(a1: *a5, a2: v80);
+  v14 = v13;
+  if ( v13[3] >= 0x10u )
+    v14 = (_QWORD *)*v13;
+  v72 = sub_42D27D0(a1: a3); 
+  v73 = 0;
+  v15 = sub_4386EF0(a1: a3 + 2648, a2: v65, a3: &v72, a4, a5: v14, a6, a7: &v64, a8: v74, a9: 0); // <-- double click this
+  sub_428D8B0(a1: &v60, a2: v15);
+  v65[0] = &RBX::Lua::WeakThreadRef::`vftable'; // <-- look down for this
+  v16 = sub_428D1C0(a1: v65);
+  if ( v16 != 0 )
   {
-    __wind
-    {
-      __wind
-      {
-        v13 = a3 + 2440;
-        v75 = 0;
-        v74 = &RBX::Lua::WeakThreadRef::`vftable';
-        v76 = 0;
-        v78 = (__m128i *)v93;
-        v84 = 0;
-        v93[24] = 0;
-        v14 = (__int64 *)(*(__int64 (__fastcall **)(__int64, _QWORD *))(*(_QWORD *)*a5 + 176LL))(a1: *a5, a2: v99);
-        v15 = (__int64)v14;
-        if ( (unsigned __int64)v14[3] >= 0x10 )
-          v15 = *v14;
-        __wind
-        {
-          v16 = sub_425E0F0(a1: v73);
-        }
-        __unwind
-        {
-          sub_7691D0(a1: v99);
-        }
-      }
-      __unwind
-      {
-        sub_425C570(a1: v78);
-      }
-      __wind
-      {
-        v90 = v16;
-        v91 = 0;
-        v92 = 0;
-        v17 = sub_430D730( // <-- this has to be double clicked
-                a1: v13,
-                a2: (__int64)&v80,
-                a3: (__int64)&v90,
-                a4,
-                a5: v15,
-                a6,
-                a7: (__int64)&v84,
-                a8: (__int64)v93);
-        sub_4222FB0(a1: &v74, a2: v17);
-        v80 = &RBX::Lua::WeakThreadRef::`vftable'; // <-- look down until SECOND weakthreadref
-        v18 = v82;
-        if ( v82 != 0 )
-        {
-          v19 = *(_DWORD *)(v82 + 8);
 ```
 
 you saw the comments, double click that rva and in that function scroll down until you see invalid facet access, first one
 
 ```c
-        v90 = a1 - 2688;
-        if ( v10 == 0 )
-          v90 = -376;
-        if ( *(int *)(v90 + 5704) >= 3 )
-          sub_4A1E8B0(a1: 0, a2: "Invalid Facet Access"); // <-- search for this
-        v14 = sub_41D0080(a1: v90); // <-- getglobalstate
-        v229 = 0;
-        v91 = v217;
-        if ( *(_BYTE *)(v217 + 24) != 0 )
-        {
-          qmemcpy(v228, (const void *)v217, sizeof(v228));
-          *(_QWORD *)(v217 + 8) = 0;
-          *(_QWORD *)(v91 + 16) = 0;
-          v229 = 1;
-        }
+  v97 = a1 - 2648;
+  if ( v10 == 0 )
+    v97 = -376;
+  if ( *(int *)(v97 + 5712) >= 3 )
+    sub_4B4F960(a1: 0, a2: (__int64)"Invalid Facet Access");
+  v13 = sub_42D3B20(a1: v97, a2: a3, a3: a6); // <-- getglobalstate
+  v286 = 0;
+  v98 = v274;
+  if ( *(_BYTE *)(v274 + 24) != 0 )
+  {
+    qmemcpy(v285, (const void *)v274, sizeof(v285));
 ```
 
 
