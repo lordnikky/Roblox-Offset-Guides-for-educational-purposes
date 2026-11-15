@@ -1,3 +1,5 @@
+**Made by goodknigh1 (1067852356953329795), thanks a lot for contributing to community!**
+
 # VisualEnginePointer
 
 string `"AutoCapture_{}_Frames-{}-{}.raw"`, and go to the first xref
