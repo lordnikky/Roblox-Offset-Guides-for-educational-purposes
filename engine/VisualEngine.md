@@ -2,7 +2,7 @@
 
 # VisualEnginePointer
 
-string `"AutoCapture_{}_Frames-{}-{}.raw"`, and go to the first xref
+string `AutoCapture_{}_Frames-{}-{}.raw`, and go to the first xref
 Then f5 to decompile an it should look like this
 
 ```c
