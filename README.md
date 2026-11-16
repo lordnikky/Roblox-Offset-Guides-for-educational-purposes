@@ -3,11 +3,11 @@
 
 Repository with various Roblox offset guides, explaining how to find them and what they're used for internally.
 
-**NOTE**: I use community driven offset names, so if something is named weirdly, or doesn't match the function it is NOT my fault, I simply make guides, but I don't make up the names.
+**NOTE**: I use community driven offset names, so if something is named weirdly, or doesn't match the function it is not my fault, I simply make guides, but I don't make up the names.
 
 **Working on version-4ea8e85481e34f46** (latest)
 
-**Notices about issues will go here, currently everything is clea. Hooray!**
+**Notices about issues will go here, currently everything is clear. Hooray!**
 
 # DISCLAIMER
 
@@ -34,7 +34,3 @@ This means that you are legally **not allowed** to sell, paywall or monetize con
 Proper credit must be present to the author(s) of this repository if any original work is present.
 
 Discord server under the name of "Skidding HQ" (1375930736166699269) is no longer legally allowed to distribute my work. That includes any links, files, snippets from my original work from this repository.
-
-October 19 2026: Currently there is 1 active violation of license, it all has been documented. 
-
-October 21 2026: DMCA request has been resolved, all instances of license being violated have been taken down.
