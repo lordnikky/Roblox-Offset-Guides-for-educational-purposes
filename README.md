@@ -7,7 +7,7 @@ Repository with various Roblox offset guides, explaining how to find them and wh
 
 **Working on version-4ea8e85481e34f46** (latest)
 
-**Notices about issues will go here, currently everything is clear. Hooray!**
+**Not tested for future version. Issues may occur.**
 
 # DISCLAIMER
 
