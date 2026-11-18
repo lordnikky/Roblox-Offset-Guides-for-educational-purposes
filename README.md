@@ -7,7 +7,7 @@ Repository with various Roblox offset guides, explaining how to find them and wh
 
 **Not updated to version-2c6fd5e09aaf4cfa** (latest)
 
-**Issues may occur.**
+**Issues may occur. Unfortunately, I am not able to verify the guides. As the dump I have is broken. Will be fixed as soon as i acquire good dump.**
 
 # DISCLAIMER
 
