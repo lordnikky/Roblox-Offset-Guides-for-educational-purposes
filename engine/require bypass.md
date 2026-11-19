@@ -1,6 +1,6 @@
 # require bypass
 
-string "Cannot require a non-RobloxScript module from a RobloxScript" or "cannot require a non" if you're lazy, first xref:
+string `Cannot require a non-RobloxScript module from a RobloxScript` or `cannot require a non` if you're lazy, first xref:
 
 ```asm
 .rdata:0000000006F79098 aCannotRequireA db 'Cannot require a non-RobloxScript module from a RobloxScript',0
