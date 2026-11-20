@@ -7,7 +7,7 @@ Repository with various Roblox offset guides, explaining how to find them and wh
 
 **Updated to version-2c6fd5e09aaf4cfa** (latest)
 
-**All guides were checked, but issues may occur as I havent checked thoroughly. Please report any issues to me.**
+**All guides were checked, but setfflag was not found. It is currently remains not found.**
 
 # DISCLAIMER
 
