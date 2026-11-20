@@ -126,40 +126,44 @@ LABEL_10:
 the last rva, double click that (literally last rva sub_26143E0), in that function, scroll till the end, look for case 0xF above case 0x10
 
 ```c
+        a4: *(unsigned __int8 *)(a2 + 2));
+      v8 = 136;
+      return sub_25A8920(a1, a2, a3: v8, a4: *(unsigned __int8 *)(a2 + 2), a5: a3);
+    case 0xA:
+      return sub_258D190(a1, a2);
+    case 0xB:
+      v32 = *(_QWORD *)(a2 + 40);
+      if ( v32 != 0 )
+        sub_25A8870(
+          a1,
+          a2: v32,
+          a3: 16LL * (unsigned int)(*(_DWORD *)(a2 + 92) - *(_DWORD *)(a2 + 88)),
+          a4: *(unsigned __int8 *)(a2 + 2));
+      v33 = *(_QWORD *)(a2 + 64);
+      if ( v33 != 0 )
+        sub_25A8870(
+          a1,
+          a2: v33,
+          a3: 8LL * (*(_DWORD *)(a2 + 92) - (unsigned int)*(unsigned __int8 *)(a2 + 104)),
+          a4: *(unsigned __int8 *)(a2 + 2));
       v8 = 112;
-      return sub_2645690(a1, a2, a3: v8, a4: *(unsigned __int8 *)(a2 + 2), a5: a3);
+      return sub_25A8920(a1, a2, a3: v8, a4: *(unsigned __int8 *)(a2 + 2), a5: a3);
+    case 0xC:
+      v34 = *(_QWORD *)(a2 + 32);
+      if ( v34 != 0 )
+        sub_25A8870(a1, a2: v34, a3: 16LL * *(unsigned int *)(a2 + 24), a4: *(unsigned __int8 *)(a2 + 2));
+      goto LABEL_60;
     case 0xD:
-      v31 = *(_QWORD *)(a2 + 32);
-      if ( v31 != 0 )
-        sub_26455E0(a1, a2: v31, a3: 16LL * *(unsigned int *)(a2 + 24), a4: *(unsigned __int8 *)(a2 + 2));
-      goto LABEL_53;
-    case 0xE:
       return result;
+    case 0xE:
+      return sub_2587E10(a1, a2); // luaF_Freeprot
     case 0xF:
-      return sub_261D6B0(a1, a2, a3); // <-- LUAF FREE PROTO
-    case 0x10:
-LABEL_53:
+LABEL_60:
       v8 = 40;
-      return sub_2645690(a1, a2, a3: v8, a4: *(unsigned __int8 *)(a2 + 2), a5: a3);
+      return sub_25A8920(a1, a2, a3: v8, a4: *(unsigned __int8 *)(a2 + 2), a5: a3);
     default:
-      return (unsigned int)*(unsigned __int8 *)(a2 + 1) - 5;
+      return (unsigned int)*(unsigned __int8 *)(a2 + 1) - 4;
   }
-  while ( v14 != a2 )
-  {
-    v13 = (__int64 *)(v14 + 8);
-    v14 = *(_QWORD *)(v14 + 8);
-    if ( v14 == 0 )
-      goto LABEL_23;
-  }
-  *v13 = *(_QWORD *)(v14 + 8);
-  --*(_DWORD *)(*(_QWORD *)(a1 + 56) + 8LL);
-LABEL_23:
-  v15 = *(_WORD *)(a2 + 4) - ((*(_WORD *)(a2 + 4) >> 1) & 0x5555);
-  v16 = (unsigned __int16)((v15 & 0x3333) + ((v15 >> 2) & 0x3333));
-  if ( (unsigned __int16)((257 * (((unsigned __int16)v16 + (unsigned __int16)(v16 >> 4)) & 0xF0F)) >> 8) < 8u )
-    *(_DWORD *)(*(_QWORD *)(a1 + 56) + 1576LL) &= ~0x20000000u;
-  v8 = *(_DWORD *)(a2 + 20) + 25;
-  return sub_2645690(a1, a2, a3: v8, a4: *(unsigned __int8 *)(a2 + 2), a5: a3);
 ```
 
 so after all of this, you were able to find luaF_freeproto. Good job, and if you failed to, just dm me idfk
