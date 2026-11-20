@@ -1,39 +1,27 @@
 # flogdatabank
 
-string "WindowsThemeInit", first xref decompile
+string `[FLog::SingleSurfaceApp] leaveUGCGameInternal`, first xref decompile
 
 ```c
-__int64 sub_759560()
-{
-  __int64 v0; // rdi
-  __int64 v1; // rcx
-  __int64 result; // rax
-  __int64 v3; // [rsp+40h] [rbp-18h] BYREF
-  char v4; // [rsp+48h] [rbp-10h]
-
-  v0 = qword_8E1B0D0 + 64;
-  v3 = qword_8E1B0D0 + 64;
-  v4 = 1;
-  sub_89F0(a1: qword_8E1B0D0 + 64, a2: 0);
-  __wind
-  {
-    sub_4AC4F90();
-    v1 = v0;
+    sub_4972020(
+      a1: (unsigned int)&v61,
+      a2: (unsigned int)"[FLog::SingleSurfaceApp] leaveUGCGameInternal",
+      a3: 0,
+      a4: 0,
+      a5: 0,
+      a6: 0,
+      a7: 0);
   }
-  __unwind
+  if ( a3 != 0 )
   {
-    sub_7C98D0(a1: &v3);
+    sub_13C28C0(a1, a2: 1);
+    sub_4C76630();
   }
-  __wind
-  {
-    result = sub_8B30(a1: v1);
-  }
-  __unwind
-  {
-    sub_4AA5ED0();
-  }
-  return result;
-}
+  sub_13C3510(a1, a2: 0);
+  v7 = qword_84E2BF8;
+  v54 = (volatile signed __int64 *)(qword_84E2BF8 + 64);
+  v55 = 1;
+  sub_2E12FD0(a1: qword_84E2BF8 + 64);
 ```
 
-  first arg of first sub is the flogdatabank, so in this case its 0x8E1B0D0
+the qword_ + 64 is the thing, so it is 0x84E2BF8
