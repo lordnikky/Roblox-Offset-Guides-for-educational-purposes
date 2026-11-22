@@ -47,18 +47,14 @@ so the offset is 0x4977B90
 
 # SetFFlag
 
-search for string `[FLog::FastLogValueChanged] Setting variable {}" or "[FLog::FastLogValueChanged] ...(previously unknown)...`, first xref will be the setfflag
+search for string `_UniverseFilter`, first xref will be the setfflag
 
 ```asm
-.rdata:0000000006FD61A8 aFlogFastlogval db '[FLog::FastLogValueChanged] Setting variable {}',0
-.rdata:0000000006FD61A8                                         ; DATA XREF: sub_493A3A0+261↑o
-.rdata:0000000006FD61D8 aFlogFastlogval_0 db '[FLog::FastLogValueChanged] ...(previously unknown)...',0
-.rdata:0000000006FD61D8                                         ; DATA XREF: sub_493A3A0+328↑o
+.rdata:000000000749EA48 aUniversefilter db '_UniverseFilter',0  ; DATA XREF: sub_4989CC0+163↑o
+.rdata:000000000749EA48                                         ; .rdata:0000000006A58470↑o
 ```
 
-so the offset is 0x493A3A0
-
-**unable to verify if still works**
+so the offset is 0x4989CC0
 
 # FFlagPointer
 
